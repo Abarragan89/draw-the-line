@@ -15,5 +15,13 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abarragan89/draw-the-line.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Abarragan89/draw-the-line/issues"
+  },
+  "homepage": "https://github.com/Abarragan89/draw-the-line#readme"
 }
