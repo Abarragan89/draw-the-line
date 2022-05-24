@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -76,15 +76,30 @@ const resolvers = {
     
           throw new AuthenticationError('You need to be logged in!');
         },
-        addComment: async (parent, { postId, commentBody }, context) => {
-          if (context.user) {
-            const updatedPost = await Post.findOneAndUpdate(
-              { _id: postId },
-              { $push: { comments: { commentBody, username: context.user.username } } },
-              { new: true, runValidators: true }
-            );
+        // addComment: async (parent, { postId, commentBody }, context) => {
+        //   if (context.user) {
+        //     const updatedPost = await Post.findOneAndUpdate(
+        //       { _id: postId },
+        //       { $push: { comments: { commentBody, username: context.user.username } } },
+        //       { new: true, runValidators: true }
+        //     );
     
-            return updatedPost;
+        //     return updatedPost;
+        //   }
+    
+        //   throw new AuthenticationError('You need to be logged in!');
+        // },
+        addComment: async (parent, args, context) => {
+          if (context.user) {
+              const comment = await Comment.create({...args, username: context.user.username});
+            
+              await User.findByIdAndUpdate(
+                { _id: context.user._id },
+                { $push: { posts: comment._id } },
+                { new: true }
+              );
+
+            return comment;
           }
     
           throw new AuthenticationError('You need to be logged in!');
@@ -102,15 +117,30 @@ const resolvers = {
     
           throw new AuthenticationError('You need to be logged in!');
         },
-        // addLike: async (parent, { postId }, context) => {
-        //   if(context.user) {
-        //     const updatePost = await Post.findOneAndUpdate(
-        //       { _id: postId },
-        //       {  }
-
-        //     )
-        //   }
-        // }
+        addPostLike: async (parent, { postId }, context) => {
+          if(context.user) {
+            const updatePost = await Post.findOneAndUpdate(
+              { _id: postId },
+              { $inc: {'likes': 1}},
+              { new: true }
+            );
+              return updatePost;
+          }
+          throw new AuthenticationError('You need to be logged in!');
+        },
+        addCommentLike: async (parent, { commentId }, context) => {
+          if(context.user) {
+            console.log(commentId)
+            const updateComment = await Comment.findOneAndUpdate(
+              { _id: commentId },
+              { $inc: {'likes': 1}},
+              { new: true }
+            );
+            console.log(updateComment)
+            return updateComment;
+          }
+          throw new AuthenticationError('You need to be logged in!');
+        }
     }
 }
 
