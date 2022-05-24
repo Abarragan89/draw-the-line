@@ -101,7 +101,16 @@ const resolvers = {
           }
     
           throw new AuthenticationError('You need to be logged in!');
-        }
+        },
+        // addLike: async (parent, { postId }, context) => {
+        //   if(context.user) {
+        //     const updatePost = await Post.findOneAndUpdate(
+        //       { _id: postId },
+        //       {  }
+
+        //     )
+        //   }
+        // }
     }
 }
 

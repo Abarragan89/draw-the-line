@@ -14,8 +14,9 @@ const typeDefs = gql`
         postText: String
         createdAt: String
         username: String
-        commentCount: Int
         comments: [Comment]
+        likes: Int
+        dislikes: Int
     }
 
     type Comment {
@@ -23,6 +24,8 @@ const typeDefs = gql`
         commentBody: String
         username: String
         createdAt: String
+        likes: Int
+        dislikes: Int
     }
 
     type Auth {
@@ -44,6 +47,9 @@ const typeDefs = gql`
         addPost(postText: String!): Post
         addComment(postId: ID!, commentBody: String!): Post 
         addFriend(friendId: ID!): User
+        addLike(postId: ID!): Post
+        addDislike(postId: ID!): Post
+
     }
 `
 
