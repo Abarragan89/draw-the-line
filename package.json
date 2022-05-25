@@ -15,5 +15,10 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.8.1",
+    "faker": "^6.6.6",
+    "graphql": "^16.5.0"
   }
 }
