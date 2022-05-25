@@ -2,7 +2,7 @@
 const userSeeds = require('./userSeeds.json');
 const postSeeds = require('./postSeeds.json');
 const db = require('../config/connection');
-const { Post , User } = require('../models');
+const { Post , User, Comment } = require('../models');
 
 db.once('open', async () => {
   try {
