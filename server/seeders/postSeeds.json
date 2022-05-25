@@ -1,11 +1,21 @@
 [
-
     {
         "postText": "sapiente illo animi non et molestiae et blanditiis adipisci aut ut dolore",
         "username": "Shyann.Crist57",
-        "comments": [],
+        "comment": [],
+        "likes": 3,
+        "dislikes": 4
+    },
+    {
+        "postText": "et ea non ut occaecati quasi ullam",
+        "username": "Elton_Heaney",
+        "comment": [
+            {
+                "commentBody": "comment body to test if this works",
+                "username": "johnny"
+            }
+        ],
         "likes": 3,
         "dislikes": 4
     }
-
 ]
