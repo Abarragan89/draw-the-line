@@ -15,15 +15,17 @@ import Contact from "./components/Contact/contact";
 function App() {
   return (
     <>
-    `<Router>
-      <Nav />
+     <Router>
+      {/* <Nav /> */}
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
-      </Router>`
+      </Router> 
+    
+
     </>
   );
 }
