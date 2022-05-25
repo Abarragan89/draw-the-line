@@ -45,10 +45,12 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addPost(postText: String!): Post
-        addComment(postId: ID!, commentBody: String!): Comment 
+        addComment(postId: ID!, commentBody: String!): Post 
         addFriend(friendId: ID!): User
         addPostLike(postId: ID!): Post
+        addPostDislike(postId: ID!): Post
         addCommentLike(commentId: ID!): Comment
+        addCommentDislike(commentId: ID!): Comment
 
     }
 `
