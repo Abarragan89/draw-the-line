@@ -1,6 +1,145 @@
 body {
-    width: 50%;
-    height: 100vh;
-    background: linear-gradient(#e66465, #9198e5);
-    /* background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); */
+  height: 100vh;
+  /* background: linear-gradient(#BCEF86, #94C3F2); */
+  background: linear-gradient(#e66465, #9198e5);
+  /* background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); */
+
+  font-family: futura;
+}
+
+#sign-up-section {
+  z-index: 9999;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+#signup-form {
+  width: 350px;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff9f9;
+}
+
+input {
+  width: 60%;
+  height: 20px;
+  background: #fff9f9;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: 15px 10px 15px 10px;
+  border: 0.5px solid #9198e5;
+  border-radius: 5px;
+}
+
+.signupText {
+  margin-bottom: 15px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.signup {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+label {
+  color: #9198e5;
+  font-size: 30px;
+  justify-content: center;
+  display: flex;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+#signup-button {
+  margin: 10px auto;
+  width: 30%;
+  height: 35px;
+  justify-content: center;
+  display: block;
+  background: #fff9f9;
+  color: #9198e5;
+  border: 0.5px solid #9198e5;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.signupButton:hover {
+  background: #6563c5;
+  color: #fff9f9;
+}
+
+.signinText {
+  font-size: 45px;
+}
+
+.login {
+  height: 300px;
+  width: 350px;
+  margin-top: 5px;
+  background: hsl(241, 50%, 72%);
+  border-radius: 20px;
+  transform: translateY(-30px);
+  transition: 0.8s ease-in-out;
+}
+
+.login-form {
+}
+
+.login-form label {
+  font-size: 50px;
+}
+
+.login-form input {}
+
+.login label {
+  color: #fff9f9;
+  transform: scale(0.6);
+}
+
+/* #chk:checked ~ .login {
+    transform: translateY(-420px);
+  }
+  
+  #chk:checked ~ .login label {
+    padding-top: 10px;
+  }
+  
+  #chk:checked ~ .signup label {
+    transform: scale(.6);
+  } */
+
+#loginSubmit {
+  margin: 10px auto;
+  width: 30%;
+  height: 35px;
+  justify-content: center;
+  display: block;
+  background: #fff9f9;
+  color: #9198e5;
+  border: 0.5px solid #9198e5;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+#loginSubmit:hover {
+  color: silver;
 }
