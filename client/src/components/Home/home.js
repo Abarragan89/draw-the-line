@@ -22,10 +22,13 @@ function Home () {
 
     return (
         <>
-        <Signup />
-        <Login />
         <p>Welcome to our page!</p>
-        {loggedIn ? <p>You're logged in, {username}!</p> : <p>please login</p>}
+        {loggedIn ? <p>You're logged in, {username}!</p> : 
+        <>
+            <p>please login</p>
+            <Link to="/login">Login</Link>
+        </>
+        }
 
         {loggedIn ? 
         <>
