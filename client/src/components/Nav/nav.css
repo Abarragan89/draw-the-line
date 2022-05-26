@@ -1,0 +1,49 @@
+.tabpanel {
+    margin-top: 2%;
+    position: fixed;
+    /* z-index: 999; */
+    height: 225px;
+    width: 250px;
+    background-color: hsl(241, 38%, 41%);
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* padding-top: 60px; */
+  }
+  
+  .tabpanel a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .tabpanel a:hover {
+    color: #f1f1f1;
+  }
+  
+  .tabpanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  .openbtn {
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      margin-top: 2%;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    /* padding: 10px 15px; */
+    border: none;
+    z-index: 999999;
+  }
+  
+  .openbtn:hover {
+    background-color:#444;
+  }
