@@ -1,0 +1,58 @@
+[
+    {
+        "postTitle": "test Title",
+        "postText": "sapiente illo animi non et molestiae et blanditiis adipisci aut ut dolore",
+        "username": "Shyann.Crist57",
+        "comment": [],
+        "likes": 3,
+        "dislikes": 4
+    },
+    {
+        "postTitle": "test Title THREE",
+        "postText": "et ea non ut occaecati quasi ullam",
+        "username": "Elton_Heaney",
+        "comment": [],
+        "likes": 3,
+        "dislikes": 4
+    },
+    {
+        "postTitle": "test Title FOUR",
+        "postText": "et ea non ut occaecati quasi ullam",
+        "username": "johnny",
+        "comment": [],
+        "likes": 3,
+        "dislikes": 4
+    },
+    {
+        "postTitle": "test Title FIVE",
+        "postText": "et ea non ut occaecati quasi ullam",
+        "username": "chris",
+        "comment": [],
+        "likes": 3,
+        "dislikes": 1
+    },
+    {
+        "postTitle": "test Title SIX",
+        "postText": "et ea non ut occaecati quasi ullam",
+        "username": "anthony",
+        "comment": [],
+        "likes": 6,
+        "dislikes": 1
+    },
+    {
+        "postTitle": "test Title SEVEN",
+        "postText": "et ea non ut occaecati quasi ullam",
+        "username": "sophie",
+        "comment": [],
+        "likes": 2,
+        "dislikes": 14
+    },
+    {
+        "postTitle": "test Title EIGHT",
+        "postText": "et ea non ut occaecati quasi ullam",
+        "username": "kyle",
+        "comment": [],
+        "likes": 13,
+        "dislikes": 4
+    }
+]

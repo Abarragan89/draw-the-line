@@ -40,6 +40,6 @@ postSchema.virtual('reactionCount').get(function() {
   return this.reactions.length;
 });
 
-const post = model('post', postSchema);
+const Post = model('Post', postSchema);
 
-module.exports = post;
+module.exports = Post;
