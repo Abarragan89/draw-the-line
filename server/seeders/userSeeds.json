@@ -1,0 +1,44 @@
+[
+    { 
+        "username" : "johnny", 
+        "email" : "johnny@hotmail.com", 
+        "password" : "kGjRfUNWUIRwfS_", 
+        "friends" : [], 
+        "posts" : [] 
+    },
+    { 
+        "username" : "chrischan", 
+        "email" : "chris@gmail.com", 
+        "password" : "otK5YtXpcalD1cm", 
+        "friends" : [], 
+        "posts" : [] 
+    },
+    { 
+        "username" : "anthony", 
+        "email" : "anthony@hotmail.com", 
+        "password" : "AP3EUTRZoxzsiHn", 
+        "friends" : [], 
+        "posts" : [] 
+    },
+    { 
+        "username" : "kyle", 
+        "email" : "kyle@yahoo.com", 
+        "password" : "3dVgRgSQmrGLaQE", 
+        "friends" : [], 
+        "posts" : [] 
+    },
+    { 
+        "username" : "fiona", 
+        "email" : "fiona@yahoo.com", 
+        "password" : "BNsmR75BHDH4na3", 
+        "friends" : [], 
+        "posts" : [] 
+    },
+    { 
+        "username" : "sophie", 
+        "email" : "sophie@hotmail.com", 
+        "password" : "vNVT_y10PBpVaUV", 
+        "friends" : [], 
+        "posts" : [] 
+    }
+]
