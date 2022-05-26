@@ -3,6 +3,10 @@ const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
   {
+    postTitle: {
+      type: String,
+      required: 'You need to leave a post title!'
+    },
     postText: {
       type: String,
       required: 'You need to leave a post!'

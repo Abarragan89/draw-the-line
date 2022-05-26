@@ -39,10 +39,15 @@ query {
 export const QUERY_POSTS = gql`
 query {
     posts {
-      _id
-      postText
-      likes
-      dislike
-    }
+        _id
+        postText
+        likes
+        comments {
+          username
+          likes
+          _id
+          commentBody
+        }
+      }
   }
 `

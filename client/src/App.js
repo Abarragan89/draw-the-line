@@ -19,6 +19,8 @@ import Nav from "./components/Nav/nav";
 import Signup from "./components/Signup/signup";
 import Profile from "./components/Profile/profile";
 import Contact from "./components/Contact/contact";
+import Login from "./components/Login/login";
+import CreatePost from "./components/CreatePost/createPost";
 
 // Set up Apollo link 
 const httpLink = createHttpLink({
@@ -46,10 +48,10 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Routes>
-          {/* <Route path="/" element={<Signup />} /> */}
-          <Route path="/Home" element={<Home />} />
-          {/* <Route path="/Profile" element={<Profile />} />
-          <Route path="/Contact" element={<Contact />} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Create-post" element={<CreatePost />} />
+          {/* <Route path="/Contact" element={<Contact />} /> */}
         </Routes>
       </Router>
     </ApolloProvider>
