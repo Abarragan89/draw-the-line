@@ -5,8 +5,8 @@ function Signup() {
         <>
             <section id="sign-up-section">
                 <form id="signup-form">
-                    <div class="signup">
-                        <label for="chk" aria-hidden="true">Sign up</label>
+                    <div className="signup">
+                        <label htmlFor="chk" aria-hidden="true">Sign up</label>
                         <input type="text" id="username" name="txt" placeholder="Username" required="" />
                         <input type="email" id="email-signup" name="email" placeholder="Email" required="" />
                         <input type="password" id="password-signup" name="pswd" placeholder="Password" required="" />
@@ -14,10 +14,10 @@ function Signup() {
                     </div>
                 </form>
 
-                <div class="login">
-                    <form class="login-form">
+                <div className="login">
+                    <form className="login-form">
                         <div>
-                            <label for="chk" aria-hidden="true">Login</label>
+                            <label htmlFor="chk" aria-hidden="true">Login</label>
                             <input id="email-login" type="email" name="email" placeholder="Email" required="" />
                         </div>
                         <div>

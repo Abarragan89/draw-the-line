@@ -13,6 +13,9 @@ import Profile from "./components/Profile/profile";
 import Contact from "./components/Contact/contact";
 
 function App() {
+  // render Nav if logged in
+    // ................
+
   return (
     <>
      <Router>
