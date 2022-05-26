@@ -4,6 +4,14 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+// import Apollo Client package for context
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
 // components 
 import Home from "./components/Home/home";
@@ -11,22 +19,42 @@ import Nav from "./components/Nav/nav";
 import Signup from "./components/Signup/signup";
 import Profile from "./components/Profile/profile";
 import Contact from "./components/Contact/contact";
+import Login from "./components/Login/login";
+import CreatePost from "./components/CreatePost/createPost";
+
+// Set up Apollo link 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 
 function App() {
   return (
-    <>
-     <Router>
-      {/* <Nav /> */}
-      <Routes>
-        <Route path="/" element={<Signup />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Profile" element={<Profile />} />
-        <Route path="/Contact" element={<Contact />} />
-      </Routes>
-      </Router> 
-    
-
-    </>
+    <ApolloProvider client={client}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Create-post" element={<CreatePost />} />
+          {/* <Route path="/Contact" element={<Contact />} /> */}
+        </Routes>
+      </Router>
+    </ApolloProvider>
   );
 }
 
