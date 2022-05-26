@@ -49,6 +49,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Create-post" element={<CreatePost />} />
           {/* <Route path="/Contact" element={<Contact />} /> */}
