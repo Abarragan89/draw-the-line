@@ -26,8 +26,8 @@ const resolvers = {
             .populate('friends');
         },
         // Get single User
-        user: async (parent, { username }) => {
-          return User.findOne({ username })
+        user: async (parent, { _id }) => {
+          return User.findOne({ _id })
             .select('-__v -password')
             .populate('friends')
             .populate('posts');
@@ -173,7 +173,6 @@ const resolvers = {
         // Delete a Post
         deletePost: async(parent, { postId }, context) => {
           if(context.user) {
-            console.log(postId)
             const deletedPost = await Post.findOneAndDelete(
               { _id: postId }
             );

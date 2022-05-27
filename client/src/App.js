@@ -54,7 +54,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Create-post" element={<CreatePost />} />
-          <Route path="/friendprofile/:username" element={<FriendProfile />} />
+          <Route path="/friendprofile/:id" element={<FriendProfile />} />
           {/* <Route path="/Contact" element={<Contact />} /> */}
         </Routes>
       </Router>

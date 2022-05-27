@@ -54,8 +54,8 @@ query {
 
 // Query for friend Profile page
 export const QUERY_FRIEND = gql `
-  query user($username: String!) {
-    user(username: $username){
+  query user($id: ID!) {
+    user(_id: $id){
       username
       friendCount
       posts {
