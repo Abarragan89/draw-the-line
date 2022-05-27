@@ -21,6 +21,7 @@
     "bcrypt": "^4.0.1",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "mongoose": "^5.9.9"
+    "mongoose": "^5.9.9",
+    "react-icons": "^4.3.1"
   }
 }

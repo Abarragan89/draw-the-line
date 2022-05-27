@@ -1,0 +1,221 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-shadow: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(#e66465, #6976ff);
+    position: relative;
+    /* background: linear-gradient(hsl(187, 100%, 66%), #7b53ff); */
+    /* background: linear-gradient(hsl(213, 100%, 75%), #0035d6);   */
+    font-family:sans-serif;
+}
+
+#logo {
+    position:absolute;
+    top: 20%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    animation-delay: .5s;
+}
+
+/* ------------------------- D ------------------------- */
+#logo path:nth-child(2) {
+    stroke-dasharray: 528; 
+    stroke-dashoffset: 528;
+    animation: line-anim 2s ease forwards .0s;
+}
+/* ------------------------- R ------------------------- */
+#logo path:nth-child(3) {
+    stroke-dasharray: 549; 
+    stroke-dashoffset: 549;
+    animation: line-anim 2s ease forwards 0.1s;
+}
+/* ------------------------- A ------------------------- */
+#logo path:nth-child(4) {
+    stroke-dasharray: 511; 
+    stroke-dashoffset: 511;
+    animation: line-anim 2s ease forwards 0.2s;
+}
+/* ------------------------- W ------------------------- */
+#logo path:nth-child(5) {
+    stroke-dasharray: 763; 
+    stroke-dashoffset: 763;
+    animation: line-anim 2s ease forwards .3s;
+}
+/* ------------------------- T ------------------------- */
+#logo path:nth-child(6) {
+    stroke-dasharray: 332; 
+    stroke-dashoffset: 332;
+    animation: line-anim 2s ease forwards .4s;
+}
+/* ------------------------- H ------------------------- */
+#logo path:nth-child(7) {
+    stroke-dasharray: 491; 
+    stroke-dashoffset: 491;
+    animation: line-anim 2s ease forwards .5s;
+}
+/* ------------------------- E ------------------------- */
+#logo path:nth-child(8) {
+    stroke-dasharray: 474; 
+    stroke-dashoffset: 474;
+    animation: line-anim 2s ease forwards .6s;
+}
+/* ------------------------- L ------------------------- */
+#logo path:nth-child(9) {
+    stroke-dasharray: 291; 
+    stroke-dashoffset: 291;
+    animation: line-anim 2s ease forwards .7s;
+}
+/* ------------------------- I ------------------------- */
+#logo path:nth-child(10) {
+    stroke-dasharray: 200; 
+    stroke-dashoffset: 200;
+     animation: line-anim 2s ease forwards .8s;
+}
+/* ------------------------- N ------------------------- */
+#logo path:nth-child(11) {
+    stroke-dasharray: 570; 
+    stroke-dashoffset: 570;
+    animation: line-anim 2s ease forwards .9s;
+}
+/* ------------------------- E ------------------------- */
+#logo path:nth-child(12) {
+    stroke-dasharray: 474; 
+    stroke-dashoffset: 474;
+    animation: line-anim 2s ease forwards 1.0s;
+}
+
+
+/* ------------------------- LETS DEBATE! ------------------------- */
+.letsDebate {
+    position:absolute;
+    font-size: 30px;
+    color: white;
+    opacity: 0;
+    animation: fade-in-up ease 0.4s forwards;  
+    animation-delay: 1.1s;
+    top: 30%;
+    left: 43.1%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes fade-in-up {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+  }
+/* ------------------------- SIGNUP BUTTON ------------------------- */
+.signUpButton {
+    position:absolute;
+    top: 60%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    /* stroke-dasharray: 207; 
+    stroke-dashoffset: 207; */
+    animation: fade-in-up ease 0.4s forwards;  
+    animation-delay: 1.1s;
+    color: white;
+    opacity: 0;
+  }
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 0;
+    margin-top: 5%;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+.signUpButton a:nth-child(1):hover ~ .dot {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+/* ------------------------- LOGIN BUTTON ------------------------- */
+.loginButton {
+    position:absolute;
+    top: 60%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    animation: fade-in-up ease 0.4s forwards;  
+    animation-delay: 1.1s;
+    opacity: 0;
+  }
+
+  .loginButton a:nth-child(1):hover ~ .dot {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+}
+
+/* ------------------------- TEXT ANIMATION ------------------------- */
+@keyframes line-anim{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes whitelogo{
+    from{
+        background-color: none;
+    }
+    to{
+        background-color:white;
+    }
+}
+/* ------------------------- DOWN ARROW ------------------------- */
+.downArrow {
+    position:absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+/* ------------------------- ABOUT ------------------------- */
+.about {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    opacity: 0;
+    animation: fade-in-up ease 0.4s forwards;  
+    animation-delay: 1.1s;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.5;
+    width: 40%;
+    font-family: sans-serif;
+}
+
+/* ------------------------- ARROW ANIMATION ------------------------- */
+/* @keyframes bounce2 {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0); opacity: 1;}
+    40% {transform: translateY(-30px); opacity: 1;}
+    60% {transform: translateY(-15px); opacity: 1;}
+} */
+
