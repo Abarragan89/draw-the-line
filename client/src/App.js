@@ -52,7 +52,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Create-post" element={<CreatePost />} />
-          <Route path="/friendprofile/:username" element={<FriendProfile />} />
+          <Route path="/friendprofile/:id" element={<FriendProfile />} />
           {/* <Route path="/Contact" element={<Contact />} /> */}
         </Routes>
       </Router>
