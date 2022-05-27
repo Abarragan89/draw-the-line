@@ -5,8 +5,9 @@ function Home() {
     <section id="home-page">
         <article id="discussions-forum">
             <div id="start-discussion">
-                <input id="start-subject" placeholder="Subject/Topic"></input>
-                <input id="start-convo-text" placeholder="What are your thoughts?" rows="5"></input>
+                <textarea id="start-subject" placeholder="Subject/Topic" rows="2"></textarea>
+                <textarea id="start-convo-text" placeholder="What are your thoughts?" rows="15"></textarea>
+                <button id="submit-thought">Submit</button>
             </div>
         </article>
     </section>
