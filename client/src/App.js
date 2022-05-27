@@ -21,6 +21,7 @@ import Profile from "./components/Profile/profile";
 import Contact from "./components/Contact/contact";
 import Login from "./components/Login/login";
 import CreatePost from "./components/CreatePost/createPost";
+import FriendProfile from "./components/FriendProfile/friendProfile";
 
 // Set up Apollo link 
 const httpLink = createHttpLink({
@@ -51,6 +52,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Create-post" element={<CreatePost />} />
+          <Route path="/friendprofile/:username" element={<FriendProfile />} />
           {/* <Route path="/Contact" element={<Contact />} /> */}
         </Routes>
       </Router>

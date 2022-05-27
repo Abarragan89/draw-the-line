@@ -50,4 +50,35 @@ query {
         }
       }
   }
+`;
+
+// Query for friend Profile page
+export const QUERY_FRIEND = gql `
+  query user($username: String!) {
+    user(username: $username){
+      username
+      friendCount
+      posts {
+        postTitle
+        postText
+        createdAt
+        likes
+        dislikes
+      }
+      friends {
+        username
+        friendCount
+      }
+    }
+  }
+`;
+
+// Delete a post (Works on GraphQL, has not been tested here.)
+export const DELETE_POST = gql `
+  mutation deletePost($postId: ID!) {
+    deletePost(postId: $postId) {
+      postText
+      username
+    }
+  }
 `
