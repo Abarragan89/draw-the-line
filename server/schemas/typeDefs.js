@@ -38,6 +38,7 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(_id: ID!): User
+        userByName(username: String!): User
         posts(username: String): [Post]
         post(_id: ID!): Post
     }

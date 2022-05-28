@@ -4,35 +4,20 @@ import { useQuery } from '@apollo/client';
 
 function FriendProfile () {
 
-    const { _id: userId } = useParams()
+    const { id: userId } = useParams()
     const { loading, data } = useQuery(QUERY_FRIEND, {
-        variables: { _id: userId },
+        variables: { id: userId },
       });
     
     const userPosts = data?.user.posts || [];
     const userFriends = data?.user.friends || [];
 
-    console.log(userPosts)
-
     return (
-        <>
-            {/* <p>This is the profile of {userParam}</p>
-            <p>{userParam} posts are: {userPosts.map( post => (
-                <>
-                    <p>{post.postText}</p>
-                    <p>{post.postTitle}</p>
-                </>
-            ))} </p>
-            <p>Here are Their friends:</p>
-            <p>{userFriends.map( friend => (
-                <p>{friend.username}</p>
-            ))}</p> */}
-
-{/*             
+        <>  
             <section>
                 <h1>Posts</h1>
-                {userPosts.map(post => (
-                    <section key={post._id}>
+                {userPosts.map((post, index) => (
+                    <section key={index}>
                         <h3>{post.postTitle}</h3>
                         <p>{post.postText}</p>
                     </section>
@@ -40,15 +25,13 @@ function FriendProfile () {
             </section>
             <section>
                 <h1>Friends</h1>
-                {userFriends.map(friend => (
-                    <Link to=''>{friend.username}</Link>
+                {userFriends.map((friend, index) => (
+                    <div key={index}>
+                       <Link to={`/friendprofile/${friend._id}`}>{friend.username}</Link>
+                    </div>
                 ))} 
-            </section> */}
-
-
-
+            </section>
         </>
-
     )
 }
 

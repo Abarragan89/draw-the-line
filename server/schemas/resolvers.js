@@ -25,9 +25,16 @@ const resolvers = {
             .populate('posts')
             .populate('friends');
         },
-        // Get single User
+        // Get single User by ID
         user: async (parent, { _id }) => {
           return User.findOne({ _id })
+            .select('-__v -password')
+            .populate('friends')
+            .populate('posts');
+        },
+        // Get single User by Username
+        userByName: async (parent, { username }) => {
+          return User.findOne({ username })
             .select('-__v -password')
             .populate('friends')
             .populate('posts');
