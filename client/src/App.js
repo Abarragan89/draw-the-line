@@ -21,6 +21,7 @@ import Profile from "./components/Profile/profile";
 import Contact from "./components/Contact/contact";
 import Login from "./components/Login/login";
 import CreatePost from "./components/CreatePost/createPost";
+import Footer from "./components/Footer/footer"
 
 // Set up Apollo link 
 const httpLink = createHttpLink({
@@ -56,6 +57,7 @@ function App() {
           {/* <Route path="/Contact" element={<Contact />} /> */}
         </Routes>
       </Router>
+      <Footer></Footer>
     </ApolloProvider>
   );
 }

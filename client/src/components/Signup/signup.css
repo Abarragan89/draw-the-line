@@ -1,15 +1,31 @@
 #sign-up-section {
-  position:absolute;
-  top: 40%;
-  left: 50%;
+  /* position:absolute;
+  top: 14.5%;
+  left: 34%; */
+  opacity: 0;
   transform: translate(-50%, -50%);
   margin-top: 50px;
+  animation: fadeinup ease 0.4s forwards;  
+  animation-delay: .2s;
+}
+
+@keyframes fadeinup {
+  from {
+      transform: translate3d(0,40px,0)
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1
+  }
 }
 
 #signup-form {
+  margin-top: 15%;
+  margin-left: 15%;
   border: .5px solid white;
-  width: 350px;
-  height: 450px;
+  width: 300px;
+  height: 350px;
   border-radius: 10px;
 }
 
@@ -17,12 +33,12 @@
 .signupEmail, 
 .signupPassword{
   background-color: white;
-  width: 60%;
+  width: 70%;
   height: 1.5%;
   justify-content: center;
   display: flex;
   margin: 10px auto;
-  padding: 15px 10px 15px 10px;
+  padding: 15px 10px;
   border: 0.5px solid #9198e5;
   border-radius: 5px;
 }
@@ -40,7 +56,8 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  margin-bottom: 50px;
+  margin-top: -10%;
+  /* margin-bottom: 50px; */
 }
 
 .signupLabel {
@@ -57,7 +74,7 @@
 
 #signup-button {
   margin-left: 35%;
-  margin-top: 10%;
+  margin-top: 5%;
   width: 30%;
   height: 35px;
   justify-content: center;
@@ -80,4 +97,15 @@
 
 .signinText {
   font-size: 45px;
+}
+
+.signupLinkText {
+    color: white;
+    position: absolute;
+    top: 83%;
+    left: 45%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: lighter;
+  
 }

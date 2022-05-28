@@ -43,7 +43,7 @@ const Login = () => {
     <section id="login-section">
        <form id="login-form" onSubmit={handleFormSubmit}>
           <div className="login">
-            <label htmlFor="chk" aria-hidden="true" className="loginLabel">Login</label>
+            {/* <label htmlFor="chk" aria-hidden="true" className="loginLabel"></label> */}
               <input
                 placeholder="Your email"
                 className="loginEmail"
@@ -62,11 +62,11 @@ const Login = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className="login-button" type="submit">Login</button>
-               {error && <div>Login failed</div>}
+              <button className="login-button" type="submit">Log in</button>
+               {error && <div>Log in failed</div>}
+          <p className="loginLinkText">Don't have an account? <br></br> Sign up <Link to="/signup" className="link"> here.</Link></p>
           </div>
        </form>
-          <p className="linkText">Don't have an account? <br></br> Sign up <Link to="/signup" className="link"> here.</Link></p>
     </section>
   );
 };
