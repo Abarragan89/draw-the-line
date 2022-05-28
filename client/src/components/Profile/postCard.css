@@ -1,0 +1,88 @@
+.card-main {
+    margin: 3rem;
+    height: 420px;
+    width: 400px;
+    border: 1px solid rgb(32, 31, 31);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+}
+
+.commentBox {
+    height: 100px;
+    width: 250px;
+    border: 1px solid black;
+}
+.card-main img {
+    height: 200px;
+    width: 380px;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.portfolio-btn {
+    margin-top: 1rem;
+    height: 2.5rem;
+}
+
+.bg-portfolio {
+    background-image: linear-gradient(-60deg, var(--color-bg) 50%, #09f 50%);
+    bottom:0;
+    left:-50%;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+
+  .follow p {
+    color: var(--color-primary);
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 5rem;
+}
+
+.portfolio-quote {
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: white;
+}
+
+.project-description {
+    padding: 0 5px 0 5px;
+    color: white;
+}
+
+.project-name {
+    color: white;
+    padding-top: 1rem;
+}
+
+
+/* ======================== MEDIA QUERIES FOR SMALL DEVICES ================================ */
+
+@media screen and (max-width: 600px) {
+
+    .card-main {
+        height: 400px;
+        width: 370px;
+    }
+
+    .card-main img {
+        padding: 1rem;
+        height: 180px;
+        width: 350px;
+    }
+    
+    
+}
+
