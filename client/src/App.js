@@ -21,6 +21,7 @@ import Profile from "./components/Profile/profile";
 import Contact from "./components/Contact/contact";
 import Login from "./components/Login/login";
 import CreatePost from "./components/CreatePost/createPost";
+import SinglePost from "./components/SinglePost/SinglePost";
 import FriendProfile from "./components/FriendProfile/friendProfile";
 import SearchPeople from "./components/SearchPeople/searchPeople";
 
@@ -55,6 +56,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/Profile/:id" element={<Profile />} />
           <Route path="/Create-post" element={<CreatePost />} />
+          <Route path="/Single-post" element={<SinglePost />} />
           <Route path="/friendprofile/:id" element={<FriendProfile />} />
           <Route path="/search-people" element={<SearchPeople />} />
           {/* <Route path="/Contact" element={<Contact />} /> */}
