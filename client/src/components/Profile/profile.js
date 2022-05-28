@@ -1,3 +1,4 @@
+import Auth from '../../utils/auth';
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { QUERY_FRIEND, QUERY_ME_BASIC, QUERY_POSTS } from '../../utils/queries';
@@ -44,14 +45,15 @@ function FriendProfile () {
     };
 
 
-
     return (
         <>  
+            <p>Welcome to our page! {username} </p>
+
             <form id='post-form' onSubmit={handleFormSubmit}>
             <section>
             <input type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Write Title Here' />
             <input type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Write Post Here' />
-            <button className='post-btn'>POST</button>
+            <div btn-container><button className='post-btn'>POST</button></div>
             </section>
             </form>
 
@@ -59,8 +61,9 @@ function FriendProfile () {
                 <h1>Posts</h1>
                 {userPosts.map((post, index) => (
                     <section className='card-main' key={index}>
-                        <Link to={`/Single-post/`}>{post.postTitle}</Link>
-                        <p>{post.postText}</p>
+                        
+                        <span>TITLE: </span><Link to={`/Single-post/`}>{post.postTitle}</Link>
+                        <p>CONTENT: {post.postText}</p>
                     </section>
                 ))}
             </section>
