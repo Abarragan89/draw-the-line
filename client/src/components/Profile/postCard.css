@@ -20,3 +20,8 @@
 .btn-container {
     justify-content: center;
 }
+
+.post-title {
+    width: 200px;
+    height: 100px;
+}
