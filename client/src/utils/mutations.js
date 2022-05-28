@@ -23,3 +23,13 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_POST = gql`
+  mutation AddPost($postText: String!, $postTitle: String!, $username: String!) {
+    addPost(postText: $postText, postTitle: $postTitle, username: $username) {
+      postText
+      postTitle
+      username
+    }
+  }
+`;
