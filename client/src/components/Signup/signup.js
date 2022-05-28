@@ -5,7 +5,7 @@ import Auth from '../../utils/auth';
 
 // import Styles
 import './signup.css';
-import{useState} from 'react';
+// import{useState} from 'react';
 
 function Signup() {
     // set up state variables
