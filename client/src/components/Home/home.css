@@ -1,4 +1,4 @@
-#discussions-forum {
+/* #discussions-forum {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -52,4 +52,4 @@ textarea {
   transition: 0.2s ease-in;
   color: #fff9f9;
   cursor: pointer;
-}
+} */
