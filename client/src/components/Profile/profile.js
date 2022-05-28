@@ -59,7 +59,7 @@ function FriendProfile () {
                 <h1>Posts</h1>
                 {userPosts.map((post, index) => (
                     <section className='card-main' key={index}>
-                        <h3>{post.postTitle}</h3>
+                        <Link to={`/Single-post/`}>{post.postTitle}</Link>
                         <p>{post.postText}</p>
                     </section>
                 ))}
