@@ -38,10 +38,11 @@ query {
 // query for the homepage 
 export const QUERY_POSTS = gql`
 query {
-    posts {
+    posts (userId: $userId) {
         _id
         postText
         likes
+        username
         comments {
           username
           likes
