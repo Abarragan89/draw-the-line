@@ -47,11 +47,11 @@ function FriendProfile () {
 
     return (
         <>  
-            <p>Welcome to our page! {username} </p>
+            <p>PROFILE PAGE</p>
 
             <form id='post-form' onSubmit={handleFormSubmit}>
             <section>
-            <input type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Write Title Here' />
+            <input className='post-tile' type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Write Title Here' />
             <input type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Write Post Here' />
             <div btn-container><button className='post-btn'>POST</button></div>
             </section>
