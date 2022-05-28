@@ -1,49 +1,74 @@
+.offcanvas {
+  height: 38%;
+  width: 18%;
+}
+
+.offcanvas-title {
+  font-size: 25px;
+}
+
 .tabpanel {
-    margin-top: 2%;
-    position: fixed;
-    /* z-index: 999; */
-    height: 225px;
-    width: 250px;
-    background-color: hsl(241, 38%, 41%);
-    overflow-x: hidden;
-    transition: 0.5s;
-    /* padding-top: 60px; */
-  }
-  
-  .tabpanel a {
-    padding: 10px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .tabpanel a:hover {
-    color: #f1f1f1;
-  }
-  
-  .tabpanel .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-  }
-  
-  .openbtn {
-      position: absolute;
-      height: 30px;
-      width: 30px;
-      margin-top: 2%;
-    font-size: 30px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    /* padding: 10px 15px; */
-    border: none;
-    z-index: 999999;
-  }
-  
-  .openbtn:hover {
-    background-color:#444;
-  }
+  /* margin-top: 2%; */
+  position: fixed;
+  /* z-index: 999; */
+  /* height: 225px;
+  width: 250px; */
+  /* background-color: hsl(241, 38%, 41%); */
+  overflow-x: hidden;
+  transition: 0.5s;
+  /* padding-top: 60px; */
+}
+
+.tabpanel a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.tabpanel a:hover {
+  color: silver;
+}
+
+.tabpanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.openbtn {
+  /* height: 50px;
+  width: 10px; */
+  /* margin-top: 2%; */
+  font-size: 50px;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  /* padding: 10px 15px; */
+  border: none;
+  z-index: 999999;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0) ; 
+   border-color: rgba(255, 255, 255, 0); 
+}
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0) ; 
+  border-color: rgba(255, 255, 255, 0); 
+  box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 0%);
+}
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 0%);
+}
+
+/* .openbtn:hover {
+  background-color: #444;
+} */
