@@ -23,3 +23,23 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+// Dislike a post
+export const DISLIKE_POST = gql`
+  mutation AddPostDislike($postId: ID!) {
+    addPostDislike(postId: $postId) {
+      _id
+      dislikes
+    }
+  }
+`;
+
+// Dislike a post
+export const LIKE_POST = gql`
+  mutation addPostLike($postId: ID!) {
+    addPostLike(postId: $postId) {
+      _id
+      likes
+    }
+  }
+`;

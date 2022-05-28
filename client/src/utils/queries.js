@@ -60,6 +60,7 @@ export const QUERY_FRIEND = gql `
       username
       friendCount
       posts {
+        _id
         postTitle
         postText
         createdAt

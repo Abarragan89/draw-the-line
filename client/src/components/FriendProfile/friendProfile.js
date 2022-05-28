@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { QUERY_FRIEND } from '../../utils/queries';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
+import { DISLIKE_POST, LIKE_POST } from '../../utils/mutations';
 
 function FriendProfile () {
 
@@ -12,6 +13,13 @@ function FriendProfile () {
     const userPosts = data?.user.posts || [];
     const userFriends = data?.user.friends || [];
 
+    const [addDislike ] = useMutation(DISLIKE_POST)
+    
+    const [addLike, {error}] = useMutation(LIKE_POST);
+    if(error) {
+        console.log(error);
+    }
+
     return (
         <>  
             <section>
@@ -20,6 +28,13 @@ function FriendProfile () {
                     <section key={index}>
                         <h3>{post.postTitle}</h3>
                         <p>{post.postText}</p>
+                        {/* likes and dislies */}
+                        <p>{post.likes}<a onClick={() =>addLike({variables: {postId: post._id}})}>    👍</a></p>
+
+
+                        <p>{post.dislikes}<a onClick={() => {
+                        addDislike({variables: {postId: post._id}})}
+                        }>      👎</a></p>
                     </section>
                 ))}
             </section>
