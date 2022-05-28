@@ -5,6 +5,7 @@ import Auth from '../../utils/auth';
 
 // import Styles
 import './signup.css';
+import{useState} from 'react';
 
 function Signup() {
     // set up state variables
@@ -45,6 +46,7 @@ function Signup() {
   };
 
     return (
+        
         <>
         <section id="sign-up-section">
             <form id="signup-form" onSubmit={handleFormSubmit}>
