@@ -56,6 +56,7 @@ query {
 export const QUERY_FRIEND = gql `
   query user($id: ID!) {
     user(_id: $id){
+      _id
       username
       friendCount
       posts {
@@ -66,11 +67,22 @@ export const QUERY_FRIEND = gql `
         dislikes
       }
       friends {
+        _id
         username
         friendCount
       }
     }
   }
+`;
+
+// Query a user by Username
+export const QUERY_USER_BY_NAME = gql`
+query Query($username: String!) {
+  userByName(username: $username) {
+    username
+    _id
+  }
+}
 `;
 
 // Delete a post (Works on GraphQL, has not been tested here.)
