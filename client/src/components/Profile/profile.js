@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { QUERY_FRIEND, QUERY_ME_BASIC, QUERY_POSTS } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
+import './postCard.css'
 import { ADD_POST } from '../../utils/mutations';
 
 function FriendProfile () {
@@ -57,12 +58,13 @@ function FriendProfile () {
             <section>
                 <h1>Posts</h1>
                 {userPosts.map((post, index) => (
-                    <section key={index}>
+                    <section className='card-main' key={index}>
                         <h3>{post.postTitle}</h3>
                         <p>{post.postText}</p>
                     </section>
                 ))}
             </section>
+
             <section>
                 <h1>Friends</h1>
                 {userFriends.map((friend, index) => (

@@ -14,6 +14,7 @@ function Home () {
     console.log(postQuery)
     // user information
     const username = data?.me.username || '';
+    const userId = data?.me._id || '';
     // Post Info
     const postData = postQuery?.posts || [];
 
@@ -34,7 +35,7 @@ function Home () {
         {loggedIn ? 
         <>
         <button onClick={() => Auth.logout()}>Logout</button> 
-        <Link to="/profile">View my profile</Link>
+        <Link to={`/profile/${userId}`}>View my profile</Link>
         {postData.map( post => (<p key={post._id}>{post.postText}</p>))}
         </>
         :
