@@ -25,8 +25,15 @@ const resolvers = {
             .populate('posts')
             .populate('friends');
         },
-        // Get single User
-        user: async (parent, { username }) => {
+        // Get single User by ID
+        user: async (parent, { _id }) => {
+          return User.findOne({ _id })
+            .select('-__v -password')
+            .populate('friends')
+            .populate('posts');
+        },
+        // Get single User by Username
+        userByName: async (parent, { username }) => {
           return User.findOne({ username })
             .select('-__v -password')
             .populate('friends')
@@ -160,7 +167,6 @@ const resolvers = {
         // Add a dislike to a comment
         addCommentDislike: async (parent, { commentId }, context) => {
           if(context.user) {
-            console.log(commentId)
             const updateComment = await Comment.findOneAndUpdate(
               { _id: commentId },
               { $inc: {'dislikes': 1}},
@@ -170,6 +176,16 @@ const resolvers = {
             return updateComment;
           }
           throw new AuthenticationError('You need to be logged in!');
+        },
+        // Delete a Post
+        deletePost: async(parent, { postId }, context) => {
+          if(context.user) {
+            const deletedPost = await Post.findOneAndDelete(
+              { _id: postId }
+            );
+            return deletedPost
+          }
+          throw new AuthenticationError('You need to be logged in!')
         }
     }
 }
