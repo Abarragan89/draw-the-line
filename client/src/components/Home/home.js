@@ -4,6 +4,7 @@ import { QUERY_POSTS, QUERY_ME_BASIC } from '../../utils/queries';
 import { Link } from 'react-router-dom';
 import Signup from '../Signup/signup';
 import Login from '../Login/login';
+import Nav from '../Nav/nav';
 
 
 function Home () {

@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // importing components from react-router-dom package
 import {
   BrowserRouter as Router,
@@ -46,6 +48,9 @@ const client = new ApolloClient({
 
 
 function App() {
+  // render Nav if logged in
+    // ................
+
   return (
     <ApolloProvider client={client}>
       <Router>
