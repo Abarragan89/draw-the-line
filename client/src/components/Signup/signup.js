@@ -48,7 +48,6 @@ function Signup() {
         <main id="sign-up-section">
             <form id="signup-form" onSubmit={handleFormSubmit}>
                 <div className="signup">
-                    {/* <label htmlFor="chk" aria-hidden="true" className="signupLabel">Sign up</label> */}
                     <input
                         placeholder="Username"
                         className="signupUsername"
@@ -77,10 +76,10 @@ function Signup() {
                         onChange={handleChange}
                     />
                     <button id="signup-button" type="submit" value="signup">Sign up</button>
+                    {error && <div>Signup failed</div>}
+                    <p className="loginLinkText">Have an account? <br></br><Link to="/" className="link">Login here.</Link></p>
                 </div>
-                {error && <div>Signup failed</div>}
             </form>
-            <p className="signupLinkText">Have an account? <br></br> Login <Link to="/" className="link"> here.</Link></p>
         </main>
         </>
     );

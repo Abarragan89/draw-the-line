@@ -5,22 +5,36 @@
 }
 
 body {
-    height: 100vh;
-    /* background: linear-gradient(#ff8f8f, #85a4fc); */
+    min-height: 100vh;
     position: relative;
-    /* background: linear-gradient(hsl(205, 100%, 69%), #805afd); */
-    background: linear-gradient( #805afd, hsl(198, 100%, 72%));
-    /* background: linear-gradient(hsl(213, 100%, 75%), #0035d6);   */
     font-family:sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(hsl(198, 100%, 72%), #805afd);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background: linear-gradient(hsl(213, 100%, 75%), #0035d6);   */
+    /* background: linear-gradient(hsl(205, 100%, 69%), #805afd); */
+    /* background: linear-gradient(#ff8f8f, #85a4fc); */
+}
+
+.logoDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #logo {
-    position:absolute;
-    top: 13%;
-    left: 22%;
-    /* top: 38%;
-    left: 68%; */
-    transform: translate(-50%, -50%);
+    padding-top: 70%;
     animation-delay: .5s;
 }
 
@@ -94,12 +108,6 @@ body {
 
 /* ------------------------- SIGNUP BUTTON ------------------------- */
 .signUpButton {
-    position:absolute;
-    top: 60%;
-    left: 42%;
-    transform: translate(-50%, -50%);
-    /* stroke-dasharray: 207; 
-    stroke-dashoffset: 207; */
     animation: fade-in-up ease 0.4s forwards;  
     animation-delay: 1.1s;
     color: white;
@@ -111,19 +119,6 @@ a {
     text-decoration: none;
 }
 
-.dot {
-    width: 6px;
-    height: 6px;
-    background: #ffffff;
-    border-radius: 50%;
-    opacity: 0;
-    margin-top: 5%;
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.3s ease-in-out;
-  }
-
 .signUpButton a:nth-child(1):hover ~ .dot {
     -webkit-transform: translateX(30px);
     transform: translateX(30px);
@@ -134,10 +129,6 @@ a {
 
 /* ------------------------- LOGIN BUTTON ------------------------- */
 .loginButton {
-    position:absolute;
-    top: 60%;
-    left: 54%;
-    transform: translate(-50%, -50%);
     animation: fade-in-up ease 0.4s forwards;  
     animation-delay: 1.1s;
     opacity: 0;
@@ -172,12 +163,13 @@ a {
   }
 
 /* ------------------------- ABOUT ------------------------- */
+.aboutSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .debateText {
-    position: absolute;
-    top: 38%;
-    left:48%;
-    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
     opacity: 0;
@@ -186,15 +178,11 @@ a {
     font-weight: lighter;
     font-size: 22px;
     line-height: 2.7;
-    width: 40%;
     font-family: sans-serif;
+    padding-top: 5%;
 }
 
 .about {
-    position: absolute;
-    top: 46%;
-    left: 48%;
-    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
     opacity: 0;
@@ -203,7 +191,25 @@ a {
     font-weight: lighter;
     font-size: 18px;
     line-height: 1.7;
-    width: 40%;
+    width: 50%;
     font-family: sans-serif;
+}
+
+/* ------------------------- ARROW ------------------------- */
+.downArrow {
+    padding-top: 10%;
+    stroke-dasharray: 207; 
+    stroke-dashoffset: 207;
+    animation: bounce2 2.5s ease infinite;
+    animation-delay: 2.5s;
+    color: white;
+    opacity: 0;
+  }
+
+/* ------------------------- ARROW ANIMATION ------------------------- */
+@keyframes bounce2 {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0); opacity: 1;}
+    40% {transform: translateY(-30px); opacity: 1;}
+    60% {transform: translateY(-15px); opacity: 1;}
 }
         
