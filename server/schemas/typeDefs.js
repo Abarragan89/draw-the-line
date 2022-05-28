@@ -18,6 +18,7 @@ const typeDefs = gql`
         comments: [Comment]
         likes: Int
         dislikes: Int
+        banMeter: Float
     }
 
     type Comment {

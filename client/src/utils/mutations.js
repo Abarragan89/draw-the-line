@@ -12,6 +12,15 @@ export const ADD_USER = gql`
   }
 `;
 
+export const ADD_FRIEND = gql`
+  mutation addFriend($friendId: ID!) {
+    addFriend(friendId: $friendId) {
+      username
+      friendCount
+    }
+  }
+`;
+
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -30,6 +39,7 @@ export const DISLIKE_POST = gql`
     addPostDislike(postId: $postId) {
       _id
       dislikes
+      banMeter
     }
   }
 `;
@@ -40,6 +50,16 @@ export const LIKE_POST = gql`
     addPostLike(postId: $postId) {
       _id
       likes
+      banMeter
+    }
+  }
+`;
+
+export const DELETE_POST = gql`
+mutation deletePost($postId: ID!) {
+    deletePost(postId: $postId) {
+      postText
+      username
     }
   }
 `;

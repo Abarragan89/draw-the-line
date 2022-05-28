@@ -66,6 +66,8 @@ export const QUERY_FRIEND = gql `
         createdAt
         likes
         dislikes
+        banMeter
+        
       }
       friends {
         _id

@@ -1,33 +1,32 @@
 import { QUERY_USER_BY_NAME } from '../../utils/queries';
 import { useLazyQuery } from '@apollo/client';
+import { ADD_FRIEND } from '../../utils/mutations';
 
 function SearchPeople() {
-    const [
-      findUser, 
-      { loading, data, error }
-    ] = useLazyQuery(QUERY_USER_BY_NAME, {
-        onCompleted: () => {
-            console.log(data)
-        }
-    });
+    // find user Query
+    const [findUser, { data }] = useLazyQuery(QUERY_USER_BY_NAME);
 
-    async function handleSubmit(e) {
-        try {
-            const searchedUser = await document.getElementById('search-bar').value
-            console.log(await searchedUser)
-            await findUser({variables: {username: searchedUser}});
-            console.log(await data.userByName.username)
+    // Add friend Query
+    // const [addFriend, { data: newFriend }] = useLazyQuery(ADD_FRIEND);
 
-        } catch (error) {
-            console.log(error)
-        }
-    }
     return (
         <>
-            <form onSubmit={() => handleSubmit()}>
+            <form onSubmit={ async (e)=> {
+                e.preventDefault();
+                const inquiryUser = await document.getElementById('search-bar').value
+                await findUser({variables: {username: inquiryUser}})
+                }   
+            }>
                 <label>Search for People</label>
                 <input type='text' name='search-bar' id='search-bar'/>
                 <button type='submit'>Search</button>
+                { data && data.userByName === null && <p>User does not exist</p>}
+                { data && data.userByName !== null && 
+                <>
+                    <p>{data.userByName.username}</p>
+                    <button>Add Friend</button>
+                </>
+                }
             </form>
             <div>
 

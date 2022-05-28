@@ -35,7 +35,8 @@ const postSchema = new Schema(
   },
   {
     toJSON: {
-      getters: true
+      getters: true,
+      virtuals: true
     }
   }
 );
@@ -43,6 +44,15 @@ const postSchema = new Schema(
 postSchema.virtual('reactionCount').get(function() {
   return this.reactions.length;
 });
+
+postSchema.virtual('banMeter').get(function() {
+  if(isNaN(this.dislikes / this.likes)) {
+    return 0;
+  } 
+  if(this.dislikes + this.likes >= 10) {
+    return this.dislikes / this.likes; 
+  }
+})
 
 const Post = model('post', postSchema);
 
