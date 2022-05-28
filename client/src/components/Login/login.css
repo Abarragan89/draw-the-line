@@ -5,9 +5,9 @@ body {
   }
   
   #login-section {
-    position:absolute;
+    /* position:absolute;
     top: 15%;
-    left: 5%;
+    left: 5%; */
     opacity: 0;
     transform: translate(-50%, -50%);
     margin-top: 50px;
