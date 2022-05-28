@@ -1,28 +1,36 @@
-// import { Link } from 'react-router-dom';
 import { QUERY_USER_BY_NAME } from '../../utils/queries';
-import { useLazyQuery} from '@apollo/client';
+import { useLazyQuery } from '@apollo/client';
+import { ADD_FRIEND } from '../../utils/mutations';
 
 function SearchPeople() {
-    const searchedUser = document.getElementById('search-bar')
-    const [
-      searchPeople, 
-      { loading, data }
-    ] = useLazyQuery(QUERY_USER_BY_NAME, { variables: {username: searchedUser}});
+    // find user Query
+    const [findUser, { data }] = useLazyQuery(QUERY_USER_BY_NAME);
 
-    if (loading) return <p>Let's find some friends...</p>
+    // Add friend Query
+    // const [addFriend, { data: newFriend }] = useLazyQuery(ADD_FRIEND);
 
-    async function handleSubmit(event) {
-        event.preventDefault();
-        await searchPeople();
-        console.log( await data);
-    }
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={ async (e)=> {
+                e.preventDefault();
+                const inquiryUser = await document.getElementById('search-bar').value
+                await findUser({variables: {username: inquiryUser}})
+                }   
+            }>
                 <label>Search for People</label>
                 <input type='text' name='search-bar' id='search-bar'/>
                 <button type='submit'>Search</button>
+                { data && data.userByName === null && <p>User does not exist</p>}
+                { data && data.userByName !== null && 
+                <>
+                    <p>{data.userByName.username}</p>
+                    <button>Add Friend</button>
+                </>
+                }
             </form>
+            <div>
+
+            </div>
         </>
     )
 }
