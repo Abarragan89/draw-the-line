@@ -5,6 +5,7 @@ import { QUERY_FRIEND, QUERY_ME_BASIC, QUERY_POSTS } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import './postCard.css'
 import { ADD_POST, DELETE_POST } from '../../utils/mutations';
+import './profile.css'
 
 // Bad word Filter
 var Filter = require('bad-words'),
