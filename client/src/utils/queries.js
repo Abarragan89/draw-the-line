@@ -9,14 +9,12 @@ export const GET_USER_POSTS = gql`
       postTitle
       createdAt
       username
-      likes
-      dislikes
       banMeter
+      likesLength
+      dislikesLength
     }
   }
 `;
-
-
 
 // Query or homepage(user info)
 export const QUERY_ME_BASIC = gql`
@@ -41,6 +39,8 @@ query {
         createdAt
         likes
         dislikes
+        likesLength
+        dislikesLength
       }
       friends {
         friends {
@@ -61,7 +61,10 @@ query {
         postTitle
         postText
         likes
+        likesLength
+        dislikesLength
         username
+        banMeter
         comments {
           username
           likes
@@ -87,6 +90,8 @@ export const QUERY_FRIEND = gql `
         likes
         dislikes
         banMeter
+        likesLength
+        dislikesLength
         
       }
       friends {

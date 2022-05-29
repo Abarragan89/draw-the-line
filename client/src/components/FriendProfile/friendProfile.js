@@ -30,7 +30,7 @@ function FriendProfile () {
                         <h3>{post.postTitle}</h3>
                         <p>{post.postText}</p>
                         {/* likes and dislies */}
-                        <p>{post.likes}<a onClick={() => {
+                        <p>{post.likesLength}<a onClick={() => {
                             addLike({variables: {postId: post._id}})
                             if(post.banMeter >= 0.6){
                                 deletePost({variables: {postId: post._id}})
@@ -39,7 +39,7 @@ function FriendProfile () {
                             }
                         
                         }}>    👍</a></p>
-                        <p>{post.dislikes}<a onClick={() => {
+                        <p>{post.dislikesLength}<a onClick={() => {
                         addDislike({variables: {postId: post._id}})
                         if(post.banMeter >= 0.6){
                                 deletePost({variables: {postId: post._id}})
