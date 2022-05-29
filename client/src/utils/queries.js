@@ -1,5 +1,23 @@
 import { gql } from '@apollo/client'
 
+// Get all users posts 
+export const GET_USER_POSTS = gql`
+  query Query {
+    posts {
+      _id
+      postText
+      postTitle
+      createdAt
+      username
+      likes
+      dislikes
+      banMeter
+    }
+  }
+`;
+
+
+
 // Query or homepage(user info)
 export const QUERY_ME_BASIC = gql`
   {
@@ -40,6 +58,7 @@ export const QUERY_POSTS = gql`
 query {
     posts {
         _id
+        postTitle
         postText
         likes
         comments {
