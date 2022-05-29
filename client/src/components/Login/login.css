@@ -10,7 +10,7 @@ body {
   }
 
   #login-form {
-    border: .5px solid white;
+    border: 1px solid white;
     width: 300px;
     height: 350px;
     border-radius: 10px;
@@ -26,8 +26,12 @@ body {
   margin-bottom: 5%;
   padding: 8px 15px;
   border: none;
-  border-radius: 5px;
-  
+  border-bottom: 1px solid white;
+  background-color: transparent !important;
+  }
+
+  input#email:focus {
+    outline:none;
   }
 
   input#password {
@@ -35,7 +39,12 @@ body {
     margin-bottom: 15%;
     padding: 8px 15px;
     border: none;
-    border-radius: 5px;
+    border-bottom: 1px solid white;
+    background-color: transparent !important;
+  }
+
+  input#password:focus {
+    outline: none;
   }
 
 
@@ -49,10 +58,10 @@ body {
   }
  
   .login-button {
-    width: 30%;
+    width: 50%;
     height: 35px;
     background: transparent;
-    border: .5px solid white;
+    border: 1px solid white;
     font-size: 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -87,8 +96,10 @@ body {
   }
   
 .error {
-  padding-top:5%;
-  font-size: 13px;
-  color: rgb(216, 16, 16);
+  /* padding-top:5%; */
+  margin-top: -8%;
+  padding-bottom: 5%;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
 }
 
