@@ -60,7 +60,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/Profile/:id" element={<Profile />} />
           <Route path="/Create-post" element={<CreatePost />} />
-          <Route path="/Single-post" element={<SinglePost />} />
+          <Route path="/Single-post/:id" element={<SinglePost />} />
           <Route path="/friendprofile/:id" element={<FriendProfile />} />
           <Route path="/search-people" element={<SearchPeople />} />
           <Route path="/about" element={<About />} />
