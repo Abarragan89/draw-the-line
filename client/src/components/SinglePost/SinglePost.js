@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { QUERY_SINGLE_POST } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { DISLIKE_POST, LIKE_POST, DELETE_POST } from '../../utils/mutations';
+import './singlePost.css';
 
 function SinglePost() {
 
@@ -29,16 +30,28 @@ function SinglePost() {
 
                 {
                     <div>
+
+                        <div className='single-post-container'>
                         <p>Username: {userPost.username}</p>
                         <p>Post Title: {userPost.postTitle}</p>
                         <p>Post Content: {userPost.postText}</p>
                         <p>Post Creation Date: {userPost.createdAt}</p>
+                        </div>
+
+                        <div className='likes-container'>
                         <p>Likes: {userPost.likes}</p>
                         <p>Dislikes: {userPost.dislikes}</p>
-                        <p>Ban meter: {userPost.banMeter}</p>
-                        <br></br>
+                        </div>
+
+                        <div className='comments-container'>
                         <p>Comments {userPost.comments}</p>
+                        </div>
+
                         <br></br>
+
+                        <div className='banmeter'>
+                        <p>Ban meter: {userPost.banMeter}</p>
+                        </div>
                         <p>{userPost.likes}<a onClick={() => {
                             addLike({variables: {postId: userPost._id}})
                             if(userPost.banMeter >= 0.6){
@@ -47,7 +60,7 @@ function SinglePost() {
                                 deletedPost.remove();
                             }
                         
-                        }}>    👍</a></p>
+                        }}> 👍</a></p>
                         <p>{userPost.dislikes}<a onClick={() => {
                         addDislike({variables: {postId: userPost._id}})
                         if(userPost.banMeter >= 0.6){
