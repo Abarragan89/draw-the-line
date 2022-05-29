@@ -5,7 +5,7 @@
 }
 
 body {
-    min-height: 100vh;
+    min-height: 00vh;
     position: relative;
     font-family:sans-serif;
     display: flex;
@@ -213,3 +213,23 @@ a {
     60% {transform: translateY(-15px); opacity: 1;}
 }
         
+/* LOGGED IN VIEW */
+
+#loggedInView {
+    /* top: 0;
+    left: 0; */
+    display: flex;
+
+    justify-content:baseline;
+    
+}
+
+#nav-hamburger {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.discussion-post{
+
+}

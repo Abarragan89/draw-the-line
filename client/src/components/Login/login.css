@@ -91,3 +91,15 @@ body {
   color: rgb(216, 16, 16);
 }
 
+/* LOGGED IN VIEW */
+
+#loggedIn-view {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#loggedIn-profile-view {
+
+}
+
