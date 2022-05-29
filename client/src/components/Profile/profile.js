@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { QUERY_FRIEND, QUERY_ME_BASIC, QUERY_POSTS } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
-import './postCard.css'
 import { ADD_POST } from '../../utils/mutations';
+import './profile.css'
 
 function Profile () {
 
@@ -47,23 +47,21 @@ function Profile () {
 
     return (
         <>  
-            <p>PROFILE PAGE</p>
-
+         <main className="profilePage">  
             <form id='post-form' onSubmit={handleFormSubmit}>
-            <section>
-            <input className='post-tile' type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Write Title Here' />
-            <input type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Write Post Here' />
-            <div btn-container><button className='post-btn'>POST</button></div>
+            <section className="writePostSection">
+            <input className='post-title' type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Title' />
+            <input className="writePost" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Post' />
+                <button className='postButton'>Send</button>
             </section>
             </form>
 
             <section>
-                <h1>Posts</h1>
+
                 {userPosts.map((post, index) => (
-                    <section className='card-main' key={index}>
-                        
-                        <span>TITLE: </span><Link to={`/Single-post/`}>{post.postTitle}</Link>
-                        <p>CONTENT: {post.postText}</p>
+                    <section className='postContainer' key={index}>
+                        <span>Title: </span><Link to={`/Single-post/`}>{post.postTitle}</Link>
+                        <p>Post: {post.postText}</p>
                     </section>
                 ))}
             </section>
@@ -76,6 +74,7 @@ function Profile () {
                     </div>
                 ))} 
             </section>
+         </main>   
         </>
     )
 }
