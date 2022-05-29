@@ -1,5 +1,5 @@
 import { QUERY_USER_BY_NAME } from '../../utils/queries';
-import { useLazyQuery } from '@apollo/client';
+import { useLazyQuery, useMutation } from '@apollo/client';
 import { ADD_FRIEND } from '../../utils/mutations';
 
 function SearchPeople() {
@@ -7,8 +7,8 @@ function SearchPeople() {
     const [findUser, { data }] = useLazyQuery(QUERY_USER_BY_NAME);
 
     // Add friend Query
-    // const [addFriend, { data: newFriend }] = useLazyQuery(ADD_FRIEND);
-
+    const [addFriend, { data: newFriend }] = useMutation(ADD_FRIEND);
+    console.log(data)
     return (
         <>
             <form onSubmit={ async (e)=> {
@@ -24,7 +24,15 @@ function SearchPeople() {
                 { data && data.userByName !== null && 
                 <>
                     <p>{data.userByName.username}</p>
-                    <button>Add Friend</button>
+                    <button onClick={() => {
+                        try {
+                            addFriend({variables: {friendId: data.userByName._id}})
+                            alert("friend has been added!")
+                        } catch(e) {
+                            console.log(e)
+                            alert("You are already friends")
+                        }
+                    }}>Add Friend</button>
                 </>
                 }
             </form>
