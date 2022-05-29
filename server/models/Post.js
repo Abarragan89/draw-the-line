@@ -20,12 +20,24 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
-    likes: {
-      type: Number
-    },
-    dislikes: {
-      type: Number
-    },
+    // likes: {
+    //   type: Number
+    // },
+    // dislikes: {
+    //   type: Number
+    // },
+    likes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ],
+    dislikes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ],
     comments: [
       {
         type: Schema.Types.ObjectId,
@@ -41,17 +53,20 @@ const postSchema = new Schema(
   }
 );
 
-postSchema.virtual('reactionCount').get(function() {
-  return this.reactions.length;
-});
-
 postSchema.virtual('banMeter').get(function() {
-  if(isNaN(this.dislikes / this.likes)) {
+
+  if(isNaN(this.dislikes.length / this.likes.length)) {
     return 0;
   } 
-  if(this.dislikes + this.likes >= 10) {
-    return this.dislikes / this.likes; 
+  if(dislikes + likes >= 10) {
+    return this.dislikes.length / this.likes.length;
   }
+})
+postSchema.virtual('likesLength').get(function() {
+  return this.likes.length;
+})
+postSchema.virtual('dislikesLength').get(function() {
+  return this.dislikes.length;
 })
 
 const Post = model('post', postSchema);

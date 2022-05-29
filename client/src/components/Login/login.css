@@ -19,24 +19,24 @@ body {
   }
 
   input#email {
-  width: 70%;
-  height: 1.5%;
+  width: 78%;
   justify-content: center;
   display: flex;
+  margin-top: -9%;
   margin-bottom: 5%;
-  padding: 15px 10px;
+  padding: 8px 15px;
   border: none;
   border-radius: 5px;
   }
 
-  .loginPassword {
-    width: 70%;
-    margin-bottom: 10%;
-    padding: 15px 10px;
-    height: 1.5%;
+  input#password {
+    width: 78%;
+    margin-bottom: 15%;
+    padding: 8px 15px;
     border: none;
     border-radius: 5px;
   }
+
 
   .login {
     display: flex;
@@ -50,7 +50,6 @@ body {
   .login-button {
     width: 30%;
     height: 35px;
-    /* justify-content: center; */
     background: transparent;
     border: .5px solid white;
     font-size: 15px;
@@ -75,24 +74,20 @@ body {
 
   .link:hover {
     text-decoration: underline;
-  }
+    color: white;
+  } 
 
   .loginLinkText {
     color: white;
     text-align: center;
     font-size: 15px;
     font-weight: lighter;
-    padding-top: 7%;
+    padding-top: 14%;
   }
   
-  .login label {
-    color: #fff9f9;
-    transform: scale(0.6);
-  }
-  
-
 .error {
   padding-top:5%;
-  font-size: 14px;
-  color: red;
+  font-size: 13px;
+  color: rgb(216, 16, 16);
 }
+

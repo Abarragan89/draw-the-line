@@ -9,7 +9,7 @@ body {
     position: relative;
     font-family:sans-serif;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     background: linear-gradient(hsl(198, 100%, 72%), #805afd);
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ body {
 }
 
 #logo {
-    padding-top: 70%;
+    padding-top: 100%;
     animation-delay: .5s;
 }
 
@@ -119,28 +119,28 @@ a {
     text-decoration: none;
 }
 
-.signUpButton a:nth-child(1):hover ~ .dot {
+/* .signUpButton a:nth-child(1):hover ~ .dot {
     -webkit-transform: translateX(30px);
     transform: translateX(30px);
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     opacity: 1;
-}
+} */
 
 /* ------------------------- LOGIN BUTTON ------------------------- */
 .loginButton {
-    animation: fade-in-up ease 0.4s forwards;  
-    animation-delay: 1.1s;
+    /* animation: fade-in-up ease 0.4s forwards;  
+    animation-delay: 1.1s; */
     opacity: 0;
   }
 
-  .loginButton a:nth-child(1):hover ~ .dot {
+  /* .loginButton a:nth-child(1):hover ~ .dot {
     -webkit-transform: translateX(30px);
     transform: translateX(30px);
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     opacity: 1;
-}
+} */
 
 /* ------------------------- TEXT ANIMATION ------------------------- */
 @keyframes line-anim{

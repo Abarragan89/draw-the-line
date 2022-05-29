@@ -35,13 +35,15 @@ export const LOGIN_USER = gql`
 
 // Dislike a post
 export const DISLIKE_POST = gql`
-  mutation AddPostDislike($postId: ID!) {
+  mutation AddPostDislikes($postId: ID!) {
     addPostDislike(postId: $postId) {
       _id
-      dislikes
+      postText
+      dislikesLength
+      username
       banMeter
     }
-  }
+}
 `;
 
 // Dislike a post
@@ -49,12 +51,16 @@ export const LIKE_POST = gql`
   mutation addPostLike($postId: ID!) {
     addPostLike(postId: $postId) {
       _id
-      likes
+      postText
+      likesLength
+      username
       banMeter
     }
-  }
+}
+
 `;
 
+// Delete a Post
 export const DELETE_POST = gql`
 mutation deletePost($postId: ID!) {
     deletePost(postId: $postId) {
@@ -63,12 +69,39 @@ mutation deletePost($postId: ID!) {
   }
   `;
 
+  // Add a Post
 export const ADD_POST = gql`
   mutation AddPost($postText: String!, $postTitle: String!, $username: String!) {
     addPost(postText: $postText, postTitle: $postTitle, username: $username) {
       postText
       postTitle
       username
+    }
+  }
+`;
+
+// Add a comment Like
+export const ADD_COMMENT_LIKE  = gql `
+  mutation AddCommentLike($commentId: ID!) {
+    addCommentLike(commentId: $commentId) {
+      _id
+      postText
+      likesLength
+      username
+      banMeter
+    }
+  }
+`;
+
+// Add a comment dislike
+export const ADD_COMMENT_DISLIKE  = gql `
+  mutation AddCommentDislike($commentId: ID!) {
+    addCommentDislike(commentId: $commentId) {
+      _id
+      postText
+      likesLength
+      username
+      banMeter
     }
   }
 `;
