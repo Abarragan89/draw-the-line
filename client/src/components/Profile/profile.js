@@ -6,7 +6,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import './postCard.css'
 import { ADD_POST } from '../../utils/mutations';
 
-function FriendProfile () {
+function Profile () {
 
     const { id: userId } = useParams()
     const { loading, data } = useQuery(QUERY_FRIEND, {
