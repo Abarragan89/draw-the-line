@@ -34,7 +34,8 @@ body {
 }
 
 #logo {
-    padding-top: 100%;
+    /* padding-top: 100%; */
+    margin-top: 20%;
     animation-delay: .5s;
 }
 
@@ -197,7 +198,8 @@ a {
 
 /* ------------------------- ARROW ------------------------- */
 .downArrow {
-    padding-top: 10%;
+    /* padding-top: 10%; */
+    margin-top: 5%;
     stroke-dasharray: 207; 
     stroke-dashoffset: 207;
     animation: bounce2 2.5s ease infinite;
