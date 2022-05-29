@@ -75,9 +75,10 @@ function Home () {
         :
         <>
           <main className="aboutSection">
-            <h1 className="about">Draw the Line is a debate platform monitored and regulated by our community.
+            <h1 className="debateText">Let's debate</h1>
+            <p className="about">Draw the Line is a debate platform monitored and regulated by our community.
             We strive to bring forth a safe space for our community members to engage in thought provoking debates with one another.
-            </h1>
+            </p>
           </main>
             <Login/>
         </>

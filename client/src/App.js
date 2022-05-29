@@ -23,9 +23,13 @@ import Profile from "./components/Profile/profile";
 import Contact from "./components/Contact/contact";
 import Login from "./components/Login/login";
 import CreatePost from "./components/CreatePost/createPost";
+<<<<<<< HEAD
 import SinglePost from "./components/SinglePost/SinglePost";
 import FriendProfile from "./components/FriendProfile/friendProfile";
 import SearchPeople from "./components/SearchPeople/searchPeople";
+=======
+import Footer from "./components/Footer/footer"
+>>>>>>> 056a81f (final use of positioning, moving forward with flexbox)
 
 // Set up Apollo link 
 const httpLink = createHttpLink({
@@ -67,6 +71,7 @@ function App() {
           {/* <Route path="/Contact" element={<Contact />} /> */}
         </Routes>
       </Router>
+      <Footer></Footer>
     </ApolloProvider>
   );
 }
