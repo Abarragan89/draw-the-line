@@ -60,8 +60,8 @@ function Profile () {
 
                 {userPosts.map((post, index) => (
                     <section className='postContainer' key={index}>
-                        <span>Title: </span><Link to={`/Single-post/`}>{post.postTitle}</Link>
-                        <p>Post: {post.postText}</p>
+                        <h2 className="title"><span>Title: </span><Link to={`/Single-post/`}>{post.postTitle}</Link></h2>
+                        <h3>Post: {post.postText}</h3>
                     </section>
                 ))}
             </section>
