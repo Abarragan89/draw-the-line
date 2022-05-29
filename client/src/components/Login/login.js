@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations'
 import { Link } from 'react-router-dom';
-
 import Auth from '../../utils/auth'
+import "./login.css"
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -40,14 +40,13 @@ const Login = () => {
     });
   };
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-md-6">
-        <div className="card">
-          <h4 className="card-header">Login</h4>
-          <div className="card-body">
-            <form onSubmit={handleFormSubmit}>
+    <section id="login-section">
+       <form id="login-form" onSubmit={handleFormSubmit}>
+          <div className="login">
+            {/* <label htmlFor="chk" aria-hidden="true" className="loginLabel"></label> */}
               <input
-                placeholder="Your email"
+                placeholder="Email"
+                className="loginEmail"
                 name="email"
                 type="email"
                 id="email"
@@ -55,24 +54,20 @@ const Login = () => {
                 onChange={handleChange}
               />
               <input
-                placeholder="******"
+                placeholder="Password"
+                className="loginPassword"
                 name="password"
                 type="password"
                 id="password"
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className="btn d-block w-100" type="submit">
-                Login
-              </button>
-              <Link to="/signup">Or SignUp</Link>
-            </form>
-
-            {error && <div>Login failed</div>}
+              <button className="login-button" type="submit">Log in</button>
+               {error && <div className="error">Log in failed</div>}
+          <p className="signupLinkText">Don't have an account? <br></br><Link to="/signup" className="link"> Sign up here.</Link></p>
           </div>
-        </div>
-      </div>
-    </main>
+       </form>
+    </section>
   );
 };
 
