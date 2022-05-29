@@ -1,3 +1,6 @@
+import './searchPeople.css';
+import Nav from '../Nav/nav';
+
 import { QUERY_USER_BY_NAME } from '../../utils/queries';
 import { useLazyQuery, useMutation } from '@apollo/client';
 import { ADD_FRIEND } from '../../utils/mutations';
@@ -11,11 +14,14 @@ function SearchPeople() {
     console.log(data)
     return (
         <>
-            <form onSubmit={ async (e)=> {
+            <div id="hamburger">
+                <Nav />
+            </div>
+            <form id="search-friend-form" onSubmit={async (e) => {
                 e.preventDefault();
                 const inquiryUser = await document.getElementById('search-bar').value
-                await findUser({variables: {username: inquiryUser}})
-                }   
+                await findUser({ variables: { username: inquiryUser } })
+            }
             }>
                 <label>Search for People</label>
                 <input type='text' name='search-bar' id='search-bar'/>
