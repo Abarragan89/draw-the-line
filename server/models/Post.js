@@ -54,19 +54,21 @@ const postSchema = new Schema(
 );
 
 postSchema.virtual('banMeter').get(function() {
+  let dislikes = this.dislikes.length;
+  let likes = this.likes.length;
 
-  if(isNaN(this.dislikes.length / this.likes.length)) {
+  if(isNaN(dislikes / likes)) {
     return 0;
   } 
-  if(dislikes + likes >= 10) {
-    return this.dislikes.length / this.likes.length;
+  if(dislikes + likes >= 5) {
+    return dislikes / likes; 
   }
 })
 postSchema.virtual('likesLength').get(function() {
   return this.likes.length;
 })
 postSchema.virtual('dislikesLength').get(function() {
-  return this.dislikes.length;
+  return this.likes.length;
 })
 
 const Post = model('post', postSchema);
