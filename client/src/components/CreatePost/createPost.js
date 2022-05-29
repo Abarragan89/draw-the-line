@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { QUERY_POSTS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
+import Form from 'react-bootstrap/Form';
 
 //HAS NOT BEEN TESTED!!!!
 function CreatePost() {
