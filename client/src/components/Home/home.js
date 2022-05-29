@@ -28,6 +28,10 @@ function Home () {
     <>
         {loggedIn ? 
         <>
+    <div id="hamburger">
+                <Nav />
+            </div>
+
         <Link to={`/profile/${userId}`}>View my profile</Link>
         <p>You're logged in, {username}!</p>
 

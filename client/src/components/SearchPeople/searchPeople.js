@@ -23,9 +23,9 @@ function SearchPeople() {
                 await findUser({ variables: { username: inquiryUser } })
             }
             }>
-                <label>Search for People</label>
+                <label id="sfp-label">Search for People</label>
                 <input type='text' name='search-bar' id='search-bar'/>
-                <button type='submit'>Search</button>
+                <button id="search-friend-btn" type='submit'>Search</button>
                 { data && data.userByName === null && <p>User does not exist</p>}
                 { data && data.userByName !== null && 
                 <>
