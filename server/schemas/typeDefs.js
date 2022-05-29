@@ -16,9 +16,11 @@ const typeDefs = gql`
         createdAt: String
         username: String
         comments: [Comment]
-        likes: Int
-        dislikes: Int
+        likes: [ID]
+        dislikes: [ID]
         banMeter: Float
+        likesLength: Int
+        dislikesLength: Int
     }
 
     type Comment {
@@ -26,8 +28,10 @@ const typeDefs = gql`
         commentBody: String
         username: String
         createdAt: String
-        likes: Int
-        dislikes: Int
+        likes: [ID]
+        dislikes: [ID]
+        likesLength: Int
+        dislikesLength: Int
     }
 
     type Auth {
@@ -50,10 +54,13 @@ const typeDefs = gql`
         addPost(postText: String!, postTitle: String!, username: String!): Post
         addComment(postId: ID!, commentBody: String!): Post 
         addFriend(friendId: ID!): User
+
         addPostLike(postId: ID!): Post
         addPostDislike(postId: ID!): Post
+
         addCommentLike(commentId: ID!): Comment
         addCommentDislike(commentId: ID!): Comment
+
         deletePost(postId: ID!): Post
 
     }
