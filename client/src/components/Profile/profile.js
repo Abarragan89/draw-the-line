@@ -61,7 +61,7 @@ function Profile () {
                     <h1>Posts</h1>
                     {userPosts.map((post, index) => (
                         <section className='postContainer' key={index} id={index}>
-                            <h2>Title:</h2> <Link to={`/Single-post/`}>{post.postTitle}</Link>
+                            <h2>Title:</h2> <Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link>
                             <h3>Post: {post.postText}</h3>
                             <button id='delete-post-btn'
                             onClick={() => {
