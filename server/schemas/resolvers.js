@@ -131,7 +131,7 @@ const resolvers = {
           if (context.user) {
             const updatePost = await Post.findOneAndUpdate(
               { _id: postId },
-              { $inc: {'likes': 1}},
+              { $addToSet: {'likes': context.user._id } },
               { new: true }
             );
               return updatePost;
@@ -143,7 +143,7 @@ const resolvers = {
           if (context.user) {
             const updatePost = await Post.findOneAndUpdate(
               { _id: postId },
-              { $inc: {'dislikes': 1}},
+              { $addToSet: {'dislikes': context.user._id } },
               { new: true }
             );
               return updatePost;
@@ -156,7 +156,7 @@ const resolvers = {
             console.log(commentId)
             const updateComment = await Comment.findOneAndUpdate(
               { _id: commentId },
-              { $inc: {'likes': 1}},
+              { $addToSet: {'likes': context.user._id } },
               { new: true }
             );
             console.log(updateComment)
@@ -169,7 +169,7 @@ const resolvers = {
           if(context.user) {
             const updateComment = await Comment.findOneAndUpdate(
               { _id: commentId },
-              { $inc: {'dislikes': 1}},
+              { $addToSet: {'dislikes': context.user._id } },
               { new: true }
             );
             console.log(updateComment)

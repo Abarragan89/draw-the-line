@@ -23,7 +23,6 @@ function Home () {
 
     // check if user is logged in
     const loggedIn = Auth.loggedIn()
-
     return (
     <>
         {loggedIn ? 
@@ -36,12 +35,12 @@ function Home () {
                 <section key={index}>
                     <h3>{post.postTitle}</h3>
                     <p>Ban Meter: </p>
-                    <progress id="banMeter" value={post.banMeter} max="0.6">{post.banMeter} </progress>
+                    <progress id="banMeter" value={post.banMeter} max="0.6">{post.banMeter}</progress>
                     <p>{post.createdAt}</p>
                     <p>{post.postText}</p>
                     <p>{post.username}</p>
-                    <p>{post.likes}<a>  👍</a></p>
-                    <p>{post.dislikes}<a>  👎</a></p>
+                    <p>{post.likesLength}<a>  👍</a></p>
+                    <p>{post.dislikesLength}<a>  👎</a></p>
                 </section>
                 ))}
         <button onClick={() => Auth.logout()}>Logout</button> 
