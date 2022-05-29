@@ -51,8 +51,8 @@ function Profile () {
 
             <form id='post-form' onSubmit={handleFormSubmit}>
             <section>
-            <input className='post-tile' type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Write Title Here' />
-            <input type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Write Post Here' />
+            <input method="post" className='post-tile' type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Write Title Here' />
+            <input method="post" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Write Post Here' />
             <div btn-container><button className='post-btn'>POST</button></div>
             </section>
             </form>
