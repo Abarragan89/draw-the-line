@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
+import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
-
-// import Styles
 import './signup.css';
 // import{useState} from 'react';
 
@@ -53,12 +52,13 @@ function Signup() {
     return (
         
         <>
-        <section id="sign-up-section">
+        <main id="sign-up-section">
             <form id="signup-form" onSubmit={handleFormSubmit}>
                 <div className="signup">
-                    <label htmlFor="chk" aria-hidden="true">Sign up</label>
+                    <label htmlFor="chk" aria-hidden="true" className="signupLabel">Sign up</label>
                     <input
-                        placeholder="Your username"
+                        placeholder="Username"
+                        className="signupUsername"
                         name="username"
                         type="username"
                         id="username"
@@ -66,7 +66,8 @@ function Signup() {
                         onChange={handleChange}
                     />
                     <input
-                        placeholder="Your email"
+                        placeholder="Email"
+                        className="signupEmail"
                         name="email"
                         type="email"
                         id="email"
@@ -74,7 +75,8 @@ function Signup() {
                         onChange={handleChange}
                     />
                     <input
-                        placeholder="******"
+                        placeholder="Password"
+                        className="signupPassword"
                         name="password"
                         type="password"
                         id="password"
@@ -83,9 +85,10 @@ function Signup() {
                     />
                     <button id="signup-button" type="submit" value="signup">Sign up</button>
                 </div>
+                {error && <div>Signup failed</div>}
             </form>
-            {error && <div>Signup failed</div>}
-        </section>
+            <p className="linkText">Have an account? <br></br> Login <Link to="/" className="link"> here.</Link></p>
+        </main>
         </>
     );
 };

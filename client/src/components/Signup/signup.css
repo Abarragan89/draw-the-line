@@ -1,43 +1,27 @@
-body {
-  height: 100vh;
-  /* background: linear-gradient(#BCEF86, #94C3F2); */
-  background: linear-gradient(#75d3f0, #9198e5);
-  /* background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); */
-
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-/* SIGNUP */
-
-.sign-up-section, .login {
-  z-index: 9999;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+#sign-up-section {
+  position:absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin-top: 50px;
 }
 
-.signup-form {
+#signup-form {
+  border: .5px solid white;
   width: 350px;
   height: 450px;
-  overflow: hidden;
   border-radius: 10px;
-  background-color: #fff9f9;
 }
 
-#chk {
-  display: none;
-}
-
-input {
+.signupUsername,
+.signupEmail, 
+.signupPassword{
+  background-color: white;
   width: 60%;
-  height: 20px;
-  background: #fff9f9;
+  height: 1.5%;
   justify-content: center;
   display: flex;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 15px 10px 15px 10px;
   border: 0.5px solid #9198e5;
   border-radius: 5px;
@@ -59,25 +43,28 @@ input {
   margin-bottom: 50px;
 }
 
-label {
-  color: #9198e5;
+.signupLabel {
+  color: white;
+  margin-top: -5%;
+  padding-bottom:10%;
   font-size: 30px;
   justify-content: center;
   display: flex;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   cursor: pointer;
   transition: 0.5s ease-in-out;
 }
 
 #signup-button {
-  margin: 10px auto;
+  margin-left: 35%;
+  margin-top: 10%;
   width: 30%;
   height: 35px;
   justify-content: center;
   display: block;
-  background: #fff9f9;
-  color: #9198e5;
-  border: 0.5px solid #9198e5;
+  background: transparent;
+  color: white;
+  border: 0.5px solid white;
   font-size: 1em;
   font-weight: bold;
   border-radius: 5px;
@@ -86,8 +73,9 @@ label {
 }
 
 #signup-button:hover {
-  background: #6563c5;
-  color: #fff9f9;
+  background-color: white;
+  color: transparent;
+  color: #956FC7;
 }
 
 .signinText {
