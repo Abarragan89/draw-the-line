@@ -1,7 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 import { QUERY_SINGLE_POST } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
-import { DISLIKE_POST, LIKE_POST, DELETE_POST } from '../../utils/mutations';
+import { DISLIKE_POST, LIKE_POST, DELETE_POST, } from '../../utils/mutations';
+import { QUERY_ME_BASIC } from '../../utils/queries';
+import { ADD_POST } from '../../utils/mutations';
+
 import './singlePost.css';
 
 function SinglePost() {
@@ -20,8 +24,37 @@ function SinglePost() {
     if (error) {
         console.log(error);
     }
-
+    const { basic } = useQuery(QUERY_ME_BASIC);
+    const username = basic?.me.username || '';
     const [deletePost] = useMutation(DELETE_POST)
+
+
+    // set up state variables for comment section
+    const [formState, setFormState] = useState({
+        postTitle: '',
+        postText: '',
+        username: username,
+      });
+      
+      const [addPost] = useMutation(ADD_POST);
+
+
+    // handleChange for comment section
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormState({
+        ...formState,
+        [name]: value,
+        });
+    };
+
+    const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    await addPost({
+        variables: { ...formState },
+    });
+    };
+
 
     return (
         <>
@@ -46,6 +79,20 @@ function SinglePost() {
                         <div className='comments-container'>
                         <p>Comments {userPost.comments}</p>
                         </div>
+
+
+
+                        {/* Comment Section */}
+
+                        <form id='post-form' onSubmit={handleFormSubmit}>
+                            <section>
+                                <input method="post" className='post-tile' type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Your Comment Here' />
+                                <div btn-container><button className='post-btn'>Post</button></div>
+                            </section>
+                        </form>
+
+
+
 
                         <br></br>
 

@@ -26,6 +26,7 @@ function Profile () {
         postText: '',
         username: username,
       });
+      
       const [addPost, { error }] = useMutation(ADD_POST);
 
     // update state based on form input changes
