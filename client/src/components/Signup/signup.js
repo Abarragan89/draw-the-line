@@ -44,11 +44,6 @@ function Signup() {
     });
   };
 
-
-
-
-
-  
     return (
         
         <>
@@ -83,7 +78,7 @@ function Signup() {
                         onChange={handleChange}
                     />
                     <button id="signup-button" type="submit" value="signup">Sign up</button>
-                    {error && <div>Signup failed</div>}
+                    {error && <div className="error">Signup failed</div>}
                     <p className="loginLinkText">Have an account? <br></br><Link to="/" className="link">Login here.</Link></p>
                 </div>
             </form>
