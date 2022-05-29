@@ -48,9 +48,6 @@ const client = new ApolloClient({
 
 
 function App() {
-  // render Nav if logged in
-    // ................
-
   return (
     <ApolloProvider client={client}>
       <Router>
