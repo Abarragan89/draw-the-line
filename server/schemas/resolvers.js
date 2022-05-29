@@ -128,7 +128,7 @@ const resolvers = {
         },
         // Add like to a Post
         addPostLike: async (parent, { postId }, context) => {
-          if(context.user) {
+          if (context.user) {
             const updatePost = await Post.findOneAndUpdate(
               { _id: postId },
               { $inc: {'likes': 1}},
@@ -140,7 +140,7 @@ const resolvers = {
         },
         // Add dislike to a post
         addPostDislike: async (parent, { postId }, context) => {
-          if(context.user) {
+          if (context.user) {
             const updatePost = await Post.findOneAndUpdate(
               { _id: postId },
               { $inc: {'dislikes': 1}},

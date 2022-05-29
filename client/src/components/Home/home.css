@@ -9,7 +9,7 @@ body {
     position: relative;
     font-family:sans-serif;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     background: linear-gradient(hsl(198, 100%, 72%), #805afd);
     background-repeat: no-repeat;
