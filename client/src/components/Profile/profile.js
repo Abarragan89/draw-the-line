@@ -11,6 +11,11 @@ var Filter = require('bad-words'),
     filter = new Filter();
 
 
+// Bad word Filter
+var Filter = require('bad-words'),
+    filter = new Filter();
+
+
 function Profile () {
 
     const { id: userId } = useParams()
