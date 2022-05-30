@@ -65,7 +65,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active  {
   transition: background-color 5000s;
-  -webkit-text-fill-color: #fff !important;
 }
 
 ::placeholder {
@@ -90,7 +89,6 @@ input:-webkit-autofill:active  {
 }
 
 #signup-button {
-  /* margin-top: -3%; */
   width: 50%;
   height: 35px;
   background: transparent;
