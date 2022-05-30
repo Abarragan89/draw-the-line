@@ -3,6 +3,7 @@ import { useLocation } from "react-router";
 import { useState } from "react";
 import './nav.css';
 import {Button, Offcanvas} from 'react-bootstrap'
+import Auth from '../../utils/auth';
 
 function Nav() {
     const location = useLocation() 
@@ -24,10 +25,9 @@ function Nav() {
             }
         }
 
-
-
     return (
         <>
+        <container id="nav-container">
         <Button className="openbtn" onClick={handleShow}>
         ☰
       </Button>
@@ -40,18 +40,19 @@ function Nav() {
         <section id="nav-tabs">
             <ul className="tabpanel">
             {/* <a  className="closebtn" onClick={openNav()}>×</a> */}
-                <Link to="/Home" className="tab">Home</Link>
+                <Link to="/" className="tab">Home</Link>
                 <Link to="/Profile" className="tab">Profile</Link>
                 <Link to="/Create-post" className="tab">Create Post</Link>
                 <Link to="/search-people" className="tab">Search People</Link>
                 <Link to="/Contact" className="tab">Contact</Link>
-                <Link to="/Logout" className="tab">Logout</Link>
+                <a onClick={() => Auth.logout()} className="tab">Logout</a>
             </ul>
             {/* <button className="openbtn" onClick={onClick}>☰</button> */}
         </section>
                   
         </Offcanvas.Body>
       </Offcanvas>
+      </container>
       </>
     )
 }
