@@ -200,12 +200,6 @@ a {
         
 /* LOGGED IN VIEW */
 
-#nav-hamburger {
-    /* position: relative;
-    top: 0;
-    left: 0; */
-}
-
 #loggedInView {
     /* top: 0;
     left: 0; */
@@ -222,10 +216,12 @@ a {
 #loggedIn-profile-view {
     font-size: 25px;
     font-weight: bold;
+
 }
 
 #loggedIn-profile-view a:hover{
     color: #99e2f8;
+    transition: 0.2s ease-in;
 }
 
 .discussion-post{
@@ -239,6 +235,7 @@ margin: 50px;
 border: 3px solid white;
 border-radius: 10px;
 width: 400px;
+/* box-shadow: 10px 15px 8px #422b8b; */
 }
 
 .discussion-post h3{

@@ -1,4 +1,11 @@
+/* #nav-container {
+  position: relative;
+} */
+
 .offcanvas {
+  /* position: absolute;
+  top: 0px;
+  right: 0px; */
   height: 55%;
   width: 20%;
 }
@@ -15,7 +22,7 @@
 
 .tabpanel {
   /* margin-top: 2%; */
-  position: fixed;
+  /* position: fixed; */
   padding-left: 10px;
   transition: 0.5s;
 }
@@ -32,39 +39,41 @@
 
 .tabpanel a:hover {
   color: silver;
+  cursor: pointer;
 }
 
 .tabpanel .closebtn {
-  position: absolute;
-  top: 0;
-  left: 25px;
   font-size: 36px;
 }
 
 .openbtn {
-  position: relative;
   font-size: 50px;
   cursor: pointer;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   color: white;
   border: none;
-  z-index: 999999;
+  z-index: 99;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: rgba(255, 255, 255, 0) ; 
-   border-color: rgba(255, 255, 255, 0); 
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0);
 }
-.btn-check:focus+.btn-primary, .btn-primary:focus {
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
   color: #fff;
-  background-color: rgba(255, 255, 255, 0) ; 
-  border-color: rgba(255, 255, 255, 0); 
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0);
   box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 0%);
 }
 button:focus:not(:focus-visible) {
   outline: none;
 }
-.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+.btn-check:active + .btn-primary:focus,
+.btn-check:checked + .btn-primary:focus,
+.btn-primary.active:focus,
+.btn-primary:active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 0%);
 }

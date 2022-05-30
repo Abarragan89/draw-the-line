@@ -31,9 +31,9 @@ function Home() {
         <>
             {loggedIn ?
                 <>
-                    <div id="nav-hamburger">
+                    
                         <Nav />
-                    </div>
+                    
 
                     <section id="loggedInView">
                     <h2>You're logged in, {username}!</h2>
@@ -59,7 +59,7 @@ function Home() {
                             </section>
                             
                         ))}
-                        <button id="logoutBTN" onClick={() => Auth.logout()}>Logout</button>
+                        {/* <button id="logoutBTN" onClick={() => Auth.logout()}>Logout</button> */}
                     </section>
                 </>
                 :
