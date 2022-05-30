@@ -30,8 +30,9 @@ function SearchPeople() {
                 { data && data.userByName === null && <p>User does not exist</p>}
                 { data && data.userByName !== null && 
                 <>
-                    <p>{data.userByName.username}</p>
-                    <button onClick={() => {
+                    <div id="foundFriendDiv">
+                    <p id="foundFriend">{data.userByName.username}</p>
+                    <button id="addFriendBTN"onClick={() => {
                         try {
                             addFriend({variables: {friendId: data.userByName._id}})
                             alert("friend has been added!")
@@ -40,6 +41,7 @@ function SearchPeople() {
                             alert("You are already friends")
                         }
                     }}>Add Friend</button>
+                    </div>
                 </>
                
                 }
