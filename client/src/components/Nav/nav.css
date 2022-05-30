@@ -37,11 +37,12 @@
 .tabpanel .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
+  left: 25px;
   font-size: 36px;
 }
 
 .openbtn {
+  position: relative;
   font-size: 50px;
   cursor: pointer;
   background-color: rgba(0,0,0,0);
