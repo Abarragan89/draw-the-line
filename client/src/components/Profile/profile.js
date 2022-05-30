@@ -10,12 +10,6 @@ import './profile.css'
 var Filter = require('bad-words'),
     filter = new Filter();
 
-
-// Bad word Filter
-var Filter = require('bad-words'),
-    filter = new Filter();
-
-
 function Profile () {
 
     const { id: userId } = useParams()
@@ -93,22 +87,25 @@ function Profile () {
 
         {loggedIn ?
             <>  
-                <p>PROFILE PAGE</p>
+             {/* <main className="profilePage">    */}
                 <form id='post-form' onSubmit={handleFormSubmit}>
-                <section>
-                <input className='post-tile' type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Write Title Here' />
-                <input type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Write Post Here' />
+                <section className="writePostSection">
+                <input className="post-title" type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Title' />
+                <div className="writePostDiv">
+                <input className="writePost" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Post' />
+                    <button className="postButton" id="post-btn">Post</button>
+                </div>
                 <div id="bad-words-warning"></div>
-                <div><button className='post-btn' id='post-btn'>POST</button></div>
                 </section>
                 </form>
+                
 
                 <section>
                     <h1>Posts</h1>
                     {userPosts.map((post, index) => (
-                        <section className='card-main' key={index} id={index}>
-                            <span>TITLE: </span><Link to={`/Single-post/`}>{post.postTitle}</Link>
-                            <p>CONTENT: {post.postText}</p>
+                        <section className='postContainer' key={index} id={index}>
+                            <h2>Title:</h2> <Link to={`/Single-post/`}>{post.postTitle}</Link>
+                            <h3>Post: {post.postText}</h3>
                             <button id='delete-post-btn'
                             onClick={() => {
                                 deletePost({variables: {postId: post._id}})
@@ -128,6 +125,7 @@ function Profile () {
                         </div>
                     ))} 
                 </section>
+              {/* </main>   */}
             </>
             :
             <>

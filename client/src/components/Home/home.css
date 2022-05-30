@@ -34,8 +34,7 @@ body {
 }
 
 #logo {
-    /* padding-top: 100%; */
-    margin-top: 20%;
+    margin-top: 60%;
     animation-delay: .5s;
 }
 
@@ -120,28 +119,10 @@ a {
     text-decoration: none;
 }
 
-/* .signUpButton a:nth-child(1):hover ~ .dot {
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-} */
-
 /* ------------------------- LOGIN BUTTON ------------------------- */
 .loginButton {
-    /* animation: fade-in-up ease 0.4s forwards;  
-    animation-delay: 1.1s; */
     opacity: 0;
-  }
-
-  /* .loginButton a:nth-child(1):hover ~ .dot {
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-} */
+}
 
 /* ------------------------- TEXT ANIMATION ------------------------- */
 @keyframes line-anim{
@@ -149,7 +130,6 @@ a {
         stroke-dashoffset: 0;
     }
 }
-
 
 /* ------------------------- FADE-IN-UP ANIMATION ------------------------- */  
 @keyframes fade-in-up {
@@ -175,7 +155,7 @@ a {
     color: white;
     opacity: 0;
     animation: fade-in-up ease 0.4s forwards;  
-    animation-delay: 1.1s;
+    animation-delay: 1.3s;
     font-weight: lighter;
     font-size: 22px;
     line-height: 2.7;
@@ -188,7 +168,7 @@ a {
     color: white;
     opacity: 0;
     animation: fade-in-up ease 0.4s forwards;  
-    animation-delay: 1.1s;
+    animation-delay: 1.5s;
     font-weight: lighter;
     font-size: 18px;
     line-height: 1.7;
@@ -198,12 +178,11 @@ a {
 
 /* ------------------------- ARROW ------------------------- */
 .downArrow {
-    /* padding-top: 10%; */
     margin-top: 5%;
     stroke-dasharray: 207; 
     stroke-dashoffset: 207;
     animation: bounce2 2.5s ease infinite;
-    animation-delay: 2.5s;
+    animation-delay: 2.3s;
     color: white;
     opacity: 0;
   }
