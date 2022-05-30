@@ -41,6 +41,8 @@ function SinglePost() {
 
     // handleChange for comment section
     const handleChange = (event) => {
+        event.preventDefault();
+
         const { name, value } = event.target;
         setFormState({
         ...formState,
@@ -52,6 +54,7 @@ function SinglePost() {
     event.preventDefault();
     await addPost({
         variables: { ...formState },
+        
     });
     };
 

@@ -3,6 +3,7 @@
     width: 300px;
     border: 2px solid green;
     padding: 1rem;
+    overflow: scroll;
 }
 
 .likes-container {
