@@ -6,6 +6,7 @@ import { useQuery, useMutation } from '@apollo/client';
 // import './postCard.css'
 import { ADD_POST, DELETE_POST } from '../../utils/mutations';
 import './profile.css'
+import Nav from '../Nav/nav';
 
 // Bad word Filter
 var Filter = require('bad-words'),
@@ -94,6 +95,7 @@ function Profile () {
 
         {loggedIn ?
             <>  
+            <Nav />
                 <p>PROFILE PAGE</p>
                 <form id='post-form' onSubmit={handleFormSubmit}>
                 <section>
