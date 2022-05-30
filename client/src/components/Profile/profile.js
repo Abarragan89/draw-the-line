@@ -61,6 +61,7 @@ function Profile () {
             <section>
                 <h1>Posts</h1>
                 {userPosts.map((post, index) => (
+                    
                     <section className='card-main' key={index}>
                         
                         <span>TITLE: </span><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link>
