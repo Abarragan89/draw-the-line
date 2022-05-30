@@ -1,0 +1,101 @@
+
+.box {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    height: auto;
+    background-color: #F9FAFB;
+    margin: 0px !important;
+    padding: 0px;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif;
+}
+
+.createPostBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    width: 100%;
+    background-color: #5680E9;
+    height: 40px;
+    margin-top: auto;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+
+#createPostBtn {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    background-color: #5680E9;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px; 
+    font-weight: 600 !important;
+
+}
+
+.modal-header {
+    background-image: linear-gradient(to left, #67C7F6, #3B69DA) !important;
+    color: white !important;
+}
+
+.modal-header .close {
+    color: white !important;
+    opacity: 1 !important;
+}
+
+.modal-footer {
+    justify-content: space-between !important;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900 !important;
+    color: #5680E9;
+}
+
+.poster {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900 !important;
+    color: #5680E9;
+}
+
+#cardplacement {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .col-md-5{
+        min-width: 500px !important;
+        
+    }
+
+}
+
+@media only screen and (max-width: 1214px) {
+    .col-md-7 {
+        min-width: 100% !important;
+        margin-left: 15px !important;
+    }
+
+    #cardplacement {
+        top: -132px !important;
+    }
+
+    #postsplacement {
+        margin-top: -150px !important;
+    }
+
+    .col-md-5 {
+        min-width: 100% !important;
+    }
+
+}

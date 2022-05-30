@@ -9,16 +9,18 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-//HAS NOT BEEN TESTED!!!!
-function CreatePost() {
 
+import './createPost.css';
+
+function CreatePost() {
+   
     const { id: postId } = useParams()
     const { data } = useQuery(QUERY_POSTS, {
         variables: { id: postId },
     });
 
-    const userPost = data?.post || [];
-    console.log(userPost)
+    const userPosts = data?.post || [];
+    console.log(userPosts)
 
     const [addDislike] = useMutation(DISLIKE_POST)
 
@@ -57,25 +59,48 @@ function CreatePost() {
     });
     };
 
+    
     return (
-        <>  
-        <section>
-            <h1>Title</h1>
-            {userTitle.map((title, index) => (
-                <section key={index}>
-                    <h3>{post.postTitle}</h3>
-                    <p>{post.postText}</p>
+        <> 
+         <p>PROFILE PAGE</p>
+                <form id='post-form' onSubmit={handleFormSubmit}>
+                <section>
+                <input className='post-tile' type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Write Title Here' />
+                <input type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Write Post Here' />
+                <div id="bad-words-warning"></div>
+                <div><button className='post-btn' id='post-btn'>POST</button></div>
                 </section>
-            ))}
-        </section>
+                </form>
+
+                <section>
+                    <h1>Posts</h1>
+                    {userPosts.map((post, index) => (
+                        <section className='card-main' key={index} id={index}>
+                            <span>TITLE: </span><Link to={`/Create-post/`}>{post.postTitle}</Link>
+                            <p>CONTENT: {post.postText}</p>
+                            <button id='delete-post-btn'
+                            onClick={() => {
+                                deletePost({variables: {postId: post._id}})
+                                const deletedPost = document.getElementById(index);
+                                deletedPost.remove();
+                                }
+                            }
+                            >Delete</button>
+                        </section>
+                    ))}
+                </section>
+        {/* <div>
+         <form id='post-form' onSubmit={handleFormSubmit}>
         <section>
-            <h1>Posts</h1>
-            {userPosts.map((post, index) => (
-                <div key={index}>
-                   <Link to={`/CreatePost/${user._id}`}>{id.username}</Link>
-                </div>
-            ))} 
+        <input className='post-tile' type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Write Title Here' />
+        <input type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Write Post Here' />
+        <div id="bad-words-warning"></div>
+        <div><button className='post-btn' id='post-btn'>POST</button></div>
         </section>
+        </form>
+        </div>
+           </>  */}
+        {/* </section> */}
         <Form.Group controlId="postTitle">
             <Form.Label>Title</Form.Label>
              <Form.Control 
@@ -83,7 +108,8 @@ function CreatePost() {
              type="post" 
              placeholder="Post Title" 
              name="title" 
-             onChange={handleInputChange} />
+             onChange={handleChange} 
+            />
                 <Form.Control.Feedback type="invalid">
                     You must have a title for your post!
                      </Form.Control.Feedback>
@@ -94,7 +120,8 @@ function CreatePost() {
                             <Form.Control as="textarea" rows={5} 
                                 required
                                 name="body" 
-                                onChange={handleInputChange} />
+                                onChange= {handleChange} 
+                            />
                             <Form.Control.Feedback type="invalid">
                                 You gotta have something to post!
                             </Form.Control.Feedback>

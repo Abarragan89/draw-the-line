@@ -105,3 +105,14 @@ export const ADD_COMMENT_DISLIKE  = gql `
     }
   }
 `;
+
+//create post
+export const CREATE_POST = gql`
+  mutation AddPost($postText: String!, $postTitle: String!, $username: String!) {
+    addPost(postText: $postText, postTitle: $postTitle, username: $username) {
+      postText
+      postTitle
+      username
+    }
+  }
+`;
