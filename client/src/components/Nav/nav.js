@@ -3,6 +3,8 @@ import { useLocation } from "react-router";
 import { useState } from "react";
 import './nav.css';
 import { Button, Offcanvas } from 'react-bootstrap'
+import { QUERY_ME_BASIC } from "../../utils/queries";
+import { useQuery } from '@apollo/client';
 import Auth from '../../utils/auth';
 
 function Nav() {
@@ -25,6 +27,9 @@ function Nav() {
         }
     }
 
+    const { data } = useQuery(QUERY_ME_BASIC);
+    const userId = data?.me._id || '';
+
     return (
         <>
             <div id="nav-container">
@@ -42,7 +47,7 @@ function Nav() {
                         <ul className="tabpanel">
                             {/* <a  className="closebtn" onClick={openNav()}>×</a> */}
                             <Link to="/" className="tab">Home</Link>
-                            <Link to="/Profile/:id" className="tab">Profile</Link>
+                            <Link to={`/profile/${userId}`}>View my profile</Link>
                             <Link to="/Create-post" className="tab">Create Post</Link>
                             <Link to="/search-people" className="tab">Search People</Link>
                             <Link to="/Contact" className="tab">Contact</Link>
