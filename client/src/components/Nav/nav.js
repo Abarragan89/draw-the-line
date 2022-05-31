@@ -42,6 +42,8 @@ function Nav() {
             {/* <a  className="closebtn" onClick={openNav()}>×</a> */}
                 <Link to="/Home" className="tab">Home</Link>
                 <Link to="/Profile" className="tab">Profile</Link>
+                <Link to="/Create-post" className="tab">Create Post</Link>
+                <Link to="/search-people" className="tab">Search People</Link>
                 <Link to="/Contact" className="tab">Contact</Link>
                 <Link to="/Logout" className="tab">Logout</Link>
             </ul>
