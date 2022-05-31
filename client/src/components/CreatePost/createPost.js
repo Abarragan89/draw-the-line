@@ -28,6 +28,7 @@ function CreatePost() {
     if (error) {
         console.log(error);
     }
+    
     const { basic } = useQuery(QUERY_ME_BASIC);
     const username = basic?.me.username || '';
     const [deletePost] = useMutation(DELETE_POST)
