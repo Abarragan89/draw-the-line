@@ -3,7 +3,19 @@ footer {
    display: flex;
    flex-direction: row;
    justify-content: center; */
-   position: absolute;
-   bottom: 0;
+   position:fixed;
+   left: 0;
+   bottom:0;
+   right: 0;
+   width:100%;
+   text-align: center;
+   padding-bottom: 2%;
+   /* background-color: orange; */
+}
+
+.instagramIcon,
+.twitterIcon,
+.emailIcon {
+   margin-right: 2%;
 }
   

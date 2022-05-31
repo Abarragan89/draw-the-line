@@ -19,6 +19,7 @@ function Home () {
     const userId = data?.me._id || '';
     // Post Info
     const postData = postQuery?.posts || [];
+    
     console.log(postData)
 
     // check if user is logged in

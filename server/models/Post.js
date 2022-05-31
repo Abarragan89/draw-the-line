@@ -53,15 +53,28 @@ const postSchema = new Schema(
   }
 );
 
-postSchema.virtual('banMeter').get(function() {
+// postSchema.virtual('banMeter').get(function() {
+//   const dislikes = this.dislikes.length;
+//   const likes = this.likes.length;
 
+//   if(isNaN(dislikes / likes)) {
+//     return 0;
+//   } 
+//   if(dislikes + likes >= 5) {
+//     return dislikes / likes; 
+//   }
+// })
+postSchema.virtual('banMeter').get(function() {
   if(isNaN(this.dislikes.length / this.likes.length)) {
     return 0;
-  } 
-  if(dislikes + likes >= 10) {
-    return this.dislikes.length / this.likes.length;
+  } else if (this.dislikes.length + this.likes.length >= 5) {
+    return this.dislikes.length / this.likes.length; 
+  } else {
+    return 0;
   }
+
 })
+
 postSchema.virtual('likesLength').get(function() {
   return this.likes.length;
 })
