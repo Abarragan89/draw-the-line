@@ -45,20 +45,27 @@ function Home() {
                         
 
                         {postData.map((post, index) =>
-                        (   
+                        (   <Accordion>
+                            <Accordion.Item eventKey="0">
                             <section className="discussion-post" key={index}>
+                            <Accordion.Header>
                                 <h3>{post.postTitle}</h3>
+                                <div id="likes-dislikes">
+                                    <p>{post.likesLength}<a>  👍</a></p>
+                                    <p>{post.dislikesLength}<a>  👎</a></p>
+                                </div>
+                                </Accordion.Header>
+                                <Accordion.Body>
                                 <p id="ban-meter-p">Ban Meter: </p>
                                 <progress id="banMeter" value={post.banMeter} max="0.6">{post.banMeter}</progress>
                                 <p>{post.createdAt}</p>
                                 <p id="postText">{post.postText}</p>
                                 <p id="username-post">{post.username}</p>
-                                <div id="likes-dislikes">
-                                    <p>{post.likesLength}<a>  👍</a></p>
-                                    <p>{post.dislikesLength}<a>  👎</a></p>
-                                </div>
+                                
+                                </Accordion.Body>
                             </section>
-                            
+                            </Accordion.Item>
+                            </Accordion>
                         ))}
                         {/* <button id="logoutBTN" onClick={() => Auth.logout()}>Logout</button> */}
                     </section>
