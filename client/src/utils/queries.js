@@ -9,9 +9,11 @@ export const GET_USER_POSTS = gql`
       postTitle
       createdAt
       username
-      banMeter
+      likes
+      dislikes
       likesLength
       dislikesLength
+      banMeter
     }
   }
 `;

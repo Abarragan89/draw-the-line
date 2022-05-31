@@ -53,22 +53,33 @@ const postSchema = new Schema(
   }
 );
 
-postSchema.virtual('banMeter').get(function() {
-  let dislikes = this.dislikes.length;
-  let likes = this.likes.length;
+// postSchema.virtual('banMeter').get(function() {
+//   const dislikes = this.dislikes.length;
+//   const likes = this.likes.length;
 
-  if(isNaN(dislikes / likes)) {
+//   if(isNaN(dislikes / likes)) {
+//     return 0;
+//   } 
+//   if(dislikes + likes >= 5) {
+//     return dislikes / likes; 
+//   }
+// })
+postSchema.virtual('banMeter').get(function() {
+  if(isNaN(this.dislikes.length / this.likes.length)) {
     return 0;
-  } 
-  if(dislikes + likes >= 5) {
-    return dislikes / likes; 
+  } else if (this.dislikes.length + this.likes.length >= 5) {
+    return this.dislikes.length / this.likes.length; 
+  } else {
+    return 0;
   }
+
 })
+
 postSchema.virtual('likesLength').get(function() {
   return this.likes.length;
 })
 postSchema.virtual('dislikesLength').get(function() {
-  return this.likes.length;
+  return this.dislikes.length;
 })
 
 const Post = model('post', postSchema);

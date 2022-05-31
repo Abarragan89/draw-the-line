@@ -14,6 +14,7 @@ var Filter = require('bad-words'),
 // Bad word Filter
 var Filter = require('bad-words'),
     filter = new Filter();
+    filter.removeWords('hell', 'tit', 'tits', 'boob', 'boobs')
 
 
 function Profile () {
