@@ -9,11 +9,6 @@ import './profile.css'
 // Bad word Filter
 var Filter = require('bad-words'),
     filter = new Filter();
-
-
-// Bad word Filter
-var Filter = require('bad-words'),
-    filter = new Filter();
     filter.removeWords('hell', 'tit', 'tits', 'boob', 'boobs')
 
 
