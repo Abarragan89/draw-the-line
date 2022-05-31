@@ -215,18 +215,20 @@ padding: 20px;
 margin: 50px;
 border: 3px solid white;
 border-radius: 10px;
-width: 400px;
+width: 450px;
+text-align: center;
 /* box-shadow: 10px 15px 8px #422b8b; */
 }
 
 .discussion-post h3{
     font-weight: bold;
     color: white;
-    font-size: 35px;
+    /* font-size: 35px; */
     margin: 20px;
     padding: 15px;
     border: 2px solid white;
     border-radius: 10px;
+    text-align: center;
 }
 
 .discussion-post p {
@@ -260,6 +262,37 @@ width: 400px;
     display: flex;
     color: white;
     font-size: 25px;
+    padding-right: 20px;
+}
+
+
+.accordion-header {
+    border: none;
+}
+
+.accordion-item {
+    background-color: transparent;
+    border: none;
+}
+
+.accordion-button {
+    background-color: transparent;
+    border: none;
+}
+
+.accordion-button .collapsed {
+    border: none;
+    background-color: transparent;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+    
 }
 
 
