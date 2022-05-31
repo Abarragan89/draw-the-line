@@ -34,19 +34,19 @@ function FriendProfile() {
                         <h3>{post.postTitle}</h3>
                         <p>{post.postText}</p>
                         {/* likes and dislies */}
-                        <p>{post.likesLength}<a onClick={() => {
-                            addLike({variables: {postId: post._id}})
-                            if(post.banMeter >= 0.6){
-                                deletePost({variables: {postId: post._id}})
+                        <p>{post.likes}<a onClick={() => {
+                            addLike({ variables: { postId: post._id } })
+                            if (post.banMeter >= 0.6) {
+                                deletePost({ variables: { postId: post._id } })
                                 const deletedPost = document.getElementById(index);
                                 deletedPost.remove();
                             }
 
                         }}>    👍</a></p>
-                        <p>{post.dislikesLength}<a onClick={() => {
-                        addDislike({variables: {postId: post._id}})
-                        if(post.banMeter >= 0.6){
-                                deletePost({variables: {postId: post._id}})
+                        <p>{post.dislikes}<a onClick={() => {
+                            addDislike({ variables: { postId: post._id } })
+                            if (post.banMeter >= 0.6) {
+                                deletePost({ variables: { postId: post._id } })
                                 const deletedPost = document.getElementById(index);
                                 deletedPost.remove();
                             }
