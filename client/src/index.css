@@ -1,2 +1,12 @@
 
 
+body {
+    min-height: 150vh;
+    background: linear-gradient(hsl(198, 100%, 72%), #805afd);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: roboto, arial, helvetica, sans-serif;
+    /* background: linear-gradient(hsl(213, 100%, 75%), #0035d6);   */
+    /* background: linear-gradient(hsl(205, 100%, 69%), #805afd); */
+    /* background: linear-gradient(#ff8f8f, #85a4fc); */
+}

@@ -1,22 +1,27 @@
+#nav-container {
+  text-align: right;
+}
+
 .offcanvas {
-  height: 38%;
-  width: 18%;
+  height: 55%;
+  width: 20%;
+}
+
+.offcanvas-body {
+  padding: 0px;
 }
 
 .offcanvas-title {
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #75d3f0;
 }
 
 .tabpanel {
   /* margin-top: 2%; */
-  position: fixed;
-  /* z-index: 999; */
-  /* height: 225px;
-  width: 250px; */
-  /* background-color: hsl(241, 38%, 41%); */
-  overflow-x: hidden;
+  /* position: fixed; */
+  padding-left: 10px;
   transition: 0.5s;
-  /* padding-top: 60px; */
 }
 
 .tabpanel a {
@@ -26,49 +31,47 @@
   color: #818181;
   display: block;
   transition: 0.3s;
+  text-align: left;
 }
 
 .tabpanel a:hover {
   color: silver;
+  cursor: pointer;
 }
 
 .tabpanel .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
+  font-size: 2px;
 }
 
 .openbtn {
-  /* height: 50px;
-  width: 10px; */
-  /* margin-top: 2%; */
+  right: 0;
   font-size: 50px;
   cursor: pointer;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   color: white;
-  /* padding: 10px 15px; */
   border: none;
-  z-index: 999999;
+  z-index: 99;
 }
+
 .btn-primary:hover {
   color: #fff;
-  background-color: rgba(255, 255, 255, 0) ; 
-   border-color: rgba(255, 255, 255, 0); 
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0);
 }
-.btn-check:focus+.btn-primary, .btn-primary:focus {
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
   color: #fff;
-  background-color: rgba(255, 255, 255, 0) ; 
-  border-color: rgba(255, 255, 255, 0); 
+  background-color: rgba(255, 255, 255, 0);
+  border-color: rgba(255, 255, 255, 0);
   box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 0%);
 }
 button:focus:not(:focus-visible) {
   outline: none;
 }
-.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+.btn-check:active + .btn-primary:focus,
+.btn-check:checked + .btn-primary:focus,
+.btn-primary.active:focus,
+.btn-primary:active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 0%);
 }
-
-/* .openbtn:hover {
-  background-color: #444;
-} */

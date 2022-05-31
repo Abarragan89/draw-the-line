@@ -4,21 +4,6 @@
     box-shadow: border-box;
 }
 
-body {
-    min-height: 100vh;
-    position: relative;
-    font-family:sans-serif;
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    background: linear-gradient(hsl(198, 100%, 72%), #805afd);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* background: linear-gradient(hsl(213, 100%, 75%), #0035d6);   */
-    /* background: linear-gradient(hsl(205, 100%, 69%), #805afd); */
-    /* background: linear-gradient(#ff8f8f, #85a4fc); */
-}
-
 .logoDiv {
     display: flex;
     flex-direction: column;
@@ -194,3 +179,104 @@ a {
     60% {transform: translateY(-15px); opacity: 1;}
 }
         
+/* LOGGED IN VIEW */
+
+#loggedInView {
+    /* top: 0;
+    left: 0; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+#loggedInView h2{
+    color: #422b8b;
+}
+
+#loggedIn-profile-view {
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+#loggedIn-profile-view a:hover{
+    color: #99e2f8;
+    transition: 0.2s ease-in;
+}
+
+.discussion-post{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+margin: 50px;
+border: 3px solid white;
+border-radius: 10px;
+width: 400px;
+/* box-shadow: 10px 15px 8px #422b8b; */
+}
+
+.discussion-post h3{
+    font-weight: bold;
+    color: white;
+    font-size: 35px;
+    margin: 20px;
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.discussion-post p {
+    padding: 10px;
+    color: white;
+}
+
+#ban-meter-p {
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 0px;
+}
+
+#banMeter {
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+#username-post {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#postText {
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+#likes-dislikes {
+    display: flex;
+    color: white;
+    font-size: 25px;
+}
+
+
+
+#logoutBTN {
+    margin: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background: transparent;
+    font-weight: bold;
+    color: white;
+    transition: 0.2s ease-in;
+}
+
+#logoutBTN:hover {
+    background-color: white;
+  color: transparent;
+  color: #956FC7;
+}
