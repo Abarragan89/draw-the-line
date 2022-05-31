@@ -4,8 +4,21 @@ import { useQuery, useMutation } from '@apollo/client';
 import { DISLIKE_POST, LIKE_POST, DELETE_POST } from '../../utils/mutations';
 import Header from '../Header/header.js';
 // import Nav from '../Nav/nav';
+import Nav from '../Nav/nav';
+// Import sounds
+import likeSound from '../../assets/sounds/like-sound.wav';
+import dislikeSound from '../../assets/sounds/dislike-sound.wav';
 
 function FriendProfile() {
+    // make audio functions
+     // Sound function for post
+     const likeSoundNoise = new Audio(likeSound);
+     likeSoundNoise.loop = false;
+     likeSoundNoise.volume = 0.3;
+     // Sound function for Delete
+     const dislikeSoundNoise = new Audio(dislikeSound);
+     dislikeSoundNoise.loop = false;
+     dislikeSoundNoise.volume = 0.3;
 
     const { id: userId } = useParams()
     const { data } = useQuery(QUERY_FRIEND, {
@@ -34,17 +47,18 @@ function FriendProfile() {
                         <h3>{post.postTitle}</h3>
                         <p>{post.postText}</p>
                         {/* likes and dislies */}
-                        <p>{post.likes}<a onClick={() => {
+                        <p>{post.likesLength}<a onClick={() => {
                             addLike({ variables: { postId: post._id } })
+                            likeSoundNoise.play();
                             if (post.banMeter >= 0.6) {
                                 deletePost({ variables: { postId: post._id } })
                                 const deletedPost = document.getElementById(index);
                                 deletedPost.remove();
                             }
-
                         }}>    👍</a></p>
-                        <p>{post.dislikes}<a onClick={() => {
-                            addDislike({ variables: { postId: post._id } })
+                        <p>{post.dislikesLength}<a onClick={() => {
+                            addDislike({ variables: { postId: post._id } });
+                            dislikeSoundNoise.play();
                             if (post.banMeter >= 0.6) {
                                 deletePost({ variables: { postId: post._id } })
                                 const deletedPost = document.getElementById(index);
