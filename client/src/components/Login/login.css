@@ -101,15 +101,4 @@ body {
   color: rgb(0, 0, 0);
 }
 
-/* LOGGED IN VIEW */
-
-#loggedIn-view {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-#loggedIn-profile-view {
-
-}
 
