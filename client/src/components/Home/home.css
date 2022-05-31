@@ -4,21 +4,6 @@
     box-shadow: border-box;
 }
 
-body {
-    min-height: 00vh;
-    position: relative;
-    font-family:sans-serif;
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    background: linear-gradient(hsl(198, 100%, 72%), #805afd);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* background: linear-gradient(hsl(213, 100%, 75%), #0035d6);   */
-    /* background: linear-gradient(hsl(205, 100%, 69%), #805afd); */
-    /* background: linear-gradient(#ff8f8f, #85a4fc); */
-}
-
 .logoDiv {
     display: flex;
     flex-direction: column;
@@ -195,6 +180,12 @@ a {
 }
         
 /* LOGGED IN VIEW */
+
+#nav-hamburger {
+    /* position: relative;
+    top: 0;
+    left: 0; */
+}
 
 #loggedInView {
     /* top: 0;

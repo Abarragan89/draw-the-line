@@ -9,6 +9,10 @@ import Nav from '../Nav/nav';
 
 // import { AiOutlineDown } from 'react-icons/ai';
 import { AiOutlineDown } from 'react-icons/ai';
+import Accordion from 'react-bootstrap/Accordion';
+// import { useAccordionButton } from 'react-bootstrap/AccordionButton';
+
+// const decoratedOnClick = useAccordionButton(eventKey, onClick);
 
 function Home() {
     const { data } = useQuery(QUERY_ME_BASIC);
@@ -28,31 +32,35 @@ function Home() {
         <>
             {loggedIn ?
                 <>
-                <div id="nav-hamburger">
-                            <Nav />
-                        </div>
-                        
+                    <div id="nav-hamburger">
+                        <Nav />
+                    </div>
+
                     <section id="loggedInView">
-                        
+                    <h2>You're logged in, {username}!</h2>
+
                         <div id="loggedIn-profile-view">
                             <Link to={`/profile/${userId}`}>View my profile</Link>
                         </div>
-                        <p>You're logged in, {username}!</p>
+                        
 
                         {postData.map((post, index) =>
-                        (
+                        (   
                             <section className="discussion-post" key={index}>
                                 <h3>{post.postTitle}</h3>
-                                <p>Ban Meter: </p>
+                                <p id="ban-meter-p">Ban Meter: </p>
                                 <progress id="banMeter" value={post.banMeter} max="0.6">{post.banMeter}</progress>
                                 <p>{post.createdAt}</p>
-                                <p>{post.postText}</p>
-                                <p>{post.username}</p>
-                                <p>{post.likesLength}<a>  👍</a></p>
-                                <p>{post.dislikesLength}<a>  👎</a></p>
+                                <p id="postText">{post.postText}</p>
+                                <p id="username-post">{post.username}</p>
+                                <div id="likes-dislikes">
+                                    <p>{post.likesLength}<a>  👍</a></p>
+                                    <p>{post.dislikesLength}<a>  👎</a></p>
+                                </div>
                             </section>
+                            
                         ))}
-                        <button onClick={() => Auth.logout()}>Logout</button>
+                        <button id="logoutBTN" onClick={() => Auth.logout()}>Logout</button>
                     </section>
                 </>
                 :
