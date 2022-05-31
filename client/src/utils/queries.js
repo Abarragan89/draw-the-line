@@ -58,7 +58,7 @@ query {
 // query for the homepage 
 export const QUERY_POSTS = gql`
 query {
-    posts (userId: $userId) {
+    post (userId: $userId) {
         _id
         postTitle
         postText
@@ -123,4 +123,28 @@ export const DELETE_POST = gql `
       username
     }
   }
-`
+`;
+
+
+// query for posts of a single user
+export const QUERY_USERS_POSTS = gql `
+  query posts($username: String!) {
+    posts(username: $username) {
+      _id
+      postText
+      username
+      postTitle
+      createdAt
+      likesLength
+      dislikesLength
+      banMeter
+      comments {
+        commentBody
+        username
+        createdAt
+        likesLength
+        dislikesLength
+      }
+    }
+}
+`;
