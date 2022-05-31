@@ -47,7 +47,8 @@ function Signup() {
     return (
         
         <>
-        <main id="sign-up-section">
+      <main className="signupPage"> 
+        <section id="sign-up-section">
             <form id="signup-form" onSubmit={handleFormSubmit}>
                 <div className="signup">
                     <input
@@ -82,7 +83,8 @@ function Signup() {
                     <p className="loginLinkText">Have an account? <br></br><Link to="/" className="link">Login here.</Link></p>
                 </div>
             </form>
-        </main>
+        </section>
+      </main>   
         </>
     );
 };

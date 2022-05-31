@@ -1,31 +1,26 @@
-/* body {
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.postContainer {
-    height: 150px;
-    width: 400px;
-    border: 1px solid white;
-    border-radius: 25px;
-    margin-bottom: 10%;
-    padding-left: 5%;
-    padding-top: 5%;
+.writePostDiv {
+    display: flex;
 }
 
  .postButton {
     background-color: #805afd;
     color: white;
     border: none;
+    font-size: 14px;
     font-weight: lighter;
     border-radius: 25px;
-    margin-left: 2%;
-    margin-top: 2%;
-    height: 2rem;
-    width: 4rem;
     text-align: center;
+    width: 12%;
+    height: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .postButton:hover {
@@ -34,38 +29,72 @@
 }
 
 #post-form {
-    margin-top: 500%;
     margin-bottom: 20%;
 }
 
 .writePostSection {
-    width:120%;
     border: 1px solid white;
     display: flex;
     flex-direction: column;
     border-radius: 25px;
-    padding-top: 8%;
-    padding-bottom: 8%;
-    padding-left: 8%;
-    margin-left: -10%;
+    padding-bottom: 6%;
 
 } 
 
 input.post-title {
-    width: 200px;
-    height: 40px;
-    border-radius: 25px;
+    width: 25%;
     border: none;
-    margin-bottom: 2%;
-    margin-left: 2%;
-    padding: 4%;
+    border-bottom: 1px solid white;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    background-color: transparent;
+}
+
+input.post-title:focus {
+    outline: none;
 }
 
 .writePost {
-    margin-left: 2%;
-    padding: 4%;
-    width: 400px;
-    height: 40px;
-    border-radius: 25px;
+    margin-left: 5%;
+    width: 600px;
+    height: 20px;
     border: none; 
-}  */
+    border-bottom: 1px solid white;
+    background-color: transparent;
+} 
+
+.writePost:focus {
+    outline: none;
+}
+
+#bad-words-warning {
+    margin-left: 10%;
+}
+
+/* ----------- MEDIA QUERIES --------- */
+@media only screen and (max-width: 700px) {
+    /* .writePostSection {
+        width: 85%;
+    } */
+
+    #post-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 624px) {
+    .writePostSection {
+        width: 80%;
+    }
+
+    #post-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+}
