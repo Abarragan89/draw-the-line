@@ -50,7 +50,7 @@ function Nav() {
                             <Link to={`/profile/${userId}`}>View my profile</Link>
                             <Link to="/Create-post" className="tab">Create Post</Link>
                             <Link to="/search-people" className="tab">Search People</Link>
-                            <Link to="/Contact" className="tab">Contact</Link>
+                            <Link to="/about" className="tab">About</Link>
                             <a onClick={() => Auth.logout()} className="tab">Logout</a>
                         </ul>
                         {/* <button className="openbtn" onClick={onClick}>☰</button> */}

@@ -17,6 +17,8 @@ import deleteSound from '../../assets/sounds/delete-sound.wav';
 var Filter = require('bad-words'),
     filter = new Filter();
     filter.removeWords('hell', 'tit', 'tits', 'boob', 'boobs')
+
+
 function CreatePost() {
     // Sound function for post
     const postSoundNoise = new Audio(postSound);
@@ -91,7 +93,6 @@ function CreatePost() {
             variables: { ...formState },
         });
         // setUsersPosts(userPosts)
-        postSoundNoise.play();
         window.location.reload(false);
     };
     const loggedIn = Auth.loggedIn();

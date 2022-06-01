@@ -6,7 +6,14 @@ import { useQuery, useMutation } from '@apollo/client';
 import { ADD_POST, DELETE_POST } from '../../utils/mutations';
 import './profile.css'
 import Header from '../Header/header.js';
+import deleteSound from '../../assets/sounds/delete-sound.wav';
+
+
 function Profile () {
+    // sound function
+    const deleteSoundNoise = new Audio(deleteSound);
+    deleteSoundNoise.loop = false;
+    deleteSoundNoise.volume = 0.5;
     // get ID and query a user's info
     const { id: userId } = useParams()
     const { data } = useQuery(QUERY_FRIEND, {
@@ -39,16 +46,6 @@ function Profile () {
             <Header />
                 {/* <p>PROFILE PAGE</p> */}
               <main className="profilePage">
-                {/* <form id='post-form' onSubmit={handleFormSubmit}>
-                <section className="writePostSection">
-                <input className="post-title" type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Title' />
-                <div className="writePostDiv">
-                <input className="writePostInput" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Post' />
-                    <button className="postButton" id="post-btn">Post</button>
-                </div>
-                <div id="bad-words-warning"></div>
-                </section>
-                </form> */}
                 <section className="postsSection">
                     <h1>Posts</h1>
                     {userPosts.map((post, index) => (
@@ -60,6 +57,7 @@ function Profile () {
                                 deletePost({variables: {postId: post._id}})
                                 const deletedPost = document.getElementById(index);
                                 deletedPost.remove();
+                                deleteSoundNoise.play();
                                 }
                             }
                             >Delete</button>

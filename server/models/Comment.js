@@ -31,22 +31,22 @@ const commentSchema = new Schema(
   },
   {
     toJSON: {
-      getters: true
+      getters: true,
+      virtuals: true
     }
   }
 );
 
 commentSchema.virtual('banMeter').get(function() {
-  let dislikes = this.dislikes.length;
-  let likes = this.likes.length;
-
-  if(isNaN(dislikes / likes)) {
+  if(isNaN(this.dislikes.length / this.likes.length)) {
     return 0;
-  } 
-  if(dislikes + likes >= 10) {
-    return dislikes / likes; 
+  } else if (this.dislikes.length + this.likes.length >= 2) {
+    return this.dislikes.length / this.likes.length; 
+  } else {
+    return 0;
   }
 })
+
 commentSchema.virtual('likesLength').get(function() {
   return this.likes.length;
 })

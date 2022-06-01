@@ -20,12 +20,6 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
-    // likes: {
-    //   type: Number
-    // },
-    // dislikes: {
-    //   type: Number
-    // },
     likes: [
       {
         type: Schema.Types.ObjectId,
@@ -53,21 +47,10 @@ const postSchema = new Schema(
   }
 );
 
-// postSchema.virtual('banMeter').get(function() {
-//   const dislikes = this.dislikes.length;
-//   const likes = this.likes.length;
-
-//   if(isNaN(dislikes / likes)) {
-//     return 0;
-//   } 
-//   if(dislikes + likes >= 5) {
-//     return dislikes / likes; 
-//   }
-// })
 postSchema.virtual('banMeter').get(function() {
   if(isNaN(this.dislikes.length / this.likes.length)) {
     return 0;
-  } else if (this.dislikes.length + this.likes.length >= 5) {
+  } else if (this.dislikes.length + this.likes.length >= 3) {
     return this.dislikes.length / this.likes.length; 
   } else {
     return 0;
