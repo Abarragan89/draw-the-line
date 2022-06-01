@@ -49,7 +49,7 @@ function Home() {
                             <Accordion.Item eventKey="0">
                             <section className="discussion-post" key={index}>
                             <Accordion.Header>
-                                <h3>{post.postTitle}</h3>
+                            <h3><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h3>
                                 <div id="likes-dislikes">
                                     <p>{post.likesLength}<a>  👍</a></p>
                                     <p>{post.dislikesLength}<a>  👎</a></p>
