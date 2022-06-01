@@ -44,7 +44,7 @@ function FriendProfile() {
                 <h1>Posts</h1>
                 {userPosts.map((post, index) => (
                     <section key={index} id={index}>
-                        <h3>{post.postTitle}</h3>
+                        <h3>Title:<Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h3>
                         <p>{post.postText}</p>
                         {/* likes and dislies */}
                         <p>{post.likesLength}<a onClick={() => {

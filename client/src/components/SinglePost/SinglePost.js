@@ -63,10 +63,8 @@ function SinglePost() {
         <>
             <section>
                 <h1>Posts</h1>
-
                 {
                     <div>
-
                         <div className='single-post-container'>
                         <p>Username: {userPost.username}</p>
                         <p>Post Title: {userPost.postTitle}</p>
@@ -128,7 +126,6 @@ function SinglePost() {
                         }
                     </div>
                 }
-
             </section>
         </>
     )

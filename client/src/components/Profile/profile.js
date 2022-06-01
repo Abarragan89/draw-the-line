@@ -6,10 +6,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { ADD_POST, DELETE_POST } from '../../utils/mutations';
 import './profile.css'
 import Header from '../Header/header.js';
-
-
 function Profile () {
-
     // get ID and query a user's info
     const { id: userId } = useParams()
     const { data } = useQuery(QUERY_FRIEND, {
@@ -25,7 +22,6 @@ function Profile () {
         variables: { username: username },
     });
     const userPosts = userPostsQuery?.posts || [];
-
     // set up state variables
     const [formState, setFormState] = useState({
         postTitle: '',
@@ -36,11 +32,8 @@ function Profile () {
     const [deletePost] = useMutation(DELETE_POST);
     
     const loggedIn = Auth.loggedIn();
-
-
     return (
         <>
-
         {loggedIn ?
             <>  
             <Header />
@@ -56,7 +49,6 @@ function Profile () {
                 <div id="bad-words-warning"></div>
                 </section>
                 </form> */}
-
                 <section className="postsSection">
                     <h1>Posts</h1>
                     {userPosts.map((post, index) => (
@@ -93,5 +85,4 @@ function Profile () {
         </>
     )
 }
-
 export default Profile;

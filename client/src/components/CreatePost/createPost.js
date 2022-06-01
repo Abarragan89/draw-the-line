@@ -86,6 +86,7 @@ function CreatePost() {
     };
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        postSoundNoise.play();
         await addPost({
             variables: { ...formState },
         });
@@ -115,13 +116,14 @@ function CreatePost() {
                     <h1>Posts</h1>
                     {userPosts.map((post, index) => (
                         <section className='postContainer' key={index} id={index}>
-                            <h2>Title:</h2> <Link to={`/Single-post/`}>{post.postTitle}</Link>
+                            <h2>Title:</h2> <Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link>
                             <h3>Post: {post.postText}</h3>
                             <button id='delete-post-btn'
                             onClick={() => {
                                 deletePost({variables: {postId: post._id}})
                                 const deletedPost = document.getElementById(index);
                                 deletedPost.remove();
+                                deleteSoundNoise.play();
                                 }
                             }
                             >Delete</button>
