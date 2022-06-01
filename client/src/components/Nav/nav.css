@@ -44,13 +44,12 @@
 }
 
 .openbtn {
-  right: 0;
-  font-size: 50px;
+  padding-top: 0%;
+  font-size: 30px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
   color: white;
   border: none;
-  z-index: 99;
 }
 
 .btn-primary:hover {

@@ -84,7 +84,7 @@ function Signup() {
                 </div>
             </form>
         </section>
-      </main>   
+        </main>
         </>
     );
 };
