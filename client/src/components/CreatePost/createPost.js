@@ -109,7 +109,7 @@ function CreatePost() {
                     <section className="writePostSection">
                         <input className="post-title" type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Title' />
                         <div className="writePostDiv">
-                        <input className="writePost" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Share your thoughts...' />
+                        <input className="writePost" type="text" id="postTextInput" name="postTextInput" value={formState.postText} onChange={handleChange} placeholder='Share your thoughts...' />
                             <button className="postButton" id="post-btn">Post</button>
                         </div>
                         <div id="bad-words-warning"></div>

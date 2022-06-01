@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { QUERY_FRIEND } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { DISLIKE_POST, LIKE_POST, DELETE_POST } from '../../utils/mutations';
+import Accordion from 'react-bootstrap/Accordion';
 import Nav from '../Nav/nav';
 // Import sounds
 import likeSound from '../../assets/sounds/like-sound.wav';
@@ -41,44 +42,53 @@ function FriendProfile() {
         <Header/>
         <main className="friendProfile">
             <section className="postsSection">
-                <h1>Posts</h1>
                 {userPosts.map((post, index) => (
-                    <section key={index} id={index}>
-                        <h3>Title:<Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h3>
-                        <p>{post.postText}</p>
-                        {/* likes and dislies */}
-                        <p>{post.likesLength}<a onClick={() => {
-                            addLike({ variables: { postId: post._id } })
-                            likeSoundNoise.play();
-                            if (post.banMeter >= 0.6) {
-                                deletePost({ variables: { postId: post._id } })
-                                const deletedPost = document.getElementById(index);
-                                deletedPost.remove();
-                            }
-                        }}>    👍</a></p>
-                        <p>{post.dislikesLength}<a onClick={() => {
-                            addDislike({ variables: { postId: post._id } });
-                            dislikeSoundNoise.play();
-                            if (post.banMeter >= 0.6) {
-                                deletePost({ variables: { postId: post._id } })
-                                const deletedPost = document.getElementById(index);
-                                deletedPost.remove();
-                            }
-                        }
-                        }>      👎</a></p>
+                     <Accordion>
+                        <Accordion.Item eventKey="0">
+                            <section className="discussion-post" key={index} id={index}>
+                                <Accordion.Header>
+                                    <div className="accordionHeaderDiv"> 
+                                    <h1 id="username-post">{post.username}</h1>  
+                                    <h2 id="userTitle-post"><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h2>
+                                    </div>
 
-                        {post.banMeter &&
-                            <>
-                                <p>Ban Meter <a>{post.banMeter}</a></p>
-                                <progress id="banMeter" value={post.banMeter} max="0.6">{post.banMeter} </progress>
-                            </>
-                        }
-
-                    </section>
+                                </Accordion.Header>
+                                <Accordion.Body>
+                                    <p>{post.createdAt}</p>
+                                    <p id="postText">{post.postText}</p>
+                                    <div id="likes-dislikes">
+                                    <p>{post.likesLength}<a onClick={() => {
+                                        addLike({ variables: { postId: post._id } })
+                                        likeSoundNoise.play();
+                                        
+                                        if (post.banMeter >= 0.6) {
+                                        deletePost({ variables: { postId: post._id } })
+                                        const deletedPost = document.getElementById(index);
+                                        deletedPost.remove();
+                                    }}}>👍</a></p>
+                                    <p>{post.dislikesLength}<a onClick={() => {
+                                        addDislike({ variables: { postId: post._id } });
+                                        dislikeSoundNoise.play();
+                                            if (post.banMeter >= 0.6) {
+                                        deletePost({ variables: { postId: post._id } })
+                                        const deletedPost = document.getElementById(index);
+                                        deletedPost.remove();
+                                    }}}>👎</a></p>
+                                    </div>
+                                    {post.banMeter &&
+                                    <>
+                                        <p>Ban Meter <a>{post.banMeter}</a></p>
+                                        <progress id="banMeter" value={post.banMeter} max="0.6">{post.banMeter} </progress>
+                                    </>
+                                    }
+                                </Accordion.Body>
+                            </section>
+                        </Accordion.Item>
+                    </Accordion>
                 ))}
             </section>
             <section className="friendsSection">
-                <h1>Friends</h1>
+                <h4 className="friendsText">Friends</h4>
                 {userFriends.map((friend, index) => (
                     <div key={index}>
                         <Link to={`/friendprofile/${friend._id}`}>{friend.username}</Link>
