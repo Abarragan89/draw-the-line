@@ -6,6 +6,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { DELETE_POST, } from '../../utils/mutations';
 import { QUERY_ME_BASIC, QUERY_USERS_POSTS } from '../../utils/queries';
 import { ADD_POST } from '../../utils/mutations';
+import Header from '../Header/header.js';
 // Style Import
 import './createPost.css';
 // Sound Imports
@@ -19,7 +20,6 @@ var Filter = require('bad-words'),
     filter.removeWords('hell', 'tit', 'tits', 'boob', 'boobs')
 
 
-import Header from '../Header/header.js';
 
 function CreatePost() {
     // Sound function for post
