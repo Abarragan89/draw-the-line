@@ -182,8 +182,6 @@ a {
 /* LOGGED IN VIEW */
 
 #loggedInView {
-    /* top: 0;
-    left: 0; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -196,8 +194,6 @@ a {
 
 #loggedIn-profile-view {
     font-size: 25px;
-    font-weight: bold;
-
 }
 
 #loggedIn-profile-view a:hover{
@@ -205,28 +201,27 @@ a {
     transition: 0.2s ease-in;
 }
 
+.homepagePostDiv {
+    display: flex;
+
+}
+
 .discussion-post{
 display: flex;
 flex-wrap: wrap;
-flex-direction: column;
+flex-direction: row;
 align-items: center;
-justify-content: center;
-padding: 20px;
-margin: 50px;
-border: 3px solid white;
+justify-content: flex-start;
+border: 1px solid white;
 border-radius: 10px;
-width: 1000px;
+width: 400px;
 text-align: center;
-/* box-shadow: 10px 15px 8px #422b8b; */
 }
 
 .discussion-post h3{
-    font-weight: bold;
     color: white;
-    /* font-size: 35px; */
     margin: 20px;
     padding: 15px;
-    border: 2px solid white;
     border-radius: 10px;
     text-align: center;
 }
@@ -237,7 +232,6 @@ text-align: center;
 }
 
 #ban-meter-p {
-    font-weight: bold;
     font-size: 20px;
     padding-bottom: 0px;
 }
@@ -248,20 +242,48 @@ text-align: center;
 }
 
 #username-post {
-    font-size: 25px;
-    font-weight: bold;
+    font-weight: normal !important;
+    margin:0;
+    padding: 0;
 }
+
+/* .postTitle {
+    padding-left: 88%;
+} */
+
+#userTitle-post {
+    padding: 0;
+    margin: 0;
+}
+
+/* #userTitle-post {
+
+} */
 
 #likes-dislikes {
     display: flex;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     padding-right: 20px;
 }
 
+.accordionHeaderDiv {
+width: 100%;    
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 
 .accordion-header {
     border: none;
+}
+
+.accordion-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150%;
 }
 
 .accordion-item {
@@ -272,11 +294,13 @@ text-align: center;
 .accordion-button {
     background-color: transparent;
     border: none;
+    width: 270%;
 }
 
 .accordion-button .collapsed {
     border: none;
     background-color: transparent;
+    margin: 0;
 }
 
 .accordion-button:not(.collapsed) {
@@ -285,11 +309,9 @@ text-align: center;
     box-shadow: none;
 }
 
-.accordion-item:last-of-type .accordion-button.collapsed {
+/* .accordion-item:last-of-type .accordion-button.collapsed {
     
-}
-
-
+} */
 
 #logoutBTN {
     margin: 30px;
@@ -297,7 +319,7 @@ text-align: center;
     border-radius: 5px;
     border: 1px solid white;
     background: transparent;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: white;
     transition: 0.2s ease-in;
 }
