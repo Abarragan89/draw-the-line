@@ -13,4 +13,10 @@ footer {
 .emailIcon {
    margin-right: 2%;
 }
+
+.instagramIcon:hover,
+.twitterIcon:hover,
+.emailIcon:hover {
+  color: white;
+}
   

@@ -1,9 +1,11 @@
 .single-post-container {
     height: 250px;
     width: 300px;
-    border: 2px solid green;
-    padding: 1rem;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 3%;
     overflow: scroll;
+    color: white;
 }
 
 .likes-container {
