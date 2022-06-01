@@ -97,12 +97,12 @@ function CreatePost() {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        postSoundNoise.play();
         await addPost({
             variables: { ...formState },
         });
 
         // setUsersPosts(userPosts)
-        postSoundNoise.play();
         window.location.reload(false);
     };
 
@@ -137,6 +137,7 @@ function CreatePost() {
                                 deletePost({variables: {postId: post._id}})
                                 const deletedPost = document.getElementById(index);
                                 deletedPost.remove();
+                                deleteSoundNoise.play();
                                 }
                             }
                             >Delete</button>
