@@ -37,31 +37,27 @@ function Home() {
                     
 
                     <section id="loggedInView">
-                    <h2>Hi, {username}!</h2>
-
-                        <div id="loggedIn-profile-view">
-                            <Link to={`/profile/${userId}`}>View my profile</Link>
-                        </div>
-                        
-
+                    <h2 className="welcomeText">Hi, {username}!</h2>                        
                         {postData.map((post, index) =>
                         (   <Accordion>
                             <Accordion.Item eventKey="0">
                             <section className="discussion-post" key={index}>
                             <Accordion.Header>
                             <h3><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h3>
+                            <div className="accordionHeaderDiv"> 
+                            <h3 id="username-post">{post.username}</h3>
+                            <h4 className="postTitle">{post.postTitle}</h4>
+                            </div>    
+                                </Accordion.Header>
+                                <Accordion.Body>
+                                <p>{post.createdAt}</p>
+                                <p id="postText">{post.postText}</p>
                                 <div id="likes-dislikes">
                                     <p>{post.likesLength}<a>  👍</a></p>
                                     <p>{post.dislikesLength}<a>  👎</a></p>
                                 </div>
-                                </Accordion.Header>
-                                <Accordion.Body>
                                 <p id="ban-meter-p">Ban Meter: </p>
                                 <progress id="banMeter" value={post.banMeter} max="0.6">{post.banMeter}</progress>
-                                <p>{post.createdAt}</p>
-                                <p id="postText">{post.postText}</p>
-                                <p id="username-post">{post.username}</p>
-                                
                                 </Accordion.Body>
                             </section>
                             </Accordion.Item>
