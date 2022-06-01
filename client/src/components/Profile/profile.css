@@ -35,6 +35,9 @@
 }
 
 .friendsSection {
+    opacity: 0;
+    animation: fadeinup ease 0.4s forwards;  
+    animation-delay: .2s;
     padding-left: 5%;
 }
 

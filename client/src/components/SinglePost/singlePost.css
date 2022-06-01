@@ -5,6 +5,9 @@
     align-items: center;
     align-content: center;
     margin-top: 4%;
+    opacity: 0;
+    animation: fadeinup ease 0.4s forwards;  
+    animation-delay: .2s;
 }
 
 #single-post-date {
@@ -27,7 +30,8 @@
 }
 
 #commentBody {
-    width: 200%;
+    width: 250%;
+    font-weight: lighter;
     background-color: transparent !important;
     border: none;
     border-bottom: 1px solid white;
@@ -58,7 +62,7 @@
     color: white;
     margin-top: 20%;
     margin-left: 4%;
-    padding: .5em 1.5em;
+    padding: .4em 1.6em;
 }
 
 .post-button:hover {

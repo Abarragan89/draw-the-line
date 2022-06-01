@@ -5,6 +5,9 @@
    color: white;
    padding-top: 4%;
    padding-bottom: 2%;
+   opacity: 0;
+   animation: fadeinup ease 0.4s forwards;  
+   animation-delay: .2s;
 }
 
 .About-me {
@@ -23,4 +26,7 @@
     /* padding-top: 30px; */
     color: white;
     width: 80%;
+    opacity: 0;
+    animation: fadeinup ease 0.4s forwards;  
+    animation-delay: .2s;
  }

@@ -208,7 +208,11 @@ a {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation: fadeinup ease 0.4s forwards;  
+    animation-delay: .2s;
 }
+
 
 .homepagePostDiv {
     display: flex;
@@ -224,6 +228,9 @@ border-radius: 25px;
 width: 400px;
 text-align: center;
 margin-bottom: 8%;
+animation: fadeinup ease 0.4s forwards;  
+animation-delay: .2s;
+opacity: 0;
 }
 
 .discussion-post h3{
