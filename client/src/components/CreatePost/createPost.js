@@ -6,6 +6,9 @@ import { useQuery, useMutation } from '@apollo/client';
 import { DISLIKE_POST, LIKE_POST, DELETE_POST, } from '../../utils/mutations';
 import { QUERY_ME_BASIC, QUERY_USERS_POSTS } from '../../utils/queries';
 import { ADD_POST } from '../../utils/mutations';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 
 import './createPost.css';
