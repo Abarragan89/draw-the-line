@@ -77,6 +77,33 @@ query {
   }
 `;
 
+export const QUERY_SINGLE_POST = gql`
+query Query($id: ID!) {
+  post(_id: $id) {
+    _id
+    postText
+    postTitle
+    createdAt
+    username
+    likesLength
+    dislikesLength
+    comments {
+      _id
+      commentBody
+      username
+      createdAt
+      likes
+      dislikes
+      likesLength
+      dislikesLength
+    }
+    likes
+    dislikes
+    banMeter
+  }
+}
+`;
+
 // Query for friend Profile page
 export const QUERY_FRIEND = gql `
   query user($id: ID!) {

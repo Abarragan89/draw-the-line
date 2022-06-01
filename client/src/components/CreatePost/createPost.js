@@ -12,15 +12,11 @@ import './createPost.css';
 // Sound Imports
 import postSound from '../../assets/sounds/postSound.wav';
 import deleteSound from '../../assets/sounds/delete-sound.wav';
-
 // bad words filter
 // Bad word Filter
 var Filter = require('bad-words'),
     filter = new Filter();
     filter.removeWords('hell', 'tit', 'tits', 'boob', 'boobs')
-
-
-
 function CreatePost() {
     // Sound function for post
     const postSoundNoise = new Audio(postSound);
@@ -30,8 +26,6 @@ function CreatePost() {
     const deleteSoundNoise = new Audio(deleteSound);
     deleteSoundNoise.loop = false;
     deleteSoundNoise.volume = 0.5;
-
-
     // Get user's information
     const { basic } = useQuery(QUERY_ME_BASIC);
     const username = basic?.me.username || '';
@@ -42,10 +36,7 @@ function CreatePost() {
     // save posts in variable
     const userPosts = data?.posts || [];
     console.log(userPosts)
-
     const [deletePost] = useMutation(DELETE_POST)
-
-
     // set up state variables for comment section
     const [formState, setFormState] = useState({
         postTitle: '',
@@ -54,7 +45,6 @@ function CreatePost() {
       });
       
       const [addPost] = useMutation(ADD_POST);
-
     // Save users posts in a state variable
     const handleChange = (event) => {
         let { name, value } = event.target;
@@ -94,20 +84,17 @@ function CreatePost() {
         [name]: value,
         });
     };
-
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        postSoundNoise.play();
         await addPost({
             variables: { ...formState },
         });
-
         // setUsersPosts(userPosts)
         postSoundNoise.play();
         window.location.reload(false);
     };
-
     const loggedIn = Auth.loggedIn();
-
     return (
         <> 
         {loggedIn ?
@@ -125,18 +112,18 @@ function CreatePost() {
                 </section>
                 </form>
                 
-
                 <section>
                     <h1>Posts</h1>
                     {userPosts.map((post, index) => (
                         <section className='postContainer' key={index} id={index}>
-                            <h2>Title:</h2> <Link to={`/Single-post/`}>{post.postTitle}</Link>
+                            <h2>Title:</h2> <Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link>
                             <h3>Post: {post.postText}</h3>
                             <button id='delete-post-btn'
                             onClick={() => {
                                 deletePost({variables: {postId: post._id}})
                                 const deletedPost = document.getElementById(index);
                                 deletedPost.remove();
+                                deleteSoundNoise.play();
                                 }
                             }
                             >Delete</button>
@@ -150,9 +137,7 @@ function CreatePost() {
                 </>
             }
         </>
-
      )
     
 }
-
 export default CreatePost;
