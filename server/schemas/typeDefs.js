@@ -63,6 +63,7 @@ const typeDefs = gql`
         addCommentDislike(commentId: ID!): Comment
 
         deletePost(postId: ID!): Post
+        deleteComment(commentId: ID!): Comment
 
     }
 `
