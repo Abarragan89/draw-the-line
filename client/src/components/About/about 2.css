@@ -1,0 +1,14 @@
+.About-me {
+    padding: 60px 60px 0 60px;
+}
+.About-me h2{
+   text-align: center;
+   text-decoration: underline;
+}
+
+.About-me p{
+    text-align: center;
+    text-indent: 20px;
+    font-size: 1.2em;
+    padding-top: 30px;
+ }

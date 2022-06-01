@@ -45,9 +45,9 @@ function Home() {
                         
 
                         {postData.map((post, index) =>
-                        (   <Accordion>
+                        (   <Accordion key={index}>
                             <Accordion.Item eventKey="0">
-                            <section className="discussion-post" key={index}>
+                            <section className="discussion-post" >
                             <Accordion.Header>
                                 <h3>{post.postTitle}</h3>
                                 <div id="likes-dislikes">

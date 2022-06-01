@@ -1,0 +1,83 @@
+#search-friend-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  /* width: 50%; */
+  align-items: center;
+}
+
+#sfp-label {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#search-bar {
+  background-color: white;
+  width: 300px;
+  height: 30px;
+  border: 0.5px solid #9198e5;
+  border-radius: 5px;
+  margin: 25px;
+}
+
+#search-friend-btn {
+  width: 5%;
+  height: 35px;
+  margin-bottom: 20px;
+  background: transparent;
+  border: 0.5px solid white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s ease-in;
+}
+
+#search-friend-btn:hover {
+  background-color: white;
+  color: transparent;
+  color: #956fc7;
+  transition: 0.2 ease;
+}
+
+#foundFriendDiv {
+  display: flex; 
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 30px;
+  width: 300px;
+}
+
+#foundFriend {
+  margin: 30px;
+  color: white;
+  font-size: 25px;
+}
+
+#addFriendBTN {
+  margin: 20px;
+  width: 70px;
+  height: 50px;
+  background: transparent;
+  border: 0.5px solid white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s ease-in;
+}
+
+#addFriendBTN:hover {
+  background-color: white;
+  color: transparent;
+  color: #956fc7;
+  transition: 0.2 ease;
+}

@@ -291,11 +291,6 @@ text-align: center;
     box-shadow: none;
 }
 
-.accordion-item:last-of-type .accordion-button.collapsed {
-    
-}
-
-
 
 #logoutBTN {
     margin: 30px;
