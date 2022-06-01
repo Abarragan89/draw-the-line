@@ -1,6 +1,6 @@
 .profilePage {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
 }
@@ -44,6 +44,21 @@
 
 } 
 
+.postContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 50px;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 300%;
+    text-align: center;
+    /* box-shadow: 10px 15px 8px #422b8b; */
+    }
+
 input.post-title {
     width: 25%;
     border: none;
@@ -76,18 +91,34 @@ input.post-title:focus {
 }
 
 .postsSection {
-    padding-left: 5%;
+    padding-left: 2%;
+    margin-top: 5%;
+}
+
+.friendsText {
+    font-size: 25px;
 }
 
 .friendsSection {
-    padding-right: 5%;
+    margin-top: 5%;
 }
+
+.friendsSection {
+    padding-left: 2%;
+    /* margin-right: 10%; */
+}
+
+/* .friendsSectionBorder {
+    border: 1px solid white;
+} */
 
 .friendProfile {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
+
 
 /* ----------- MEDIA QUERIES --------- */
 @media only screen and (max-width: 700px) {

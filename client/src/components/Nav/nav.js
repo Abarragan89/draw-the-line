@@ -40,7 +40,6 @@ function Nav() {
 
             <Offcanvas placement="end" show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Draw The Line</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <section id="nav-tabs">

@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { QUERY_FRIEND, QUERY_ME_BASIC, QUERY_USERS_POSTS } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { ADD_POST, DELETE_POST } from '../../utils/mutations';
+import Accordion from 'react-bootstrap/Accordion';
 import './profile.css'
 import Header from '../Header/header.js';
 
@@ -58,8 +59,7 @@ function Profile () {
                 </form> */}
 
                 <section className="postsSection">
-                    <h1>Posts</h1>
-                    {userPosts.map((post, index) => (
+                    {/* {userPosts.map((post, index) => (
                         <section className='postContainer' key={index} id={index}>
                             <h2>Title:</h2> <Link to={`/Single-post/`}>{post.postTitle}</Link>
                             <h3>Post: {post.postText}</h3>
@@ -72,16 +72,52 @@ function Profile () {
                             }
                             >Delete</button>
                         </section>
-                    ))}
+                    ))} */}
+                     {userPosts.map((post, index) =>
+                        (   <Accordion>
+                            <Accordion.Item eventKey="0">
+                            <section className="discussion-post" key={index}>
+                            <Accordion.Header>
+                            <div className="accordionHeaderDiv">     
+                                <h2 id="username-post">{post.username}</h2>
+                                <h3 id="userTitle-post">{post.postTitle}</h3>
+                            </div>      
+                                </Accordion.Header>
+                                <Accordion.Body>
+                                <p id="postText">{post.postText}</p>
+                                <p>{post.createdAt}</p>
+                                <div id="likes-dislikes">
+                                    <p>{post.likesLength}<a>  👍</a></p>
+                                    <p>{post.dislikesLength}<a>  👎</a></p>
+                                </div>
+                                <p id="ban-meter-p">Ban Meter: </p>
+                                <progress id="banMeter" value={post.banMeter} max="0.6">{post.banMeter}</progress>
+                                </Accordion.Body>
+                            </section>
+                            </Accordion.Item>
+                            </Accordion>
+                        ))}
                 </section>
                 <section className="friendsSection">
-                    <h1>Friends</h1>
+                <Accordion>
+                    <section className="friendsSectionBorder">
+                <Accordion.Header>
+                    <h1 className="friendsText">Friends</h1>
+                </Accordion.Header>    
+                <Accordion.Body>
+                    <div className="friendsDiv">
                     {userFriends.map((friend, index) => (
                         <div key={index}>
                         <Link to={`/friendprofile/${friend._id}`}>{friend.username}</Link>
                         </div>
                     ))} 
+                    </div>
+                      </Accordion.Body>
+                      </section>
+                    </Accordion>
                 </section>
+                
+        
             </main>  
               {/* </main>   */}
             </>
