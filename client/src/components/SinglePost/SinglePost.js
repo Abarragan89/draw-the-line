@@ -63,13 +63,12 @@ function SinglePost() {
         <>
         <Header /> 
             <section>
-                <h1>Posts</h1>
                     <div id="single-post-page">
                         <div className='single-post-container'>
-                            <p>Username: {userPost.username}</p>
-                            <p>Post Title: {userPost.postTitle}</p>
-                            <p>Post Content: {userPost.postText}</p>
-                            <p>Post Creation Date: {userPost.createdAt}</p>
+                            <p id="username-post"> Username: {userPost.username}</p>
+                            <p id="userTitle-post">{userPost.postTitle}</p>
+                            <p id="postText"> {userPost.postText}</p>
+                            <p>{userPost.createdAt}</p>
                         </div>
 
                         <div className='likes-container'>

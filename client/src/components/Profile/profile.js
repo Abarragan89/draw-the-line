@@ -9,7 +9,6 @@ import './profile.css'
 import Header from '../Header/header.js';
 import deleteSound from '../../assets/sounds/delete-sound.wav';
 
-
 function Profile () {
     // sound function
     const deleteSoundNoise = new Audio(deleteSound);
@@ -45,24 +44,8 @@ function Profile () {
         {loggedIn ?
             <>  
             <Header />
-                {/* <p>PROFILE PAGE</p> */}
               <main className="profilePage">
                 <section className="postsSection">
-                    {/* {userPosts.map((post, index) => (
-                        <section className='postContainer' key={index} id={index}>
-                            <h2>Title:</h2> <Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link>
-                            <h3>Post: {post.postText}</h3>
-                            <button id='delete-post-btn'
-                            onClick={() => {
-                                deletePost({variables: {postId: post._id}})
-                                const deletedPost = document.getElementById(index);
-                                deletedPost.remove();
-                                deleteSoundNoise.play();
-                                }
-                            }
-                            >Delete</button>
-                        </section>
-                    ))} */}
                      {userPosts.map((post, index) =>
                         (   <Accordion>
                             <Accordion.Item eventKey="0">
@@ -74,8 +57,8 @@ function Profile () {
                             </div>      
                                 </Accordion.Header>
                                 <Accordion.Body>
-                                <p id="postText">{post.postText}</p>
                                 <p>{post.createdAt}</p>
+                                <p id="postText">{post.postText}</p>
                                 <div id="likes-dislikes">
                                     <p>{post.likesLength}<a>  👍</a></p>
                                     <p>{post.dislikesLength}<a>  👎</a></p>
@@ -89,31 +72,20 @@ function Profile () {
                         ))}
                 </section>
                 <section className="friendsSection">
-                <Accordion>
-                    <section className="friendsSectionBorder">
-                <Accordion.Header>
+                    <section id="friendsSectionBorder">
                     <h1 className="friendsText">Friends</h1>
-                </Accordion.Header>    
-                <Accordion.Body>
-                    <div className="friendsDiv">
                     {userFriends.map((friend, index) => (
                         <div key={index}>
                         <Link to={`/friendprofile/${friend._id}`}>{friend.username}</Link>
                         </div>
-                    ))} 
-                    </div>
-                      </Accordion.Body>
+                    ))}
                       </section>
-                    </Accordion>
                 </section>
-                
-        
-            </main>  
-              {/* </main>   */}
+            </main> 
             </>
             :
             <>
-                <p>You need to login to see this page</p>
+                <p>You must be to logged in to proceed</p>
             </>
             }
         </>

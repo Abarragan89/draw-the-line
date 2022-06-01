@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { DELETE_POST, } from '../../utils/mutations';
+import Accordion from 'react-bootstrap/Accordion';
 import { QUERY_ME_BASIC, QUERY_USERS_POSTS } from '../../utils/queries';
 import { ADD_POST } from '../../utils/mutations';
 import Header from '../Header/header.js';
@@ -103,19 +104,46 @@ function CreatePost() {
         {loggedIn ?
             <>  
            <Header />
-                <p>Create a Post</p>
+           <main className="createPostPage">
                 <form id='post-form' onSubmit={handleFormSubmit}>
                     <section className="writePostSection">
                         <input className="post-title" type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Title' />
                         <div className="writePostDiv">
-                        <input className="writePost" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Post' />
+                        <input className="writePost" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Share your thoughts...' />
                             <button className="postButton" id="post-btn">Post</button>
                         </div>
                         <div id="bad-words-warning"></div>
                     </section>
                 </form>
                 
-                <section>
+                <section className="postsSection">
+                     {userPosts.map((post, index) =>
+                        (   <Accordion>
+                            <Accordion.Item eventKey="0">
+                            <section className="discussion-post" key={index}>
+                            <Accordion.Header>
+                            <div className="accordionHeaderDiv"> 
+                            <h3 id="username-post">{post.username}</h3>
+                            <h3 id="userTitle-post"><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h3>
+                            </div>    
+                                </Accordion.Header>
+                                <Accordion.Body>
+                                <p>{post.createdAt}</p>
+                                <p id="postText">{post.postText}</p>
+                                <div id="likes-dislikes">
+                                    <p>{post.likesLength}<a>  👍</a></p>
+                                    <p>{post.dislikesLength}<a>  👎</a></p>
+                                </div>
+                                <p id="ban-meter-p">Ban Meter: </p>
+                                <progress id="banMeter" value={post.banMeter} max="0.6">{post.banMeter}</progress>
+                                </Accordion.Body>
+                            </section>
+                            </Accordion.Item>
+                            </Accordion>
+                        ))}
+                </section>
+
+                {/* <section>
                     <h1>Posts</h1>
                     {userPosts.map((post, index) => (
                         <section className='postContainer' key={index} id={index}>
@@ -132,13 +160,15 @@ function CreatePost() {
                             >Delete</button>
                         </section>
                     ))}
-                </section>
+                </section> */}
+                </main>
                 </> 
                 :
                 <>
                 <p>You need to login to see this page</p>
                 </>
             }
+            
         </>
      )
     

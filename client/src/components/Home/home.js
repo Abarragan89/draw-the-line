@@ -32,10 +32,7 @@ function Home() {
         <>
             {loggedIn ?
                 <>
-                    
                         <Header />
-                    
-
                     <section id="loggedInView">
                     <h2 className="welcomeText">Hi, {username}!</h2>                        
                         {postData.map((post, index) =>
@@ -43,10 +40,9 @@ function Home() {
                             <Accordion.Item eventKey="0">
                             <section className="discussion-post" key={index}>
                             <Accordion.Header>
-                            <h3><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h3>
                             <div className="accordionHeaderDiv"> 
                             <h3 id="username-post">{post.username}</h3>
-                            <h4 className="postTitle">{post.postTitle}</h4>
+                            <h4 id="userTitle-post"><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h4>
                             </div>    
                                 </Accordion.Header>
                                 <Accordion.Body>
