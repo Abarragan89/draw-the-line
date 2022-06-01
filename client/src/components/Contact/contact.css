@@ -1,0 +1,64 @@
+.contactForm {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 100%;
+    padding-top: 5%;
+    justify-content: center;
+  }
+  
+  label {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  
+  .contactName, .contactEmail {
+    margin-bottom: 10%;
+    padding-bottom: 3%;
+    border:none;
+    border-bottom: 1px solid black;
+    width: 40%;
+    outline: none !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  }
+  
+  .contactEmail {
+    margin-left: 18%;
+  }
+  
+  .contactMessage {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 201.5%;
+    box-sizing: border-box;
+    resize: none;
+    outline: none !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  }
+  
+  .submitButton {
+    margin-top: 10%;
+    border: none;
+    padding-top: 2%;
+    padding-bottom:2%;
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: black;
+    color: white;
+    font-size: .9em;
+  }
+  
+  .submitButton:hover {
+    background-color: rgb(87, 150, 213); 
+  }
+  
+  .errorMessage {
+    position: absolute;
+    left: 31.5%;
+  
+  }
