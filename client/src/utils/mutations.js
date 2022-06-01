@@ -85,7 +85,7 @@ export const ADD_COMMENT_LIKE  = gql `
   mutation AddCommentLike($commentId: ID!) {
     addCommentLike(commentId: $commentId) {
       _id
-      postText
+      commentBody
       likesLength
       username
       banMeter
@@ -98,10 +98,27 @@ export const ADD_COMMENT_DISLIKE  = gql `
   mutation AddCommentDislike($commentId: ID!) {
     addCommentDislike(commentId: $commentId) {
       _id
-      postText
+      commentBody
       likesLength
       username
+      dislikesLength
       banMeter
     }
   }
+`;
+
+export const ADD_COMMENT = gql `
+  mutation Mutation($postId: ID!, $commentBody: String!) {
+    addComment(postId: $postId, commentBody: $commentBody) {
+      comments {
+        commentBody
+        username
+        createdAt
+        likes
+        dislikes
+        likesLength
+        dislikesLength
+      }
+    }
+}
 `;

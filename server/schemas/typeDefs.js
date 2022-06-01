@@ -32,6 +32,7 @@ const typeDefs = gql`
         dislikes: [ID]
         likesLength: Int
         dislikesLength: Int
+        banMeter: Float
     }
 
     type Auth {

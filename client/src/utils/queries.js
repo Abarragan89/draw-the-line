@@ -96,6 +96,7 @@ query Query($id: ID!) {
       dislikes
       likesLength
       dislikesLength
+      banMeter
     }
     likes
     dislikes
