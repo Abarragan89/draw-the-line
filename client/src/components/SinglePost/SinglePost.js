@@ -75,8 +75,8 @@ function SinglePost() {
                         </div>
 
                         <div className='likes-container'>
-                        <p>Likes: {userPost.likes}</p>
-                        <p>Dislikes: {userPost.dislikes}</p>
+                        <p>Likes: {userPost.likesLength}</p>
+                        <p>Dislikes: {userPost.dislikesLength}</p>
                         </div>
 
                         <div className='comments-container'>
@@ -102,7 +102,7 @@ function SinglePost() {
                         <div className='banmeter'>
                         <p>Ban meter: {userPost.banMeter}</p>
                         </div>
-                        <p>{userPost.likes}<a onClick={() => {
+                        <p>{userPost.likesLength}<a onClick={() => {
                             addLike({variables: {postId: userPost._id}})
                             if(userPost.banMeter >= 0.6){
                                 deletePost({variables: {postId: userPost._id}})
@@ -111,7 +111,7 @@ function SinglePost() {
                             }
                         
                         }}> 👍</a></p>
-                        <p>{userPost.dislikes}<a onClick={() => {
+                        <p>{userPost.dislikesLength}<a onClick={() => {
                         addDislike({variables: {postId: userPost._id}})
                         if(userPost.banMeter >= 0.6){
                                 deletePost({variables: {postId: userPost._id}})

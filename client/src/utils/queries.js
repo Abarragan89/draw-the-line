@@ -85,6 +85,8 @@ query Query($id: ID!) {
     postTitle
     createdAt
     username
+    likesLength
+    dislikesLength
     comments {
       _id
       commentBody
@@ -92,6 +94,8 @@ query Query($id: ID!) {
       createdAt
       likes
       dislikes
+      likesLength
+      dislikesLength
     }
     likes
     dislikes
