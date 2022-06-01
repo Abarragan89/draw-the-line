@@ -5,7 +5,7 @@ import { QUERY_FRIEND, QUERY_ME_BASIC, QUERY_POSTS } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { ADD_POST, DELETE_POST } from '../../utils/mutations';
 import './profile.css'
-import Nav from '../Nav/nav';
+import Header from '../Header/header.js';
 
 // Bad word Filter
 var Filter = require('bad-words'),
@@ -90,21 +90,21 @@ function Profile () {
 
         {loggedIn ?
             <>  
-            <Nav />
-                <p>PROFILE PAGE</p>
-                <form id='post-form' onSubmit={handleFormSubmit}>
+            <Header />
+                {/* <p>PROFILE PAGE</p> */}
+              <main className="profilePage">
+                {/* <form id='post-form' onSubmit={handleFormSubmit}>
                 <section className="writePostSection">
                 <input className="post-title" type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Title' />
                 <div className="writePostDiv">
-                <input className="writePost" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Post' />
+                <input className="writePostInput" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Post' />
                     <button className="postButton" id="post-btn">Post</button>
                 </div>
                 <div id="bad-words-warning"></div>
                 </section>
-                </form>
-                
+                </form> */}
 
-                <section>
+                <section className="postsSection">
                     <h1>Posts</h1>
                     {userPosts.map((post, index) => (
                         <section className='postContainer' key={index} id={index}>
@@ -121,7 +121,7 @@ function Profile () {
                         </section>
                     ))}
                 </section>
-                <section>
+                <section className="friendsSection">
                     <h1>Friends</h1>
                     {userFriends.map((friend, index) => (
                         <div key={index}>
@@ -129,6 +129,7 @@ function Profile () {
                         </div>
                     ))} 
                 </section>
+            </main>  
               {/* </main>   */}
             </>
             :

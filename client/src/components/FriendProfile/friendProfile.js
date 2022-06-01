@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { QUERY_FRIEND } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { DISLIKE_POST, LIKE_POST, DELETE_POST } from '../../utils/mutations';
+import Header from '../Header/header.js';
 // import Nav from '../Nav/nav';
 
 function FriendProfile() {
@@ -24,10 +25,9 @@ function FriendProfile() {
 
     return (
         <>  
-        {/* <div id="hamburger">
-              <Nav />
-            </div> */}
-            <section>
+        <Header/>
+        <main className="friendProfile">
+            <section className="postsSection">
                 <h1>Posts</h1>
                 {userPosts.map((post, index) => (
                     <section key={index} id={index}>
@@ -63,7 +63,7 @@ function FriendProfile() {
                     </section>
                 ))}
             </section>
-            <section>
+            <section className="friendsSection">
                 <h1>Friends</h1>
                 {userFriends.map((friend, index) => (
                     <div key={index}>
@@ -71,6 +71,7 @@ function FriendProfile() {
                     </div>
                 ))}
             </section>
+        </main>   
         </>
     )
 }

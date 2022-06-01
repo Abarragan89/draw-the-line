@@ -1,15 +1,12 @@
-/* body {
-    height: 100vh;
-    display: flex;
-    font-family: sans-serif;
-  } */
-  
-  #login-section {
+#login-section {
     display: flex;
     flex-direction: column;
   }
 
   #login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid white;
     width: 300px;
     height: 350px;
@@ -21,10 +18,7 @@
   input#email {
   width: 78%;
   justify-content: center;
-  display: flex;
-  margin-top: -9%;
   margin-bottom: 5%;
-  padding: 8px 15px;
   border: none;
   border-bottom: 1px solid white;
   background-color: transparent !important;
@@ -37,7 +31,6 @@
   input#password {
     width: 78%;
     margin-bottom: 15%;
-    padding: 8px 15px;
     border: none;
     border-bottom: 1px solid white;
     background-color: transparent !important;
@@ -53,7 +46,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-top: 20%;
   }
  
   .login-button {

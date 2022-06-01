@@ -1,5 +1,5 @@
 import './searchPeople.css';
-import Nav from '../Nav/nav';
+import Header from '../Header/header.js';
 
 import { QUERY_USER_BY_NAME } from '../../utils/queries';
 import { useLazyQuery, useMutation } from '@apollo/client';
@@ -15,7 +15,7 @@ function SearchPeople() {
     return (
         <>
             <div id="hamburger">
-                <Nav />
+                <Header />
             </div>
             <form id="search-friend-form" onSubmit={async (e) => {
                 e.preventDefault();
