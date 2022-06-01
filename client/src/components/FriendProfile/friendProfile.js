@@ -6,6 +6,8 @@ import Nav from '../Nav/nav';
 // Import sounds
 import likeSound from '../../assets/sounds/like-sound.wav';
 import dislikeSound from '../../assets/sounds/dislike-sound.wav';
+import Header from '../Header/header.js';
+// import Nav from '../Nav/nav';
 
 function FriendProfile() {
     // make audio functions
@@ -36,8 +38,9 @@ function FriendProfile() {
 
     return (
         <>  
-        <Nav />
-            <section>
+        <Header/>
+        <main className="friendProfile">
+            <section className="postsSection">
                 <h1>Posts</h1>
                 {userPosts.map((post, index) => (
                     <section key={index} id={index}>
@@ -74,7 +77,7 @@ function FriendProfile() {
                     </section>
                 ))}
             </section>
-            <section>
+            <section className="friendsSection">
                 <h1>Friends</h1>
                 {userFriends.map((friend, index) => (
                     <div key={index}>
@@ -82,6 +85,7 @@ function FriendProfile() {
                     </div>
                 ))}
             </section>
+        </main>   
         </>
     )
 }

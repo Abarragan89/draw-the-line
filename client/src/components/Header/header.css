@@ -1,0 +1,14 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoFont {
+    font-family: Nunito, sans-serif;
+    padding-top: 2%;
+    padding-left: 2%;
+    color: white;
+    font-weight: bold;
+
+}
