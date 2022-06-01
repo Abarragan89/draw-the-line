@@ -122,3 +122,13 @@ export const ADD_COMMENT = gql `
     }
 }
 `;
+// Delete Comment
+export const DELETE_COMMENT = gql `
+  mutation Mutation($commentId: ID!) {
+    deleteComment(commentId: $commentId) {
+      commentBody
+      username
+      _id
+    }
+  }
+`

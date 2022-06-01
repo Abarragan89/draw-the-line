@@ -186,6 +186,16 @@ const resolvers = {
             return deletedPost
           }
           throw new AuthenticationError('You need to be logged in!')
+        },
+        // Delete Comment
+        deleteComment: async(parent, { commentId }, context) => {
+          if(context.user) {
+            const deletedComment = await Comment.findOneAndDelete(
+              { _id: commentId }
+            );
+            return deletedComment
+          }
+          throw new AuthenticationError('You need to be logged in!')
         }
     }
 }
