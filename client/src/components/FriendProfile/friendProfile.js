@@ -2,8 +2,9 @@ import { useParams, Link } from 'react-router-dom';
 import { QUERY_FRIEND } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { DISLIKE_POST, LIKE_POST, DELETE_POST } from '../../utils/mutations';
+
 import Header from '../Header/header.js';
-// import Nav from '../Nav/nav';
+
 import Nav from '../Nav/nav';
 // Import sounds
 import likeSound from '../../assets/sounds/like-sound.wav';
@@ -38,9 +39,11 @@ function FriendProfile() {
 
     return (
         <>  
+
         <Header/>
         <main className="friendProfile">
             <section className="postsSection">
+
                 <h1>Posts</h1>
                 {userPosts.map((post, index) => (
                     <section key={index} id={index}>

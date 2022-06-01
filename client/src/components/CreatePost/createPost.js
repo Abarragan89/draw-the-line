@@ -1,4 +1,6 @@
+
 import Header from '../Header/header.js';
+
 import Auth from '../../utils/auth';
 import Nav from '../Nav/nav';
 import { Link } from 'react-router-dom';
@@ -7,9 +9,11 @@ import { useQuery, useMutation } from '@apollo/client';
 import { DELETE_POST, } from '../../utils/mutations';
 import { QUERY_ME_BASIC, QUERY_USERS_POSTS } from '../../utils/queries';
 import { ADD_POST } from '../../utils/mutations';
+
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+
 // Style Import
 import './createPost.css';
 // Sound Imports
@@ -115,7 +119,9 @@ function CreatePost() {
         <> 
         {loggedIn ?
             <>  
+
              <Header />
+
                 <p>Create a Post</p>
                 <form id='post-form' onSubmit={handleFormSubmit}>
                 <section className="writePostSection">

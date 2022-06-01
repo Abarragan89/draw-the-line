@@ -7,7 +7,6 @@ import { ADD_POST, DELETE_POST } from '../../utils/mutations';
 import './profile.css'
 import Header from '../Header/header.js';
 
-
 function Profile () {
 
     // get ID and query a user's info
@@ -43,6 +42,7 @@ function Profile () {
 
         {loggedIn ?
             <>  
+
             <Header />
                 {/* <p>PROFILE PAGE</p> */}
               <main className="profilePage">
@@ -58,6 +58,7 @@ function Profile () {
                 </form> */}
 
                 <section className="postsSection">
+
                     <h1>Posts</h1>
                     {userPosts.map((post, index) => (
                         <section className='postContainer' key={index} id={index}>
