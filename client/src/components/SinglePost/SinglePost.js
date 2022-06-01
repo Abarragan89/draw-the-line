@@ -67,14 +67,13 @@ function SinglePost() {
         <>
         <Header /> 
             <section>
-                <h1>Posts</h1>
                 {
                     <div>
                         <div className='single-post-container'>
-                            <p>Username: {userPost.username}</p>
-                            <p>Post Title: {userPost.postTitle}</p>
-                            <p>Post Content: {userPost.postText}</p>
-                            <p>Post Creation Date: {userPost.createdAt}</p>
+                            <p id="username-post"> Username: {userPost.username}</p>
+                            <p id="userTitle-post">{userPost.postTitle}</p>
+                            <p id="postText"> {userPost.postText}</p>
+                            <p>{userPost.createdAt}</p>
                         </div>
 
                         <div className='likes-container'>
@@ -127,40 +126,6 @@ function SinglePost() {
                                 <div btn-container><button className='post-btn'>Post</button></div>
                             </section>
                         </form>
-
-
-
-
-                        <br></br>
-
-                        <div className='banmeter'>
-                            <p>Ban meter: {userPost.banMeter}</p>
-                        </div>
-                        <p>{userPost.likesLength}<a onClick={() => {
-                            addLike({ variables: { postId: userPost._id } })
-                            if (userPost.banMeter >= 0.6) {
-                                deletePost({ variables: { postId: userPost._id } })
-                                const deletedPost = document.getElementById();
-                                deletedPost.remove();
-                            }
-
-                        }}> 👍</a></p>
-                        <p>{userPost.dislikesLength}<a onClick={() => {
-                            addDislike({ variables: { postId: userPost._id } })
-                            if (userPost.banMeter >= 0.6) {
-                                deletePost({ variables: { postId: userPost._id } })
-                                const deletedPost = document.getElementById();
-                                deletedPost.remove();
-                            }
-                        }
-                        }>      👎</a></p>
-
-                        {userPost.banMeter &&
-                            <>
-                                <p>Ban Meter <a>{userPost.banMeter}</a></p>
-                                <progress id="banMeter" value={userPost.banMeter} max="0.6">{userPost.banMeter} </progress>
-                            </>
-                        }
                     </div>
                 }
             </section>

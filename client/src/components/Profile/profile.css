@@ -1,48 +1,18 @@
 .profilePage {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 80%;
+    margin-top: 4%;
+
 }
 
-.writePostDiv {
-    display: flex;
-}
-
- .postButton {
-    background-color: #805afd;
-    color: white;
-    border: none;
-    font-size: 14px;
-    font-weight: lighter;
-    border-radius: 25px;
-    text-align: center;
-    width: 12%;
-    height: 30px;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top:-1.5%;
-    margin-bottom: 1%;
-}
-
-.postButton:hover {
-    background-color:white;
-    color: #805afd;
-}
-
-#post-form {
-    margin-bottom: 5%;
-}
-
-.writePostSection {
-    border: 1px solid white;
+.postsSection {
     display: flex;
     flex-direction: column;
-    border-radius: 25px;
-    padding-bottom: 3%;
-    max-width: 100%;
-
-} 
+    justify-content: center;
+    align-items: center;
+}
 
 .postContainer {
     display: flex;
@@ -54,71 +24,26 @@
     margin: 50px;
     border: 1px solid white;
     border-radius: 10px;
-    width: 300%;
     text-align: center;
-    /* box-shadow: 10px 15px 8px #422b8b; */
-    }
-
-input.post-title {
-    width: 25%;
-    border: none;
-    border-bottom: 1px solid white;
-    margin-bottom: 5%;
-    margin-left: 5%;
-    margin-top: 5%;
-    background-color: transparent;
-}
-
-input.post-title:focus {
-    outline: none;
-}
-
-.writePostInput {
-    margin-left: 5%;
-    width: 600px;
-    height: 20px;
-    border: none; 
-    border-bottom: 1px solid white;
-    background-color: transparent;
-} 
-
-.writePostInput:focus {
-    outline: none;
-}
-
-#bad-words-warning {
-    margin-left: 10%;
-}
-
-.postsSection {
-    padding-left: 2%;
-    margin-top: 5%;
 }
 
 .friendsText {
     font-size: 25px;
+    background: -webkit-linear-gradient(#b7a5f7, #714de6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .friendsSection {
-    margin-top: 5%;
+    padding-left: 5%;
 }
-
-.friendsSection {
-    padding-left: 2%;
-    /* margin-right: 10%; */
-}
-
-/* .friendsSectionBorder {
-    border: 1px solid white;
-} */
 
 .friendProfile {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-
-
 
 /* ----------- MEDIA QUERIES --------- */
 @media only screen and (max-width: 700px) {

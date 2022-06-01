@@ -2,46 +2,46 @@
   text-align: right;
 }
 
+.offcanvas-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 3%;
+}
+
 .offcanvas {
-  height: 55%;
-  width: 20%;
+  height: 38%;
+  width:20%;
 }
 
 .offcanvas-body {
   padding: 0px;
 }
 
-.offcanvas-title {
-  font-size: 30px;
-  font-weight: bold;
-  color: #75d3f0;
-}
-
 .tabpanel {
-  /* margin-top: 2%; */
-  /* position: fixed; */
-  /* padding-left: 10px; */
+  padding-left: 5%;
   transition: 0.5s;
 }
 
 .tabpanel a {
-  padding: 8px;
+  padding: 10px;
   text-decoration: none;
-  font-size: 15px;
-  color: #818181;
+  font-size: 16px;
+  color:  black;
+  font-weight: lighter;
   display: block;
   transition: 0.3s;
   text-align: left;
 }
 
 .tabpanel a:hover {
-  color: silver;
+  color: #805afd;
+  background-color: rgb(239, 235, 235);
   cursor: pointer;
 }
 
 
 .openbtn {
-  padding-top: 0%;
   font-size: 30px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);

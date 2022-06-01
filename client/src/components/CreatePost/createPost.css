@@ -1,3 +1,50 @@
+#post-form {
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+input.post-title {
+    width: 25%;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+}
+
+input.post-title:focus {
+    outline: none;
+}
+
+.writePostDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.writePostInput:focus {
+    outline: none;
+}
+
+#postText{
+    background-color: transparent !important;
+    border-bottom: 1px solid white !important;
+    width: 85%;
+    border: none;
+    margin-top: 5%;
+    padding: 0;
+}
+
+
+
+.createPostPage {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+}
+
 .box {
     display: flex;
     width: 100%;
@@ -7,8 +54,16 @@
     margin: 0px !important;
     padding: 0px;
     flex-direction: column;
-    font-family: 'Raleway', sans-serif;
 }
+
+.writePostSection {
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    padding:4%;
+    Width: 60%;
+} 
 
 .createPostBar {
     display: flex;
@@ -31,10 +86,8 @@
     justify-content: flex-end !important;
     align-items: center !important;
     background-color: #5680E9;
-    font-family: 'Raleway', sans-serif;
     font-size: 22px; 
     font-weight: 600 !important;
-
 }
 
 .modal-header {
@@ -52,13 +105,11 @@
 }
 
 h3 {
-    font-family: 'Raleway', sans-serif;
     font-weight: 900 !important;
     color: #5680E9;
 }
 
 .poster {
-    font-family: 'Raleway', sans-serif;
     font-weight: 900 !important;
     color: #5680E9;
 }
@@ -69,6 +120,28 @@ h3 {
     justify-content: center !important;
     align-items: flex-start !important;
 }
+
+.postButton {
+    width: 15%;
+    height: 35px;
+    background: transparent;
+    border: 1px solid white;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-left: 4%;
+    margin-top: 4%;
+}
+
+
+.postButton:hover {
+    background-color:white;
+    color: #805afd;
+}
+
+
+
 
 @media only screen and (min-width: 768px) {
 
