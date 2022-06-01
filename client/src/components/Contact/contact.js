@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
-import { useQuery, useMutation } from '@apollo/client';
-import emailjs from 'emailjs-com';
+// import { useQuery, useMutation } from '@apollo/client';
+import Nav from '../../components/Nav/nav'
+import emailjs from '@emailjs/browser';
 import './contact.css';
 
 export function validateEmail(email) {
@@ -58,6 +59,7 @@ const sendEmail = (e) => {
 
 return (
   <>
+   <Nav />
   <div className="contactForm">
         <form ref={form} onSubmit={sendEmail} className="contactForm">
           <input type="text" name="name" defaultValue={name} className="contactName" id="contact-name"  onBlur={handleChange} placeholder="YOUR NAME"/>
