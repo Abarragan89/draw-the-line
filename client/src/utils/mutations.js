@@ -105,3 +105,19 @@ export const ADD_COMMENT_DISLIKE  = gql `
     }
   }
 `;
+
+export const ADD_COMMENT = gql `
+  mutation Mutation($postId: ID!, $commentBody: String!) {
+    addComment(postId: $postId, commentBody: $commentBody) {
+      comments {
+        commentBody
+        username
+        createdAt
+        likes
+        dislikes
+        likesLength
+        dislikesLength
+      }
+    }
+}
+`;

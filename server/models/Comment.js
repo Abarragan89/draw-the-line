@@ -16,12 +16,6 @@ const commentSchema = new Schema(
       default: Date.now,
       get: timestamp => dateFormat(timestamp)
     },
-    // likes: {
-    //   type: Number
-    // },
-    // dislikes: {
-    //   type: Number
-    // }
     likes: [
       {
         type: Schema.Types.ObjectId,

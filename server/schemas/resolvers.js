@@ -46,7 +46,7 @@ const resolvers = {
         },
         // Get a single post
         post: async (parent, { _id }) => {
-          return Post.findOne({ _id });
+          return Post.findOne({ _id }).populate('comments');
         }
       },
     //   Mutations
@@ -104,7 +104,7 @@ const resolvers = {
                 { _id: args.postId },
                 { $push: { comments: comment._id } },
                 { new: true }
-              ).populate('comments');;
+              ).populate('comments');
 
             console.log(post)
             return post;

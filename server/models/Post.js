@@ -72,7 +72,6 @@ postSchema.virtual('banMeter').get(function() {
   } else {
     return 0;
   }
-
 })
 
 postSchema.virtual('likesLength').get(function() {

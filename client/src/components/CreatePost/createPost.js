@@ -102,14 +102,14 @@ function CreatePost() {
            <Header />
                 <p>Create a Post</p>
                 <form id='post-form' onSubmit={handleFormSubmit}>
-                <section className="writePostSection">
-                <input className="post-title" type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Title' />
-                <div className="writePostDiv">
-                <input className="writePost" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Post' />
-                    <button className="postButton" id="post-btn">Post</button>
-                </div>
-                <div id="bad-words-warning"></div>
-                </section>
+                    <section className="writePostSection">
+                        <input className="post-title" type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Title' />
+                        <div className="writePostDiv">
+                        <input className="writePost" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Post' />
+                            <button className="postButton" id="post-btn">Post</button>
+                        </div>
+                        <div id="bad-words-warning"></div>
+                    </section>
                 </form>
                 
                 <section>
