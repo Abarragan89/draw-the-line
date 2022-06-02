@@ -28,7 +28,7 @@ export const QUERY_ME_BASIC = gql`
   }
 `;
 
-// query for 
+// query for Create Post and Profile page
 export const QUERY_ME = gql`
 query {
     me {
@@ -38,18 +38,13 @@ query {
       posts {
         _id
         postText
+        postTitle
+        banMeter
         createdAt
         likes
         dislikes
         likesLength
         dislikesLength
-      }
-      friends {
-        friends {
-          friends {
-            _id
-          }
-        }
       }
     }
   }
@@ -106,7 +101,7 @@ query Query($id: ID!) {
 `;
 
 // Query for friend Profile page
-export const QUERY_FRIEND = gql `
+export const QUERY_USER = gql `
   query user($id: ID!) {
     user(_id: $id){
       _id
@@ -122,7 +117,6 @@ export const QUERY_FRIEND = gql `
         banMeter
         likesLength
         dislikesLength
-        
       }
       friends {
         _id
@@ -139,6 +133,7 @@ query Query($username: String!) {
   userByName(username: $username) {
     username
     _id
+    posts
   }
 }
 `;
@@ -155,24 +150,24 @@ export const DELETE_POST = gql `
 
 
 // query for posts of a single user
-export const QUERY_USERS_POSTS = gql `
-  query posts($username: String!) {
-    posts(username: $username) {
-      _id
-      postText
-      username
-      postTitle
-      createdAt
-      likesLength
-      dislikesLength
-      banMeter
-      comments {
-        commentBody
-        username
-        createdAt
-        likesLength
-        dislikesLength
-      }
-    }
-}
-`;
+// export const QUERY_USERS_POSTS = gql `
+//   query posts($username: String!) {
+//     posts(username: $username) {
+//       _id
+//       postText
+//       username
+//       postTitle
+//       createdAt
+//       likesLength
+//       dislikesLength
+//       banMeter
+//       comments {
+//         commentBody
+//         username
+//         createdAt
+//         likesLength
+//         dislikesLength
+//       }
+//     }
+// }
+// `;

@@ -36,7 +36,7 @@ function Home() {
                     <section id="loggedInView">
                     <h2 className="welcomeText">Hi, {username}!</h2>                        
                         {postData.map((post, index) =>
-                        (   <Accordion>
+                        (   <Accordion key={index}>
                             <Accordion.Item eventKey="0">
                             <section className="discussion-post" key={index}>
                             <Accordion.Header>

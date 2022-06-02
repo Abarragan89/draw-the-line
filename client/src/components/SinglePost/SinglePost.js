@@ -130,7 +130,7 @@ function SinglePost() {
                         }>      👎</a>
 
                         </div> 
-                        {userPost.banMeter &&
+                        {userPost.banMeter !==0 &&
                             <>
                                 <p>Ban Meter <a></a></p>
                                 <progress id="banMeter" value={userPost.banMeter} max="0.6">{userPost.banMeter}</progress>
@@ -171,7 +171,7 @@ function SinglePost() {
                                         }
                                     }
                                     }>      👎</a>
-                                      {comment.banMeter &&
+                                      {comment.banMeter !== 0 &&
                                         <>
                                             <progress id="banMeter" value={comment.banMeter} max="0.6">{comment.banMeter} </progress>
                                         </>
