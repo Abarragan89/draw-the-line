@@ -91,3 +91,16 @@
 #single-page-likes-dislikes a {
     margin-right: 10%;
 }
+
+.voteBtn {
+    padding-right: 1em;
+    padding-left: 5px;
+}
+.voteBtnClickable {
+    padding-right: 1em;
+    padding-left: 5px;
+}
+.voteBtnClickable:hover {
+    cursor: pointer;
+    text-decoration: none;
+}

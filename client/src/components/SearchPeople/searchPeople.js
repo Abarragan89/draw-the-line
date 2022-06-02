@@ -11,7 +11,6 @@ function SearchPeople() {
 
     // Add friend Query
     const [addFriend, { data: newFriend }] = useMutation(ADD_FRIEND);
-    console.log(data)
     return (
         <>
             <div id="hamburger">
@@ -25,7 +24,7 @@ function SearchPeople() {
             }
             }>
                 
-                <label id="sfp-label">Search Friends</label>
+                <label id="sfp-label" className='welcomeText'>Search Friends</label>
                 <input id='search-bar' type='text' name='search-bar' placeholder='Search' />
                 <button id="search-friend-btn" type='submit'>Search</button>
                 { data && data.userByName === null && <p>User does not exist</p>}

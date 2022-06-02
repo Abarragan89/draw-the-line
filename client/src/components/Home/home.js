@@ -3,28 +3,19 @@ import './home.css'
 import { useQuery } from '@apollo/client';
 import { QUERY_ME_BASIC, GET_USER_POSTS } from '../../utils/queries';
 import { Link } from 'react-router-dom';
-import Signup from '../Signup/signup';
 import Login from '../Login/login';
 import Header from '../Header/header.js';
 
-// import { AiOutlineDown } from 'react-icons/ai';
 import { AiOutlineDown } from 'react-icons/ai';
 import Accordion from 'react-bootstrap/Accordion';
-// import { useAccordionButton } from 'react-bootstrap/AccordionButton';
-
-// const decoratedOnClick = useAccordionButton(eventKey, onClick);
 
 function Home() {
     const { data } = useQuery(QUERY_ME_BASIC);
-    console.log(data)
     const { data: postQuery } = useQuery(GET_USER_POSTS);
     // user information
     const username = data?.me.username || '';
-    const userId = data?.me._id || '';
     // Post Info
     const postData = postQuery?.posts || [];
-    
-    console.log(postData)
 
     // check if user is logged in
     const loggedIn = Auth.loggedIn()
@@ -32,25 +23,25 @@ function Home() {
         <>
             {loggedIn ?
                 <>
-                        <Header />
+                    <Header />
                     <section id="loggedInView">
-                    <h2 className="welcomeText">Hi, {username}!</h2>                        
+                    <h2 className="welcomeText">Welcome, {username}!</h2>                        
                         {postData.map((post, index) =>
-                        (   <Accordion>
+                        (   <Accordion key={index}>
                             <Accordion.Item eventKey="0">
                             <section className="discussion-post" key={index}>
                             <Accordion.Header>
                             <div className="accordionHeaderDiv"> 
-                            <h3 id="username-post">{post.username}</h3>
                             <h4 id="userTitle-post"><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h4>
+                            <h3 id="username-post">{post.username}</h3>
+                            <p>{post.createdAt}</p>
                             </div>    
                                 </Accordion.Header>
                                 <Accordion.Body>
                                 <p id="postText">{post.postText}</p>
-                                <p>{post.createdAt}</p>
                                 <div id="likes-dislikes">
-                                    <p>{post.likesLength}<a>  👍</a></p>
-                                    <p>{post.dislikesLength}<a>  👎</a></p>
+                                    {post.likesLength}<a className='voteBtn'>  👍</a>
+                                    {post.dislikesLength}<a className='voteBtn'>  👎</a>
                                 </div>
                                 <p id="ban-meter-p">Ban Meter: </p>
                                 <progress id="banMeter" value={post.banMeter} max="0.6">{post.banMeter}</progress>

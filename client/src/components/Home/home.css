@@ -102,11 +102,8 @@
 a {
     color: white;
     text-decoration: none;
-}
-
-a:hover {
-    color: white;
-    text-decoration: underline;
+    font-size: 1.5em;
+    font-weight: normal;
 }
 
 /* ------------------------- LOGIN BUTTON ------------------------- */
@@ -209,7 +206,7 @@ a:hover {
 .welcomeText {
     margin-top: 4%;
     padding-bottom: 5%;
-     background: -webkit-linear-gradient(#b9a8f2, #340faf); 
+    background: -webkit-linear-gradient(#b9a8f2, #340faf); 
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -219,8 +216,9 @@ a:hover {
     color: white;
 	font-size: 40px;
 	-webkit-text-stroke: .5px #340faf;
-    
+    text-align: center;
 }
+
 
 
 .homepagePostDiv {
@@ -268,8 +266,8 @@ button:focus {
 }
 
 #username-post {
-    font-weight: normal !important;
-    font-size: 25px;
+    font-weight: lighter !important;
+    font-size: 1.2em;
     margin:0;
     padding: 0;
 }
@@ -290,7 +288,9 @@ button:focus {
 #likes-dislikes a {
     margin-right: 2%;
 }
-
+.according {
+    width: 100%;
+}
 .accordionHeaderDiv { 
 display: flex;
 flex-direction: column;

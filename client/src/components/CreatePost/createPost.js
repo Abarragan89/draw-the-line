@@ -3,16 +3,18 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { DELETE_POST, } from '../../utils/mutations';
-import Accordion from 'react-bootstrap/Accordion';
-import { QUERY_ME_BASIC, QUERY_USERS_POSTS } from '../../utils/queries';
+import { QUERY_ME, QUERY_ME_BASIC } from '../../utils/queries';
 import { ADD_POST } from '../../utils/mutations';
 import Header from '../Header/header.js';
+
 // Style Import
+import Accordion from 'react-bootstrap/Accordion';
 import './createPost.css';
+
 // Sound Imports
 import postSound from '../../assets/sounds/postSound.wav';
 import deleteSound from '../../assets/sounds/delete-sound.wav';
-// bad words filter
+
 // Bad word Filter
 var Filter = require('bad-words'),
     filter = new Filter();
@@ -22,30 +24,30 @@ var Filter = require('bad-words'),
 
 
 function CreatePost() {
+
     // Sound function for post
     const postSoundNoise = new Audio(postSound);
     postSoundNoise.loop = false;
     postSoundNoise.volume = 0.5;
+
     // Sound function for Delete
     const deleteSoundNoise = new Audio(deleteSound);
     deleteSoundNoise.loop = false;
     deleteSoundNoise.volume = 0.5;
-    // Get user's information
-    const { basic } = useQuery(QUERY_ME_BASIC);
+
+    // Get basic info
+    const { data: basic } = useQuery(QUERY_ME_BASIC);
     const username = basic?.me.username || '';
-    // Get user's posts
-    const { data } = useQuery(QUERY_USERS_POSTS, {
-        variables: { username: username },
-    });
-    // save posts in variable
-    const userPosts = data?.posts || [];
-    console.log(userPosts)
+    // Get user's information
+    const { data } = useQuery(QUERY_ME);
+    const userPosts = data?.me.posts || [];
+
     const [deletePost] = useMutation(DELETE_POST)
     // set up state variables for comment section
     const [formState, setFormState] = useState({
         postTitle: '',
         postText: '',
-        username: username,
+        username: username
       });
       
       const [addPost] = useMutation(ADD_POST);
@@ -98,15 +100,18 @@ function CreatePost() {
         window.location.reload(false);
     };
     const loggedIn = Auth.loggedIn();
+
     return (
         <> 
         {loggedIn ?
             <>  
            <Header />
+           <h2 className='welcomeText'>Create a Post</h2>
            <main className="createPostPage">
                 <form id='post-form' onSubmit={handleFormSubmit}>
                     <section className="writePostSection">
                         <input className="post-title" type="text" id="postTitle" name="postTitle" value={formState.postTitle} onChange={handleChange} placeholder='Title' />
+
                         <div className="writePostDiv">
                         <input className="writePost" type="text" id="postText" name="postText" value={formState.postText} onChange={handleChange} placeholder='Share your thoughts...' />
                             <button className="postButton" id="post-btn">Post</button>
@@ -117,17 +122,17 @@ function CreatePost() {
                 
                 <section className="postsSection">
                      {userPosts.map((post, index) =>
-                        (   <Accordion>
+                        (   <Accordion key={index}>
                             <Accordion.Item eventKey="0">
                             <section className="discussion-post" key={index}>
                             <Accordion.Header>
                             <div className="accordionHeaderDiv"> 
-                            <h3 id="username-post">{post.username}</h3>
-                            <h3 id="userTitle-post"><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h3>
+                                <h3 id="userTitle-post"><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h3>
+                                <h3 id="username-post">{username}</h3>
+                                <p>{post.createdAt}</p>
                             </div>    
                                 </Accordion.Header>
                                 <Accordion.Body>
-                                <p>{post.createdAt}</p>
                                 <p id="postText">{post.postText}</p>
                                 <div id="likes-dislikes">
                                     <p>{post.likesLength}<a>  👍</a></p>
