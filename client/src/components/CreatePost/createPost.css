@@ -15,6 +15,7 @@ input.post-title {
     background-color: transparent;
     font-weight: lighter;
     font-size: 18px;
+    padding-left: 1%;
 }
 
 input.post-title:focus {
@@ -42,6 +43,7 @@ input.post-title:focus {
     padding: 0;
     font-weight: lighter;
     font-size: 18px;
+    padding-left: 1%;
 }
 
 #postTextInput:focus {

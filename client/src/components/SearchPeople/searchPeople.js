@@ -17,6 +17,7 @@ function SearchPeople() {
             <div id="hamburger">
                 <Header />
             </div>
+            <section class="search-friend-section">
             <form id="search-friend-form" onSubmit={async (e) => {
                 e.preventDefault();
                 const inquiryUser = await document.getElementById('search-bar').value
@@ -24,8 +25,8 @@ function SearchPeople() {
             }
             }>
                 
-                <label id="sfp-label">Search for People</label>
-                <input id='search-bar' type='text' name='search-bar' />
+                <label id="sfp-label">Search Friends</label>
+                <input id='search-bar' type='text' name='search-bar' placeholder='Search' />
                 <button id="search-friend-btn" type='submit'>Search</button>
                 { data && data.userByName === null && <p>User does not exist</p>}
                 { data && data.userByName !== null && 
@@ -46,6 +47,7 @@ function SearchPeople() {
                
                 }
             </form>
+            </section>
             <div>
 
             </div>
