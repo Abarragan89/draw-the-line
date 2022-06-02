@@ -28,17 +28,7 @@ function Profile () {
     const userFriends = data?.user.friends || [];
     console.log(userInfo)
     console.log(userPosts)
-    
-    // // Query the posts of the user
-    // const { data: userPostsQuery } = useQuery(QUERY_USERS, {
-    //     variables: { username: username },
-    // });
-    // set up state variables
-    // const [formState, setFormState] = useState({
-    //     postTitle: '',
-    //     postText: '',
-    //     username: userInfo.username,
-    //   });
+
     const [addPost, { error }] = useMutation(ADD_POST);
     const [deletePost] = useMutation(DELETE_POST);
     
@@ -48,6 +38,7 @@ function Profile () {
         {loggedIn ?
             <>  
             <Header />
+              <h2 className='welcomeText'>{userInfo.username}'s Profile Page</h2>
               <main className="profilePage">
                 <section className="postsSection">
                      {userPosts.map((post, index) =>
@@ -56,13 +47,13 @@ function Profile () {
                             <section className="discussion-post" key={index}>
                             <Accordion.Header>
                             <div className="accordionHeaderDiv">     
+                            <h4 id="userTitle-post"><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h4>
                                 <h2 id="username-post">{userInfo.username}</h2>
-                                <h3 id="userTitle-post">{userPosts.postTitle}</h3>
+                                <p>{post.createdAt}</p>
                             </div>      
                                 </Accordion.Header>
                                 <Accordion.Body>
                                 <p id="postText">{post.postText}</p>
-                                <p>{post.createdAt}</p>
                                 <div id="likes-dislikes">
                                     <p>{post.likesLength}<a>  👍</a></p>
                                     <p>{post.dislikesLength}<a>  👎</a></p>

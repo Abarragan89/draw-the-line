@@ -36,13 +36,12 @@ function CreatePost() {
     deleteSoundNoise.volume = 0.5;
 
     // Get basic info
-    const { basic } = useQuery(QUERY_ME_BASIC);
+    const { data: basic } = useQuery(QUERY_ME_BASIC);
     const username = basic?.me.username || '';
-
+    console.log(username)
     // Get user's information
     const { data } = useQuery(QUERY_ME);
     const userPosts = data?.me.posts || [];
-    console.log(userPosts)
 
     const [deletePost] = useMutation(DELETE_POST)
     // set up state variables for comment section
@@ -109,6 +108,7 @@ function CreatePost() {
         {loggedIn ?
             <>  
            <Header />
+           <h2 className='welcomeText'>Create a Post</h2>
            <main className="createPostPage">
                 <form id='post-form' onSubmit={handleFormSubmit}>
                     <section className="writePostSection">
@@ -129,8 +129,8 @@ function CreatePost() {
                             <section className="discussion-post" key={index}>
                             <Accordion.Header>
                             <div className="accordionHeaderDiv"> 
-                                <h3 id="username-post">{post.username}</h3>
                                 <h3 id="userTitle-post"><Link to={`/Single-post/${post._id}`}>{post.postTitle}</Link></h3>
+                                <h3 id="username-post">{username}</h3>
                                 <p>{post.createdAt}</p>
                             </div>    
                                 </Accordion.Header>
