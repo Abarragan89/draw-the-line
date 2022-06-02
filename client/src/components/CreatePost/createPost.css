@@ -34,7 +34,7 @@ input.post-title:focus {
     outline: none;
 }
 
-#postTextInput {
+.writePost {
     background-color: transparent !important;
     border-bottom: 1px solid white !important;
     width: 100%;
@@ -46,7 +46,7 @@ input.post-title:focus {
     padding-left: 1%;
 }
 
-#postTextInput:focus {
+.writePost:focus {
     outline: none;
 }
 
