@@ -104,6 +104,11 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 /* ------------------------- LOGIN BUTTON ------------------------- */
 .loginButton {
     opacity: 0;
@@ -204,13 +209,17 @@ a {
 .welcomeText {
     margin-top: 4%;
     padding-bottom: 5%;
-    background: -webkit-linear-gradient(#b19bf7, #2c0f8a);
+     background: -webkit-linear-gradient(#b9a8f2, #340faf); 
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0;
     animation: fadeinup ease 0.4s forwards;  
     animation-delay: .2s;
+    color: white;
+	font-size: 40px;
+	-webkit-text-stroke: .5px #340faf;
+    
 }
 
 
