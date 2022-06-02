@@ -26,8 +26,6 @@ function Profile () {
     const userInfo = data?.user || [];
     const userPosts = data?.user.posts || [];
     const userFriends = data?.user.friends || [];
-    console.log(userInfo)
-    console.log(userPosts)
 
     const [addPost, { error }] = useMutation(ADD_POST);
     const [deletePost] = useMutation(DELETE_POST);

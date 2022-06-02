@@ -38,7 +38,6 @@ function CreatePost() {
     // Get basic info
     const { data: basic } = useQuery(QUERY_ME_BASIC);
     const username = basic?.me.username || '';
-    console.log(username)
     // Get user's information
     const { data } = useQuery(QUERY_ME);
     const userPosts = data?.me.posts || [];
@@ -55,7 +54,6 @@ function CreatePost() {
     // Save users posts in a state variable
     const handleChange = (event) => {
         let { name, value } = event.target;
-        console.log(name, value)
         // Booleans to keep name and value state
         let cleanName;
         let cleanText;

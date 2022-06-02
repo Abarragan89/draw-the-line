@@ -15,7 +15,6 @@ function Nav() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const onClick = () => setShow(true);
-    // console.log(location.pathname);
 
     const selectedTab = location.pathname;
 

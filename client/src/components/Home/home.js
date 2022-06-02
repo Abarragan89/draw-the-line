@@ -11,7 +11,6 @@ import Accordion from 'react-bootstrap/Accordion';
 
 function Home() {
     const { data } = useQuery(QUERY_ME_BASIC);
-    console.log(data)
     const { data: postQuery } = useQuery(GET_USER_POSTS);
     // user information
     const username = data?.me.username || '';

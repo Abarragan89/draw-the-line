@@ -11,7 +11,6 @@ function SearchPeople() {
 
     // Add friend Query
     const [addFriend, { data: newFriend }] = useMutation(ADD_FRIEND);
-    console.log(data)
     return (
         <>
             <div id="hamburger">
