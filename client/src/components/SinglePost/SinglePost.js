@@ -64,15 +64,15 @@ function SinglePost() {
         <Header /> 
             <section>
                     <div id="single-post-page">
-                        <div className='single-post-container'>
-                            <p id="username-post"> Username: {userPost.username}</p>
-                            <p id="userTitle-post">{userPost.postTitle}</p>
+                        <div className='single-page-discussion-post'>
+                            <p id="username-post">{userPost.username}</p>
+                            <p id="single-post-userTitle-post">{userPost.postTitle}</p>
                             <p id="postText"> {userPost.postText}</p>
-                            <p>{userPost.createdAt}</p>
-                        </div>
+                            <p id="single-post-date">{userPost.createdAt}</p>
+                        {/* </div> */}
 
-                        <div className='likes-container'>
-                            <p>Likes: {userPost.likesLength}<a onClick={() => {
+                        <div id="single-page-likes-dislikes">
+                            {userPost.likesLength}<a onClick={() => {
                             addLike({ variables: { postId: userPost._id } })
                             likeSoundNoise.play();
                             if (userPost.banMeter >= 0.6) {
@@ -80,10 +80,10 @@ function SinglePost() {
                                 const deletedPost = document.getElementById('single-post-page');
                                 deletedPost.remove();
                             }
-                        }}>    👍</a></p>
+                        }}>    👍</a>
+                        
                             
-                            
-                            <p>Dislikes: {userPost.dislikesLength}<a onClick={() => {
+                            {userPost.dislikesLength}<a onClick={() => {
                             addDislike({ variables: { postId: userPost._id } });
                             dislikeSoundNoise.play();
                             if (userPost.banMeter >= 0.6) {
@@ -92,9 +92,9 @@ function SinglePost() {
                                 deletedPost.remove();
                             }
                         }
-                        }>      👎</a></p>
+                        }>      👎</a>
 
-
+                        </div> 
                         {userPost.banMeter &&
                             <>
                                 <p>Ban Meter <a></a></p>
@@ -102,7 +102,12 @@ function SinglePost() {
                             </>
                         }
 
-                        </div>
+                        <form id='comment-form' onSubmit={handleFormSubmitComment}>
+                                <input method="post" className='post-tile' type="text" id="commentBody" name="commentBody" value={formStateComment.commentBody} onChange={handleChangeComment} placeholder='Comment' />
+                                <div btn-container>
+                                    <button className='post-button'>Post</button>
+                                </div>
+                        </form>
 
                         <div className='comments-container'>
                             {userComments.map((comment, index) => (
@@ -111,7 +116,7 @@ function SinglePost() {
                                     <p>{comment.username}</p>
                                     <p>{comment.commentBody}</p>
                                     <p>{comment.createdAt}</p>
-                                    <p>{comment.likesLength}<a onClick={() => {
+                                   {comment.likesLength}<a onClick={() => {
                                         addCommentLike({ variables: { commentId: comment._id } })
                                         likeSoundNoise.play();
                                         if (comment.banMeter >= 0.6) {
@@ -119,8 +124,8 @@ function SinglePost() {
                                             const deletedPost = document.getElementById(index);
                                             deletedPost.remove();
                                         }
-                                    }}>    👍</a></p>
-                                    <p>{comment.dislikesLength}<a onClick={() => {
+                                    }}>    👍</a>
+                                    {comment.dislikesLength}<a onClick={() => {
                                         addCommentDislike({ variables: { commentId: comment._id } });
                                         dislikeSoundNoise.play();
                                         if (comment.banMeter >= 0.6) {
@@ -129,26 +134,17 @@ function SinglePost() {
                                             deletedPost.remove();
                                         }
                                     }
-                                    }>      👎</a></p>
+                                    }>      👎</a>
                                       {comment.banMeter &&
                                         <>
-                                            <p>Ban Meter</p>
                                             <progress id="banMeter" value={comment.banMeter} max="0.6">{comment.banMeter} </progress>
                                         </>
                         }
                                 </section>
 
                             ))}
-                        </div>
-
-                        {/* Comment Section */}
-
-                        <form id='comment-form' onSubmit={handleFormSubmitComment}>
-                            <section>
-                                <input method="post" className='post-tile' type="text" id="commentBody" name="commentBody" value={formStateComment.commentBody} onChange={handleChangeComment} placeholder='Your Comment Here' />
-                                <div btn-container><button className='post-btn'>Post</button></div>
-                            </section>
-                        </form>
+                         </div>   
+                    </div>
                     </div>
             </section>
         </>

@@ -1,38 +1,55 @@
 #search-friend-form {
+  margin-top: 4%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  /* width: 50%; */
   align-items: center;
+  width: 50%;
+  border-radius: 25px;
 }
 
 #sfp-label {
   color: white;
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 4%;
+}
+
+.search-friend-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  opacity: 0;
+  animation: fadeinup ease 0.4s forwards;  
+  animation-delay: .2s;
 }
 
 #search-bar {
-  background-color: white;
+  background-color: transparent !important;
   width: 300px;
   height: 30px;
-  border: 0.5px solid #9198e5;
+  border: 1px solid white;
   border-radius: 5px;
   margin: 25px;
+  padding-left: 1%;
+  font-weight: lighter;
+}
+
+#search-bar:focus {
+  outline: none;
 }
 
 #search-friend-btn {
-    width: 15%;
-    height: 35px;
+  padding: .4em 1.6em;
     background: transparent;
     border: 1px solid white;
     font-size: 15px;
     border-radius: 5px;
     cursor: pointer;
     color: white;
-    margin-top: 4%;
-}
+    margin-top: 2%;
+  }
 
 #search-friend-btn:hover {
   background-color: white;
@@ -47,7 +64,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid white;
+  border: 1.5px solid white;
   border-radius: 10px;
   margin: 30px;
   width: 300px;
@@ -61,12 +78,11 @@
 
 #addFriendBTN {
   margin: 20px;
-  width: 70px;
-  height: 50px;
+  padding: .4em 1.6em;
   background: transparent;
   border: 0.5px solid white;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: lighter;
   border-radius: 5px;
   cursor: pointer;
   color: white;

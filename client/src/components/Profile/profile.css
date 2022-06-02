@@ -1,10 +1,9 @@
-.profilePage {
+.profilePage, .friendProfile {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     max-width: 80%;
     margin-top: 4%;
-
 }
 
 .postsSection {
@@ -36,14 +35,17 @@
 }
 
 .friendsSection {
+    opacity: 0;
+    animation: fadeinup ease 0.4s forwards;  
+    animation-delay: .2s;
     padding-left: 5%;
 }
 
-.friendProfile {
+/* .friendProfile {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+} */
 
 /* ----------- MEDIA QUERIES --------- */
 @media only screen and (max-width: 700px) {

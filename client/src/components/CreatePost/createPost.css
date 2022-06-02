@@ -3,13 +3,19 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    opacity: 0;
+    animation: fadeinup ease 0.4s forwards;  
+    animation-delay: .2s;
 }
 
 input.post-title {
-    width: 25%;
+    width: 40%;
     border: none;
     border-bottom: 1px solid white;
     background-color: transparent;
+    font-weight: lighter;
+    font-size: 18px;
+    padding-left: 1%;
 }
 
 input.post-title:focus {
@@ -18,8 +24,8 @@ input.post-title:focus {
 
 .writePostDiv {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0;
     margin: 0;
 }
@@ -28,21 +34,27 @@ input.post-title:focus {
     outline: none;
 }
 
-#postText{
+#postTextInput {
     background-color: transparent !important;
     border-bottom: 1px solid white !important;
-    width: 85%;
+    width: 100%;
     border: none;
     margin-top: 5%;
     padding: 0;
+    font-weight: lighter;
+    font-size: 18px;
+    padding-left: 1%;
 }
 
-
+#postTextInput:focus {
+    outline: none;
+}
 
 .createPostPage {
     display: flex;
     flex-direction: column;
     margin-top: 4%;
+    padding-bottom: 4%;
 }
 
 .box {
@@ -130,7 +142,6 @@ h3 {
     border-radius: 5px;
     cursor: pointer;
     color: white;
-    margin-left: 4%;
     margin-top: 4%;
 }
 

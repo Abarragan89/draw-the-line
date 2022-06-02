@@ -46,8 +46,8 @@ function Home() {
                             </div>    
                                 </Accordion.Header>
                                 <Accordion.Body>
-                                <p>{post.createdAt}</p>
                                 <p id="postText">{post.postText}</p>
+                                <p>{post.createdAt}</p>
                                 <div id="likes-dislikes">
                                     <p>{post.likesLength}<a>  👍</a></p>
                                     <p>{post.dislikesLength}<a>  👎</a></p>
