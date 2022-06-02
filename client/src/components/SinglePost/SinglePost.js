@@ -11,6 +11,11 @@ import Header from '../Header/header'
 import './singlePost.css';
 
 function SinglePost() {
+    // censor filter
+    // Bad word Filter
+    var Filter = require('bad-words'),
+    filter = new Filter();
+    filter.removeWords('hell', 'tit', 'tits', 'boob', 'boobs')
     // sound functions
     const likeSoundNoise = new Audio(likeSound);
      likeSoundNoise.loop = false;
@@ -43,11 +48,41 @@ function SinglePost() {
     });
 
     const handleChangeComment = (event) => {
-        event.preventDefault();
-        const { name, value } = event.target;
+        let { name, value } = event.target;
+        // Booleans to keep name and value state
+        let cleanName;
+        let cleanText;
+        // Censor postText
+        if (value && !value.match(/^[*]{1,}/)){
+            value = filter.clean(value)
+            if (value.match(/([*]{3,})/g)) {
+                cleanText = false;
+            } else {
+                cleanText = true
+            }
+        }
+        // Censor postTitle
+        if (name && !name.match(/^[*]{1,}/)){
+            name = filter.clean(name)
+            if (name.match(/([*]{3,})/g)) {
+                cleanName = false
+            } else {
+                cleanName = true
+            }
+        }
+        // Get html elements and check their values to render html elements
+        const postBtn = document.getElementById('postBtnComment')
+        // const warningDiv = document.getElementById('warningDivComment');
+        if (cleanName && cleanText) {
+            // warningDiv.innerHTML = '';
+             postBtn.disabled = false;
+        } else {
+            // warningDiv.innerHTML = 'Keep it friendly';
+             postBtn.disabled = true;
+        }
         setFormStateComment({
-            ...formStateComment,
-            [name]: value,
+        ...formStateComment,
+        [name]: value,
         });
     };
 
@@ -105,7 +140,8 @@ function SinglePost() {
                         <form id='comment-form' onSubmit={handleFormSubmitComment}>
                                 <input method="post" className='post-tile' type="text" id="commentBody" name="commentBody" value={formStateComment.commentBody} onChange={handleChangeComment} placeholder='Comment' />
                                 <div btn-container>
-                                    <button className='post-button'>Post</button>
+                                    <button className='post-button' id='postBtnComment'>Post</button>
+                                    <div id='waringDivComment'></div>
                                 </div>
                         </form>
 
