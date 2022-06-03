@@ -40,31 +40,29 @@ const Login = () => {
     });
   };
   return (
-    <section id="login-section">
-       <form id="login-form" onSubmit={handleFormSubmit}>
-          <div className="login">
-            {/* <label htmlFor="chk" aria-hidden="true" className="loginLabel"></label> */}
+    <section>
+      <h2 className="section-heading">Log In</h2>
+       <form className="login-form" onSubmit={handleFormSubmit}>
+          <div className="login-elements">
               <input
                 placeholder="Email"
-                className="loginEmail"
+                className="login-input"
                 name="email"
                 type="email"
-                id="email"
                 value={formState.email}
                 onChange={handleChange}
               />
               <input
                 placeholder="Password"
-                className="loginPassword"
                 name="password"
+                 className="login-input"
                 type="password"
-                id="password"
                 value={formState.password}
                 onChange={handleChange}
               />
               {error && <div className="error">Log in failed</div>}
               <button className="login-button" type="submit">Log in</button>
-          <p className="signupLinkText">Don't have an account? <br></br><Link to="/signup" className="link"> Sign up here.</Link></p>
+          <p className="login-text">Don't have an account? <br></br><Link to="/signup" className="login-link"> Sign up here.</Link></p>
           </div>
        </form>
     </section>

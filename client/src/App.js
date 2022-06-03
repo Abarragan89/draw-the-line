@@ -1,5 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 // importing components from react-router-dom package
 import {
   BrowserRouter as Router,
@@ -17,10 +15,8 @@ import { setContext } from '@apollo/client/link/context';
 
 // components 
 import Home from "./components/Home/home";
-import Nav from "./components/Nav/nav";
 import Signup from "./components/Signup/signup";
 import Profile from "./components/Profile/profile";
-import Contact from "./components/Contact/contact";
 import Login from "./components/Login/login";
 import CreatePost from "./components/CreatePost/createPost";
 import SinglePost from "./components/SinglePost/SinglePost";
@@ -42,7 +38,6 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
-
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
@@ -62,7 +57,6 @@ function App() {
           <Route path="/Single-post/:id" element={<SinglePost />} />
           <Route path="/search-people" element={<SearchPeople />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/Contact" element={<Contact />} /> */}
         </Routes>
       </Router>
       <Footer></Footer>

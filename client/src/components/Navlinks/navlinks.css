@@ -1,0 +1,110 @@
+
+.link-el {
+    font-size: 1.25em;
+    font-family: var(--secondary-font);
+    color: var(--secondary-color);
+    display: inline;
+}
+.link-el {
+    margin-left: 20px;
+}
+.link-el:hover{
+    text-decoration: underline;
+}
+.link-el a {
+    text-decoration: none;
+    font-size: 1.25em;
+}
+nav a.active {
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.navIsActive {
+    color: var(--primary-color)
+}
+.navigation {
+    padding: 0.5em;
+    
+}
+.navigation ul {
+    padding-left: 0;
+}
+.mobile-nav {
+    display:none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 990px) {
+    .navigation {
+        display:none;
+    }
+    .mobile-nav {
+        padding: 0.5em;
+        display: flex;
+        align-items: center;
+        
+    }
+    .mobile-nav .hamburger {
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+        color: var(--main-color);
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: var(--secondary-color);
+        border-top: 2px solid ;
+    }
+    nav ul li {
+        padding-left: 5%;
+        padding-bottom: 20px;
+    }
+    .link-el {
+        font-size: 1.4em;
+    } 
+    .link-el {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navigation {
+        display:none;
+    }
+    .mobile-nav {
+        padding: 0.5em;
+        display: flex;
+        align-items: center;
+    }
+    .mobile-nav .hamburger {
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+        color: var(--main-color);
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #181818;
+        border-top: 2px solid ;
+    }
+    nav ul li {
+        padding-left: 5%;
+        padding-bottom: 20px;
+    }
+    .link-el {
+        font-size: 1em;
+        padding-bottom: 20px;
+        margin-left: 5px;
+    }
+}

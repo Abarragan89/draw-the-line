@@ -46,40 +46,38 @@ function Signup() {
     return (
         
         <>
-      <main className="signupPage"> 
-        <section id="sign-up-section">
-            <form id="signup-form" onSubmit={handleFormSubmit}>
-                <div className="signup">
+      <main> 
+        <section>
+        <h2 className="section-heading">Sign Up</h2>
+            <form className="login-form" onSubmit={handleFormSubmit}>
+                <div className="login-elements">
                     <input
                         placeholder="Username"
-                        className="signupUsername"
+                        className="login-input"                        
                         name="username"
                         type="username"
-                        id="username"
                         value={formState.username}
                         onChange={handleChange}
                     />
                     <input
                         placeholder="Email"
-                        className="signupEmail"
+                        className="login-input"
                         name="email"
                         type="email"
-                        id="email"
                         value={formState.email}
                         onChange={handleChange}
                     />
                     <input
                         placeholder="Password"
-                        className="signupPassword"
+                        className="login-input"                        
                         name="password"
                         type="password"
-                        id="password"
                         value={formState.password}
                         onChange={handleChange}
                     />
-                    <button id="signup-button" type="submit" value="signup">Sign up</button>
+                    <button className="login-button" type="submit" value="signup">Sign up</button>
                     {error && <div className="error">Signup failed</div>}
-                    <p className="loginLinkText">Have an account? <br></br><Link to="/" className="link">Login here.</Link></p>
+                    <p className="login-text">Have an account? <br></br><Link to="/login" className="login-link">Login here.</Link></p>
                 </div>
             </form>
         </section>

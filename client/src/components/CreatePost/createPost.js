@@ -8,7 +8,6 @@ import { ADD_POST } from '../../utils/mutations';
 import Header from '../Header/header.js';
 
 // Style Import
-import Accordion from 'react-bootstrap/Accordion';
 import './createPost.css';
 
 // Sound Imports
@@ -120,7 +119,7 @@ function CreatePost() {
                     </section>
                 </form>
                 
-                <section className="postsSection">
+                {/* <section className="postsSection">
                      {userPosts.map((post, index) =>
                         (   <Accordion key={index}>
                             <Accordion.Item eventKey="0">
@@ -145,7 +144,7 @@ function CreatePost() {
                             </Accordion.Item>
                             </Accordion>
                         ))}
-                </section>
+                </section> */}
 
                 {/* <section>
                     <h1>Posts</h1>

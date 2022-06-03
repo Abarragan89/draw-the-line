@@ -4,7 +4,6 @@ import { useParams, Link } from 'react-router-dom';
 import { QUERY_USER } from '../../utils/queries';
 import { useQuery, useMutation } from '@apollo/client';
 import { ADD_POST, DELETE_POST } from '../../utils/mutations';
-import Accordion from 'react-bootstrap/Accordion';
 import './profile.css'
 import Header from '../Header/header.js';
 import deleteSound from '../../assets/sounds/delete-sound.wav';
@@ -38,7 +37,7 @@ function Profile () {
             <Header />
               <h2 className='welcomeText'>{userInfo.username}'s Profile Page</h2>
               <main className="profilePage">
-                <section className="postsSection">
+                {/* <section className="postsSection">
                      {userPosts.map((post, index) =>
                         (   <Accordion key={index}>
                             <Accordion.Item eventKey="0">
@@ -63,7 +62,7 @@ function Profile () {
                             </Accordion.Item>
                             </Accordion>
                         ))}
-                </section>
+                </section> */}
                 <section className="friendsSection">
                     <section id="friendsSectionBorder">
                     <h4 className="friendsText">Friends</h4>
