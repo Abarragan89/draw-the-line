@@ -1,4 +1,5 @@
 import Auth from '../../utils/auth';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { DELETE_POST } from '../../utils/mutations';
@@ -95,10 +96,15 @@ function CreatePost() {
     };
 
     function deletePostFunction (postId, index) {
+        let text = "Are you sure you want to delete this post?";
+        if (window.confirm(text) == true) {
         deletePost({ variables: { postId: postId } })
         deleteSoundNoise.play();
         const deletedPost = document.getElementById(index);
         deletedPost.remove();
+        } else {
+            return;
+        }
     }
     const loggedIn = Auth.loggedIn();
 
@@ -122,8 +128,7 @@ function CreatePost() {
                     </form>
 
                     <section>
-
-                        <h2 className="section-heading">Your Post</h2>
+                        <h2 className="section-heading">Your Posts</h2>
                         {userPosts.map((post, index) =>
                         (
                             <section className="preview-post-sect" id={index} key={index}>
@@ -145,6 +150,7 @@ function CreatePost() {
                                 </div>
                                 <div className="edit-delete-post-div">
                                     <button className="post-mutation-btn" id="edit-post-btn">Edit</button>
+                                    <Link  id="view-your-post" className="preview-post-link" to={`/Single-post/${post._id}`}>View Post</Link>
                                     <button className="post-mutation-btn" id="delete-post-btn" onClick={() => deletePostFunction(post._id, index)}>Delete</button>
                                 </div>
                             </section>

@@ -32,7 +32,7 @@ function Home() {
                         </div>
                     </div>
                     <div className="post-body-div">
-                        <div className="preview-post-body">
+                        <div className="preview-post-body-locked">
                             <p className="preview-post-text">{post.postText}</p>
                         </div>
                         <div className="preview-post-body-overlay"></div>

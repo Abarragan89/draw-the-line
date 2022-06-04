@@ -1,6 +1,15 @@
+.login-form-signup {
+  border: 1px solid black;
+  width: 400px;
+  padding: 2%;
+  margin: 10% auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 15px 40px;
+}
 .login-form {
   border: 1px solid black;
-  width: 80%;
+  width:80%;
   padding: 2%;
   margin: 10% auto;
   background-color: white;
@@ -69,4 +78,9 @@
   font-size: 1.3em;
   margin-bottom: 10px;
   color:red;
+}
+@media screen and (max-width: 480px) {
+  .login-form-signup {
+      width: 100%;
+  }
 }

@@ -1,0 +1,74 @@
+#flex-div-profile {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#profile-section-post {
+    flex: 1;
+    margin: 0 35px;
+}
+
+#friendsSection {
+    flex: 1;
+    margin: 0 35px;
+}
+
+.friend-div {
+    display:flex;
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    padding: 10px 30px;
+    margin: 0 auto 40px;
+    border-radius: 3px;
+    justify-content: center;
+}
+
+.friend-label {
+    margin: 0 auto;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: var(--accent-color);
+    margin-bottom: 10px 0;
+}
+
+#view-friend-profile {
+    background-color: green;
+    color: white;
+}
+#view-friend-profile:hover {
+    color: rgb(13, 24, 46);
+}
+#view-friend-profile:active {
+    background: rgb(13, 24, 46);
+    color:white;
+}
+
+/* media query styles */
+@media screen and (max-width: 768px){
+    #flex-div-profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 480px){
+    #flex-div-profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #profile-section-post {
+        margin: 0;
+    }
+    #friendsSection {
+        margin: 0;
+        width: 100%;
+    }
+    .friend-div {
+        width: 100%
+    }
+}

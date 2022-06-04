@@ -1,32 +1,20 @@
-.About-me h2{
-   text-align: center;
-   text-decoration: none;
-   border: none;
-   color: white;
-   padding-top: 4%;
-   padding-bottom: 2%;
-   opacity: 0;
-   animation: fadeinup ease 0.4s forwards;  
-   animation-delay: .2s;
-}
-
-.About-me {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    padding-bottom: 5%;
-}
-
 .About-me p{
-    text-align: center;
     text-indent: 20px;
-    font-size: 16px;
-    line-height: 2;
-    /* padding-top: 30px; */
+    font-size: 1.3em;
+    line-height: 1.5;
+    padding: 30px 20px;
     color: white;
     width: 80%;
-    opacity: 0;
-    animation: fadeinup ease 0.4s forwards;  
-    animation-delay: .2s;
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+ }
+
+ .About-me p:last-child {
+     margin-bottom: 40px;
+ }
+
+ @media screen and (max-width: 480px) {
+    .About-me p {
+        width: 100%;
+    }
  }

@@ -83,15 +83,13 @@ progress::-moz-progress-value {
 
 /* comment section styles */
 #comment-form {
-    text-align: center;
     width: 100%;
     margin: 0 auto;
 }
 
 #commentBody {
-    height: 150px;
     width: 100%;
-    margin-bottom: 50px;
+    height: 200px;
 }
 .comment-section {
     width: 75%;
@@ -107,7 +105,15 @@ progress::-moz-progress-value {
 }
 .preview-comment-sect {
   width: 80%;
-  margin: 0 auto 30px;
+  margin: 0 auto 50px;
+}
+
+.preview-comment-body {
+  background-color: var(--primary-color);
+  padding: 15px;
+  font-size: 1.1em;
+  line-height: 1.3;
+  overflow-y: hidden
 }
 
 /* media queries */

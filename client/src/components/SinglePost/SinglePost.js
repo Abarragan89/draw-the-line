@@ -187,10 +187,9 @@ function SinglePost() {
                         </div>
 
                         <div className="post-body-div">
-                            <div className="preview-post-body">
+                            <div className="preview-comment-body" id="users-comment-text" >
                                 <p className="preview-post-text">{comment.commentBody}</p>
                             </div>
-                            <div className="preview-post-body-overlay"></div>
                         </div>
                         <div className="vote-section" id="comment-vote">
                                 <div className='like-div'>

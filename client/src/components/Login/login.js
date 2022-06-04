@@ -42,7 +42,7 @@ const Login = () => {
   return (
     <section>
       <h2 className="section-heading">Log In</h2>
-       <form className="login-form" onSubmit={handleFormSubmit}>
+       <form className="login-form-signup" onSubmit={handleFormSubmit}>
           <div className="login-elements">
               <input
                 placeholder="Email"

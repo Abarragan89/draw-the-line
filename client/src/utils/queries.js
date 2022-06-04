@@ -129,13 +129,12 @@ export const QUERY_USER = gql `
 
 // Query a user by Username
 export const QUERY_USER_BY_NAME = gql`
-query Query($username: String!) {
-  userByName(username: $username) {
-    username
-    _id
-    posts
+  query Query($username: String!) {
+    userByName(username: $username) {
+      _id
+      username
+    }
   }
-}
 `;
 
 // Delete a post (Works on GraphQL, has not been tested here.)
@@ -147,27 +146,3 @@ export const DELETE_POST = gql `
     }
   }
 `;
-
-
-// query for posts of a single user
-// export const QUERY_USERS_POSTS = gql `
-//   query posts($username: String!) {
-//     posts(username: $username) {
-//       _id
-//       postText
-//       username
-//       postTitle
-//       createdAt
-//       likesLength
-//       dislikesLength
-//       banMeter
-//       comments {
-//         commentBody
-//         username
-//         createdAt
-//         likesLength
-//         dislikesLength
-//       }
-//     }
-// }
-// `;

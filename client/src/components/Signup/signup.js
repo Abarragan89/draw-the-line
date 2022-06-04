@@ -49,7 +49,7 @@ function Signup() {
       <main> 
         <section>
         <h2 className="section-heading">Sign Up</h2>
-            <form className="login-form" onSubmit={handleFormSubmit}>
+            <form className="login-form-signup" onSubmit={handleFormSubmit}>
                 <div className="login-elements">
                     <input
                         placeholder="Username"
