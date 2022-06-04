@@ -29,7 +29,6 @@
 /* Styles for footer section */
 .edit-delete-post-div {
     background-color: var(--tertiary-color);
-    padding: 10px 0;
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -38,28 +37,24 @@
 .post-mutation-btn{
     font-size: 1.1em;
     padding: 3px 15px;
-    border-radius: 3px;
-    border: 1px solid rgb(13, 24, 46);
 }
 
 #edit-post-btn {
-    margin-left: 10px;
-    background: green;
+    background: var(--secondary-color);
     color: white;
     flex: 1;
 }
 
 #delete-post-btn {
-    margin-right: 10px;
-    background: rgb(174, 34, 34);
+    background: rgba(171, 22, 22, 0.588);
     color: white;
     flex: 1;
 }
 #edit-post-btn:hover {
-    color: rgb(13, 24, 46);
+    background: var(--secondary-color-solid);
 }
 #delete-post-btn:hover {
-    color: rgb(13, 24, 46)
+    background: rgba(171, 22, 22, 1);
 }
 #edit-post-btn:active {
     background: rgb(13, 24, 46);
@@ -71,14 +66,15 @@
 }
 
 #view-your-post {
-    background: var(--accent-color);
-    color: black;
+    background: var(--tertiary-color);
+    color: white;
     padding: 2px 5px;
     border-radius: 3px;
     flex: 1;
+    border: 1px solid black;
 }
 #view-your-post:hover {
-    color: white;
+    background: var(--tertiary-color-solid);
 }
 #view-your-post:active {
     background: rgb(13, 24, 46);

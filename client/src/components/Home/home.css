@@ -8,7 +8,7 @@
     text-align: center;
     right: 0;
     margin: 50px auto 50px;
-    color: var(--secondary-color);
+    color: var(--title-font-text);
     width: 70%;
     border: 3px solid var(--tertiary-color);
     background-color: var(--offwhite-color);
@@ -37,10 +37,10 @@
 .preview-post-header p,
 .preview-post-header h4 {
     margin: 0;
-    color: var(--primary-color)
+    color: white;
 }
 .preview-post-header h2 {
-    color: var(--accent-color)
+    color: var(--subtitle-font-text)
 }
 .preview-post-header h4 {
     margin-bottom: 5px;

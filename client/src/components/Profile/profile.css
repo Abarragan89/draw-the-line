@@ -35,11 +35,11 @@
 }
 
 #view-friend-profile {
-    background-color: green;
+    background-color: var(--tertiary-color);
     color: white;
 }
 #view-friend-profile:hover {
-    color: rgb(13, 24, 46);
+    background: var(--tertiary-color-solid);
 }
 #view-friend-profile:active {
     background: rgb(13, 24, 46);

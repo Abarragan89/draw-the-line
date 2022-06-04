@@ -4,8 +4,10 @@ header {
     align-items: center;
     height: 80px;
     background: var(--tertiary-color);
-    border-bottom: 1px solid black;
-    color: var(--tertiary-color)
+    color: var(--tertiary-color);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 header h1 {
