@@ -1,0 +1,69 @@
+/* Styles for form */
+#post-form {
+    width: 95%;
+}
+
+.writePostSection input {
+    width: 95%;
+}
+
+.writePostSection textarea {
+    width: 95%;
+    height: 300px;
+}
+
+#bad-words-warning {
+    color: red;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.curse-warning-div {
+    text-align: center;
+}
+
+#postTitle {
+    margin-bottom: 0;
+}
+
+/* Styles for footer section */
+.edit-delete-post-div {
+    background-color: var(--tertiary-color);
+    padding: 10px 0;
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+.post-mutation-btn{
+    font-size: 1.1em;
+    padding: 3px 15px;
+    border-radius: 3px;
+    border: 1px solid rgb(13, 24, 46);
+}
+
+#edit-post-btn {
+    margin-left: 10px;
+    background: green;
+    color: white;
+}
+
+#delete-post-btn {
+    margin-right: 10px;
+    background: rgb(174, 34, 34);
+    color: white;
+}
+#edit-post-btn:hover {
+    color: rgb(13, 24, 46);
+}
+#delete-post-btn:hover {
+    color: rgb(13, 24, 46)
+}
+#edit-post-btn:active {
+    background: rgb(13, 24, 46);
+    color:white;
+}
+#delete-post-btn:active {
+    background: rgb(13, 24, 46);
+    color:white;
+}

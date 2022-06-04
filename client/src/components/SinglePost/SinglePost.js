@@ -6,7 +6,6 @@ import { DISLIKE_POST, LIKE_POST, DELETE_POST, ADD_COMMENT } from '../../utils/m
 import { ADD_COMMENT_LIKE, ADD_COMMENT_DISLIKE, DELETE_COMMENT } from '../../utils/mutations'
 import likeSound from '../../assets/sounds/like-sound.wav';
 import dislikeSound from '../../assets/sounds/dislike-sound.wav';
-import Header from '../Header/header'
 
 import './singlePost.css';
 
@@ -117,23 +116,23 @@ function SinglePost() {
 
     }
     // like a comment
-    function likeCommentClick(comment) {
+    function likeCommentClick(comment, index) {
         addCommentLike({ variables: { commentId: comment._id } })
         likeSoundNoise.play();
         if (comment.banMeter >= 0.6) {
             deleteComment({ variables: { commentId: comment._id } })
-            // const deletedPost = document.getElementById(index);
-            // deletedPost.remove();
+            const deletedPost = document.getElementById(index);
+            deletedPost.remove();
         }
     }
     // dislike a comment
-    function dislikeCommentClick(comment) {
+    function dislikeCommentClick(comment, index) {
         addCommentDislike({ variables: { commentId: comment._id } })
         dislikeSoundNoise.play();
         if (comment.banMeter >= 0.6) {
             deleteComment({ variables: { commentId: comment._id } })
-            // const deletedPost = document.getElementById(index);
-            // deletedPost.remove();
+            const deletedPost = document.getElementById(index);
+            deletedPost.remove();
         }
     }
 
@@ -179,7 +178,7 @@ function SinglePost() {
 
                 {userComments.map((comment, index) =>
                 (
-                    <section className="preview-comment-sect" key={index}>
+                    <section className="preview-comment-sect" id={index} key={index}>
                         <div className="preview-post-header">
                             <div className="preview-post-title">
                                 <h3>{comment.username}</h3>
@@ -196,11 +195,11 @@ function SinglePost() {
                         <div className="vote-section" id="comment-vote">
                                 <div className='like-div'>
                                     <p>{comment.likesLength}</p>
-                                    <a className='voteBtnClickable' onClick={likeCommentClick}>👍</a>
+                                    <a className='voteBtnClickable' onClick={() => likeCommentClick(comment, index)}>👍</a>
                                 </div>
                                 <div className='like-div'>
                                     <p>{comment.dislikesLength}</p>
-                                    <a className='voteBtnClickable' onClick={dislikeCommentClick}>👎</a>
+                                    <a className='voteBtnClickable' onClick={() => dislikeCommentClick(comment, index)}>👎</a>
                                 </div>
                             <div>
                                 {comment.banMeter !== 0 &&
@@ -215,18 +214,6 @@ function SinglePost() {
 
                     </section>
                 ))}
-
-                {/* <div className='posted-comment-container'>
-                    {userComments.map((comment, index) => (
-
-                        <section key={index} id={index}>
-                            <p>{comment.username}</p>
-                            <p>{comment.commentBody}</p>
-                            <p>{comment.createdAt}</p>
-                        </section>
-
-                    ))}
-                </div> */}
             </section>
         </>
     )
