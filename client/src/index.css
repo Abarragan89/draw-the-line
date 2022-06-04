@@ -4,17 +4,12 @@
     box-sizing: border-box;
 }
 :root{
-  /* --primary-color: rgba(249, 240, 240, 0.973);
-  --secondary-color: rgba(54, 50, 50, 0.909);
-  --tertiary-color: rgba(55, 31, 100, 0.875);
-  --accent-color: rgba(255, 221, 0, 0.864);
-  --offwhite-color: rgb(229, 229, 241); */
   /* Fonts */
   --section-font: 'Joan', serif;
   --body-font: 'Roboto', sans-serif;
 
   --primary-color: rgba(249, 240, 240, 0.973);
-  --accent-color: rgba(255, 221, 0, 0.864);
+  --accent-color: rgba(4, 76, 32, 1);
   --offwhite-color: rgb(229, 229, 241);
 
 /* opaque */
@@ -39,4 +34,22 @@ html, body {
   -o-background-size: cover;
   background-size: cover;
   font-family: var(--body-font);
+}
+
+/* animiations */
+#sign-up-section {
+  opacity: 0;
+  animation: fadeinup ease 0.4s forwards;  
+  animation-delay: .2s;
+}
+
+@keyframes fadeinup {
+  from {
+      transform: translate3d(0,40px,0)
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1
+  }
 }

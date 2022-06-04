@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <img id='home-logo' src={require('../../assets/sounds/photos/DrawLogo.png')} width='70px' alt='draw the line logo'/> 
+      <img id='home-logo' src={require('../../assets/sounds/photos/DrawLogo.png')} alt='draw the line logo'/> 
       <nav>
         <Nav />
         <MobileNav />

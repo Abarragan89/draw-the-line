@@ -6,6 +6,9 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 5px 15px 40px;
+  opacity: 0;
+  animation: fadeinup ease 0.4s forwards;  
+  animation-delay: .2s;
 }
 .login-form {
   border: 1px solid black;
@@ -15,6 +18,9 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 5px 15px 40px;
+  opacity: 0;
+  animation: fadeinup ease 0.4s forwards;  
+  animation-delay: .2s;
 }
 .login-input {
   display: block;
@@ -51,7 +57,10 @@
 
 
 .login-button:hover {
-  color: yellow
+  color: var(--tertiary-color-solid)
+}
+.login-button:active {
+  color: white;
 }
 
 .login-text {

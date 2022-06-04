@@ -21,6 +21,9 @@
     margin-bottom: 50px;
     border: 1px solid black;
     box-shadow: 5px 15px 40px;
+    opacity: 0;
+    animation: fadeinup ease 0.4s forwards;  
+    animation-delay: .2s;
     
 }
 

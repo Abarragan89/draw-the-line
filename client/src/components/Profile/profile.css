@@ -24,6 +24,9 @@
     margin: 0 auto 40px;
     border-radius: 3px;
     justify-content: center;
+    opacity: 0;
+    animation: fadeinup ease 0.4s forwards;  
+    animation-delay: .2s;
 }
 
 .friend-label {

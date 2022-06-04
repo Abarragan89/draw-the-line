@@ -16,8 +16,10 @@ header h1 {
 }
 
 #home-logo {
-    margin-left: 20px;
+    margin-left: 55px;
     border-radius: 5px;
+    width: 115px;
+
 }
 
 @media screen and (max-width: 480px) {
