@@ -1,22 +1,22 @@
-
 .link-el {
     font-size: 1.25em;
-    font-family: var(--secondary-font);
-    color: var(--secondary-color);
+    color: var(--offvar(--offwhite-color)-color);
     display: inline;
 }
 .link-el {
     margin-left: 20px;
 }
 .link-el:hover{
-    text-decoration: underline;
+    text-decoration: none;
+    color: var(--accent-color)
 }
 .link-el a {
     text-decoration: none;
     font-size: 1.25em;
+    color: var(--offwhite-color)
 }
 nav a.active {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     cursor: pointer;
 }
 
@@ -35,7 +35,7 @@ nav a.active {
 }
 
 /* Media Queries */
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 992px) {
     .navigation {
         display:none;
     }
@@ -43,11 +43,20 @@ nav a.active {
         padding: 0.5em;
         display: flex;
         align-items: center;
-        
+    }
+    .link-el {
+        color: var(--offwhite-color);
+        margin-left: 5px;
+        font-size: 1.2em;
+    }
+    nav a.active {
+        color: var(--accent-color);
+        cursor: pointer;
     }
     .mobile-nav .hamburger {
         position: absolute;
         right: 5%;
+        top: 3%;
         cursor: pointer;
         color: var(--main-color);
     }
@@ -55,21 +64,22 @@ nav a.active {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        right: 0;
+        top: 80px;
+        left: 65%;
         width: 100%;
-        background-color: var(--secondary-color);
+        background-color: var(--tertiary-color);
         border-top: 2px solid ;
+        border-radius: 5px;
+        z-index: 50;
     }
     nav ul li {
-        padding-left: 5%;
-        padding-bottom: 20px;
+        padding-bottom: 15px;
     }
-    .link-el {
-        font-size: 1.4em;
-    } 
-    .link-el {
-        margin-left: 10px;
+    .section-heading {
+        font-size: 2em;
+        width: 80%;
+        margin: 10% auto;
+        text-align: center;
     }
 }
 
@@ -86,25 +96,29 @@ nav a.active {
         position: absolute;
         right: 5%;
         cursor: pointer;
-        color: var(--main-color);
     }
     nav ul {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        right: 0;
+        top: 80px;
+        left: 60%;
         width: 100%;
-        background-color: #181818;
+        background-color: var(--tertiary-color);
         border-top: 2px solid ;
+        border-radius: 5px;
     }
     nav ul li {
-        padding-left: 5%;
         padding-bottom: 20px;
     }
     .link-el {
         font-size: 1em;
         padding-bottom: 20px;
         margin-left: 5px;
+    }
+    .section-heading {
+        font-size: 2em;
+        width: 100%;
+        text-align: center;
     }
 }

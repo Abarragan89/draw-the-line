@@ -1,0 +1,132 @@
+/* post styles */
+.single-post-author {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.single-post-text {
+  background-color: var(--primary-color);
+  padding: 30px;
+  padding-top: 5px;
+  line-height: 2;
+  font-size: 1.2em;
+  margin: 0 10%;
+  margin-top: 30px;
+}
+
+.single-page-likes-dislikes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+/* voting section styles */
+.voteBtnClickable {
+  font-size: 1.7em;
+}
+.voteBtnClickable:hover {
+    cursor: pointer;
+}
+
+.like-div p {
+  color: var(--offwhite-color);
+  font-size: 1.5em;
+}
+
+.vote-section {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  background-color: var(--secondary-color);
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.ban-meter-text {
+  color: var(--offwhite-color);
+  font-size: 1.5em;
+  padding: 0 30px;
+}
+
+progress {
+  border-radius: 4px;
+  width: 100%;
+  height: 15px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+progress::-webkit-progress-bar {
+  background-color: white;
+  border-radius: 4px;
+}
+progress::-webkit-progress-value {
+  background-color: var(-);
+  border-radius: 4px;
+}
+progress::-moz-progress-bar {
+  background-color: white;
+  border-radius: 4px;
+}
+progress::-moz-progress-value {
+  background-color: var(-);
+  border-radius: 4px;
+}
+
+/* comment section styles */
+#comment-form {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#commentBody {
+    height: 150px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.comment-section {
+    width: 75%;
+    margin-top: 50px;
+}
+
+#comment-vote {
+  width: 100%;
+  padding: 0;
+}
+#comment-thumbs {
+  padding: 0 5px;
+}
+.preview-comment-sect {
+  width: 80%;
+  margin: 0 auto 30px;
+}
+
+/* media queries */
+@media screen and (max-width: 480px) {
+  .vote-section {
+  padding: 0;
+  }
+  .comment-section{
+      width: 100%;
+  }
+  .single-post-text {
+      width: 100%;
+      margin-left: 0;
+  }
+  .vote-section {
+      width: 100%;
+  }
+  .preview-comment-sect {
+    width: 100%;
+    margin-left: 0;
+  }
+}

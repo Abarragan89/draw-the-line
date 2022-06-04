@@ -6,8 +6,8 @@ import '../Navlinks/navlinks.css'
 
 function MobileNav () {
     const [open, setOpen] = useState(false)
-    const hamburgerIcon = <CgMenuRound className='hamburger' size='35px' color='rgba(55, 31, 100, 0.875)' onClick={()=> setOpen(!open)}/>
-    const closeIcon = <CgCloseO className='hamburger' size='35px' color='rgba(55, 31, 100, 0.875)' onClick={()=> setOpen(!open)}/>
+    const hamburgerIcon = <CgMenuRound className='hamburger' size='35px' color='rgb(229, 229, 241)' onClick={()=> setOpen(!open)}/>
+    const closeIcon = <CgCloseO className='hamburger' size='35px' color='rgb(229, 229, 241)' onClick={()=> setOpen(!open)}/>
 
     function closeMobileMenu () {
         setOpen(false);

@@ -65,14 +65,6 @@
   color: white
 }
 
-.section-heading {
-  text-align: center;
-  font-size: 3em;
-  margin-top: 10%;
-  background-color: var(--tertiary-color);
-  color: var(--accent-color)
-}
-
 .error {
   font-size: 1.3em;
   margin-bottom: 10px;

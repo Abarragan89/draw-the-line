@@ -3,7 +3,6 @@ import './home.css'
 import { useQuery } from '@apollo/client';
 import { QUERY_ME_BASIC, GET_USER_POSTS } from '../../utils/queries';
 import { Link } from 'react-router-dom';
-import Header from '../Header/header.js';
 
 function Home() {
     const { data } = useQuery(QUERY_ME_BASIC);
@@ -17,7 +16,6 @@ function Home() {
     const loggedIn = Auth.loggedIn()
     return (
         <>
-            <Header />
             <h1 className="section-heading">Welcome, {username}</h1>
             {postData.map((post, index) =>
             (
@@ -39,7 +37,7 @@ function Home() {
                         </div>
                         <div className="preview-post-body-overlay"></div>
                     </div>
-                    {loggedIn ? 
+                    {loggedIn ?
                         <Link className="preview-post-link" to={`/Single-post/${post._id}`}>Click To View Post</Link>
                         :
                         <Link className="preview-post-link" to='/signup'>Signup or Login to View Post</Link>

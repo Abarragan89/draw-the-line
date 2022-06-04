@@ -15,6 +15,7 @@ import { setContext } from '@apollo/client/link/context';
 
 // components 
 import Home from "./components/Home/home";
+import Header from "./components/Header/header"
 import Signup from "./components/Signup/signup";
 import Profile from "./components/Profile/profile";
 import Login from "./components/Login/login";
@@ -23,6 +24,8 @@ import SinglePost from "./components/SinglePost/SinglePost";
 import SearchPeople from "./components/SearchPeople/searchPeople";
 import Footer from "./components/Footer/footer"
 import About from "./components/About/about"
+// import styles
+
 
 // Set up Apollo link 
 const httpLink = createHttpLink({
@@ -48,6 +51,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+       <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
@@ -59,7 +63,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </Router>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </ApolloProvider>
   );
 }

@@ -34,8 +34,7 @@ function Profile () {
         <>
         {loggedIn ?
             <>  
-            <Header />
-              <h2 className='welcomeText'>{userInfo.username}'s Profile Page</h2>
+              <h2 className='section-heading'>{userInfo.username}'s Profile Page</h2>
               <main className="profilePage">
                 {/* <section className="postsSection">
                      {userPosts.map((post, index) =>

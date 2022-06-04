@@ -9,12 +9,14 @@
   /* --tertiary-color: rgba(77, 47, 133, 0.875); */
   --tertiary-color: rgba(55, 31, 100, 0.875);
   --accent-color: rgba(255, 221, 0, 0.864);
+  --offwhite-color: rgb(229, 229, 241);
 
 }
-body {
-  background-image: url('./assets/sounds/photos/background.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;;
-}
 
+html, body {
+  background: url(./assets/sounds/photos/background2.png) no-repeat center center fixed;
+  -webkit-background-size: 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -4,7 +4,6 @@ import Header from '../../components/Header/header'
 function About () {
     return(
         <>
-        <Header />
         <div className="About-me">
             <h2>About</h2>
             <p>America was a great experiment in democracy where the power to make decisions was given to the public. The line between rulers and subjects was blurred and freedoms flourished. This website is inspired by this American genesis. Popular social media websites are criticized for unjustly banning users for voicing opinions that belong to specific political parties or maintaining a narrative that aligns with their administrators personal beliefs or their stakeholders. While the public debated whether this was an infringement on free-speech, a billionaire decided to buy an entire social media company to address this issue. Now the public fears he has too much power. Who will he ban and where will he draw the line? </p>

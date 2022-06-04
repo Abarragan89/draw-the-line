@@ -95,8 +95,8 @@ function SinglePost() {
         window.location.reload();
     };
 
-    // Like click function
-    function likeClick() {
+    // Like Post click function
+    function likePostClick() {
         addLike({ variables: { postId: userPost._id } })
         likeSoundNoise.play();
         if (userPost.banMeter >= 0.6) {
@@ -105,8 +105,8 @@ function SinglePost() {
             deletedPost.remove();
         }
     }
-    // Dislike  click function
-    function dislikeClick() {
+    // Dislike  Post click function
+    function dislikePostClick() {
         addDislike({ variables: { postId: userPost._id } });
         dislikeSoundNoise.play();
         if (userPost.banMeter >= 0.6) {
@@ -116,76 +116,117 @@ function SinglePost() {
         }
 
     }
+    // like a comment
+    function likeCommentClick(comment) {
+        addCommentLike({ variables: { commentId: comment._id } })
+        likeSoundNoise.play();
+        if (comment.banMeter >= 0.6) {
+            deleteComment({ variables: { commentId: comment._id } })
+            // const deletedPost = document.getElementById(index);
+            // deletedPost.remove();
+        }
+    }
+    // dislike a comment
+    function dislikeCommentClick(comment) {
+        addCommentDislike({ variables: { commentId: comment._id } })
+        dislikeSoundNoise.play();
+        if (comment.banMeter >= 0.6) {
+            deleteComment({ variables: { commentId: comment._id } })
+            // const deletedPost = document.getElementById(index);
+            // deletedPost.remove();
+        }
+    }
+
     return (
         <>
-            <Header />
             <section>
-            <h2 className='welcomeText'>Single Post</h2>
-                <div id="single-post-page">
-                    <div className='single-page-discussion-post'>
-                        <p id="username-post">{userPost.username}</p>
-                        <p id="single-post-userTitle-post">{userPost.postTitle}</p>
-                        <p id="postText"> {userPost.postText}</p>
-                        <p id="single-post-date">{userPost.createdAt}</p>
-                        {/* </div> */}
-
-                        <div id="single-page-likes-dislikes">
-                            {userPost.likesLength}<a className='voteBtnClickable' onClick={likeClick}>    👍</a>
-                            {userPost.dislikesLength}<a className='voteBtnClickable' onClick={dislikeClick}>      👎</a>
-
+                <h2 className="section-heading">{userPost.postTitle}</h2>
+                <div className="single-post-text">
+                    <p className="single-post-author">By: {userPost.username}</p>
+                    <p > {userPost.postText}</p>
+                    <br />
+                    <p> Posted on: {userPost.createdAt}</p>
+                </div>
+                <div className="vote-section">
+                    <div className="single-page-likes-dislikes">
+                        <div className='like-div'>
+                            <p>{userPost.likesLength}</p>
+                            <a className='voteBtnClickable' onClick={likePostClick}>👍</a>
                         </div>
-                        {userPost.banMeter !== 0 &&
-                            <>
-                                <p>Ban Meter <a></a></p>
-                                <progress id="banMeter" value={userPost.banMeter} max="0.6">{userPost.banMeter}</progress>
-                            </>
-                        }
-
-                        <form id='comment-form' onSubmit={handleFormSubmitComment}>
-                            <input method="post" className='post-tile' type="text" id="commentBody" name="commentBody" value={formStateComment.commentBody} onChange={handleChangeComment} placeholder='Comment' />
-                            <div>
-                                <button className='post-button' id='postBtnComment'>Post</button>
-                                <div id='waringDivComment'></div>
-                            </div>
-                        </form>
-
-                        <div className='comments-container'>
-                            {userComments.map((comment, index) => (
-
-                                <section key={index} id={index}>
-                                    <p>{comment.username}</p>
-                                    <p>{comment.commentBody}</p>
-                                    <p>{comment.createdAt}</p>
-                                    {comment.likesLength}<a  className='voteBtnClickable' onClick={() => {
-                                        addCommentLike({ variables: { commentId: comment._id } })
-                                        likeSoundNoise.play();
-                                        if (comment.banMeter >= 0.6) {
-                                            deleteComment({ variables: { commentId: comment._id } })
-                                            const deletedPost = document.getElementById(index);
-                                            deletedPost.remove();
-                                        }
-                                    }}>    👍</a>
-                                    {comment.dislikesLength}<a className='voteBtnClickable' onClick={() => {
-                                        addCommentDislike({ variables: { commentId: comment._id } });
-                                        dislikeSoundNoise.play();
-                                        if (comment.banMeter >= 0.6) {
-                                            deleteComment({ variables: { commentId: comment._id } })
-                                            const deletedPost = document.getElementById(index);
-                                            deletedPost.remove();
-                                        }
-                                    }
-                                    }>      👎</a><br></br>
-                                    {comment.banMeter !== 0 &&
-                                        <>
-                                            <progress id="banMeter" value={comment.banMeter} max="0.6">{comment.banMeter} </progress>
-                                        </>
-                                    }
-                                </section>
-
-                            ))}
+                        <div className='like-div'>
+                            <p>{userPost.dislikesLength}</p>
+                            <a className='voteBtnClickable' onClick={dislikePostClick}>👎</a>
                         </div>
                     </div>
+                    <div>
+                        {userPost.banMeter !== 0 &&
+                            <>
+                                <p className="ban-meter-text">Ban Meter <a></a></p>
+                                <progress className="ban-meter-bar" value={userPost.banMeter} max="0.6">{userPost.banMeter}</progress>
+                            </>
+                        }
+                    </div>
                 </div>
+                <div className="comment-section login-form">
+                    <form id='comment-form' onSubmit={handleFormSubmitComment}>
+                        <textarea method="post" className='login-input' type="text" id="commentBody" name="commentBody" value={formStateComment.commentBody} onChange={handleChangeComment} placeholder='Comment' />
+                        <div>
+                            <button className='login-button' id='postBtnComment'>Post</button>
+                            <div id='waringDivComment'></div>
+                        </div>
+                    </form>
+                </div>
+
+                {userComments.map((comment, index) =>
+                (
+                    <section className="preview-comment-sect" key={index}>
+                        <div className="preview-post-header">
+                            <div className="preview-post-title">
+                                <h3>{comment.username}</h3>
+                                <h4>{comment.createdAt}</h4>
+                            </div>
+                        </div>
+
+                        <div className="post-body-div">
+                            <div className="preview-post-body">
+                                <p className="preview-post-text">{comment.commentBody}</p>
+                            </div>
+                            <div className="preview-post-body-overlay"></div>
+                        </div>
+                        <div className="vote-section" id="comment-vote">
+                                <div className='like-div'>
+                                    <p>{comment.likesLength}</p>
+                                    <a className='voteBtnClickable' onClick={likeCommentClick}>👍</a>
+                                </div>
+                                <div className='like-div'>
+                                    <p>{comment.dislikesLength}</p>
+                                    <a className='voteBtnClickable' onClick={dislikeCommentClick}>👎</a>
+                                </div>
+                            <div>
+                                {comment.banMeter !== 0 &&
+                                    <>
+                                        <p className="ban-meter-text">Ban Meter <a></a></p>
+                                        <progress className="ban-meter-bar" value={comment.banMeter} max="0.6">{comment.banMeter}</progress>
+                                    </>
+                                }
+                            </div>
+                        </div>
+
+
+                    </section>
+                ))}
+
+                {/* <div className='posted-comment-container'>
+                    {userComments.map((comment, index) => (
+
+                        <section key={index} id={index}>
+                            <p>{comment.username}</p>
+                            <p>{comment.commentBody}</p>
+                            <p>{comment.createdAt}</p>
+                        </section>
+
+                    ))}
+                </div> */}
             </section>
         </>
     )

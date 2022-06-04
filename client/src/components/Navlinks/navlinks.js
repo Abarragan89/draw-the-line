@@ -23,14 +23,14 @@ function NavLinks ({ closeMobileMenu, isMobile }) {
     return (
         <>
             {loggedIn ?
-                <ul className="tabpanel">
+                <ul>
                     <li className={'link-el'}
                         onClick={closeHamburger}>
                         <NavLink className={'link-el'} to="/">Home</NavLink>
                     </li>
                     <li className={'link-el'}
                         onClick={closeHamburger}>
-                        <NavLink className={'link-el'} to={`/profile/${userId}`}>View my profile</NavLink>
+                        <NavLink className={'link-el'} to={`/profile/${userId}`}>My Profile</NavLink>
 
                     </li>
                     <li className={'link-el'}
@@ -39,11 +39,13 @@ function NavLinks ({ closeMobileMenu, isMobile }) {
                     </li>
                     <li className={'link-el'}
                         onClick={closeHamburger}>
-                        <NavLink className={'link-el'} to="/search-people">Search People</NavLink>
+                        <NavLink className={'link-el'} to="/search-people">Search</NavLink>
                     </li>
                     <li className={'link-el'}
                         onClick={closeHamburger}>
                         <NavLink className={'link-el'} to="/about">About</NavLink>
+                    </li>
+                    <li  className={'link-el'}>
                         <a className={'link-el'} onClick={() => Auth.logout()} >Logout</a>
                     </li>
                 </ul>

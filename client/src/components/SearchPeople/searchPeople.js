@@ -14,7 +14,6 @@ function SearchPeople() {
     return (
         <>
             <div id="hamburger">
-                <Header />
             </div>
             <section class="search-friend-section">
             <form id="search-friend-form" onSubmit={async (e) => {

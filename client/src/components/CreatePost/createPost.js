@@ -19,9 +19,6 @@ var Filter = require('bad-words'),
     filter = new Filter();
     filter.removeWords('hell', 'tit', 'tits', 'boob', 'boobs')
 
-
-
-
 function CreatePost() {
 
     // Sound function for post
@@ -104,7 +101,6 @@ function CreatePost() {
         <> 
         {loggedIn ?
             <>  
-           <Header />
            <h2 className='welcomeText'>Create a Post</h2>
            <main className="createPostPage">
                 <form id='post-form' onSubmit={handleFormSubmit}>
