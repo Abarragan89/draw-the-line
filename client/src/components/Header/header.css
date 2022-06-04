@@ -15,6 +15,11 @@ header h1 {
     margin-left: 10px
 }
 
+#home-logo {
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 480px) {
     header h1 {
         font-size: 1.6em

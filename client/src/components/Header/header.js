@@ -3,6 +3,7 @@ import './header.css'
 import Nav from '../Nav/nav.js'
 import Auth from '../../utils/auth';
 import MobileNav from '../MobileNav/mobileNav';
+import '../../assets/sounds/photos/DrawLogo.png'
 
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1 className="logoFont">Draw The Line</h1>
+      <img id='home-logo' src={require('../../assets/sounds/photos/DrawLogo.png')} width='70px' alt='draw the line logo'/> 
       <nav>
         <Nav />
         <MobileNav />

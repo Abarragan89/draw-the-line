@@ -1,23 +1,27 @@
 .link-el {
-    font-size: 1.25em;
-    color: var(--offvar(--offwhite-color)-color);
+    font-size: 1.2em;
     display: inline;
 }
 .link-el {
-    margin-left: 20px;
+    margin-left: 15px;
+    padding: 1px;
+    border-radius: 3px;
 }
-.link-el:hover{
+ul li .link-el:hover{
     text-decoration: none;
     color: var(--accent-color)
 }
+
 .link-el a {
     text-decoration: none;
     font-size: 1.25em;
     color: var(--offwhite-color)
 }
 nav a.active {
-    color: var(--accent-color);
+    /* color: var(--accent-color); */
     cursor: pointer;
+    background: var(--tertiary-color-more-opaque);
+    padding: 0 5px;
 }
 
 .navIsActive {
@@ -48,6 +52,10 @@ nav a.active {
         color: var(--offwhite-color);
         margin-left: 5px;
         font-size: 1.2em;
+    }
+    .link-el:hover{
+        text-decoration: none;
+        color: var(--accent-color);
     }
     nav a.active {
         color: var(--accent-color);

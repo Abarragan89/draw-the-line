@@ -43,12 +43,14 @@
     background: var(--secondary-color);
     color: white;
     flex: 1;
+    border: 1px solid var(--secondary-color-solid)
 }
 
 #delete-post-btn {
     background: rgba(171, 22, 22, 0.588);
     color: white;
     flex: 1;
+    border: 1px solid rgba(171, 22, 22, 0.588);
 }
 #edit-post-btn:hover {
     background: var(--secondary-color-solid);
@@ -71,7 +73,7 @@
     padding: 2px 5px;
     border-radius: 3px;
     flex: 1;
-    border: 1px solid black;
+    border: 1px solid var(--tertiary-color);
 }
 #view-your-post:hover {
     background: var(--tertiary-color-solid);

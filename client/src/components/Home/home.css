@@ -19,7 +19,8 @@
     flex-direction: column;
     margin: 5%;
     margin-bottom: 50px;
-    border: 2px solid black;
+    border: 1px solid black;
+    box-shadow: 5px 15px 40px;
     
 }
 
@@ -81,9 +82,13 @@
     font-size: 1.3em;
 }
 .preview-post-link:hover {
-    color: var(--accent-color);
+    background-color: var(--tertiary-color-solid);
 }
+.preview-post-link:active {
+    color: var(--title-font-text);
+    color: yellow;
 
+}
 @media screen and (max-width: 480px) {
     .preview-post-sect {
         width: 100%;

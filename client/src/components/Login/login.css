@@ -68,7 +68,7 @@
 }
 
 .login-link:hover {
-  background: yellow
+  background: var(--tertiary-color);
 }
 .login-link:active {
   color: white

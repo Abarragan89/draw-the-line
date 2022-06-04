@@ -15,8 +15,12 @@ function Home() {
     // check if user is logged in
     const loggedIn = Auth.loggedIn()
     return (
-        <>
-            <h1 className="section-heading">Welcome, {username}</h1>
+        <>  
+            {loggedIn ? 
+                <h1 className="section-heading">Welcome, {username}</h1>
+                :
+                <h1 className="section-heading">Welcome</h1>
+            }
             {postData.map((post, index) =>
             (
                 <section className="preview-post-sect" key={index}>
